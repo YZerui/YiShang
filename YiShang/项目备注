@@ -27,3 +27,7 @@
 	  	   2. 将T_MsgBuffer的信息同步到T_Msg表中
 	  	   3. T_Msg再同步到其它表中
 	   		
+
+增加git备份
+
+add git 
