@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/page_bg_level_one"
+    android:orientation="vertical" >
+
+    <View
+        android:id="@+id/bar_split_h_top_view"
+        style="@style/split_line_view"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/bar_horizontal_layout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/bar_h_unit_1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/btn_selector_bg"
+            android:gravity="center"
+            android:visibility="gone"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/bar_h_img_1"
+                android:layout_width="@dimen/bar_h_icon_size"
+                android:layout_height="@dimen/bar_h_icon_size"
+                android:src="@drawable/self_note_label_icon"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/bar_h_text_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/unit_margin_level_three"
+                android:text="转发"
+                android:visibility="gone"
+                android:textColor="@color/text_color_level_three"
+                android:textSize="@dimen/bar_h_text_size" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/bar_h_split_1"
+            style="@style/split_line_vetical_view"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/bar_h_unit_2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/btn_selector_bg"
+            android:gravity="center"
+            android:visibility="gone"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/bar_h_img_2"
+                android:layout_width="@dimen/bar_h_icon_size"
+                android:layout_height="@dimen/bar_h_icon_size"
+                android:src="@drawable/self_note_label_icon"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/bar_h_text_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/unit_margin_level_three"
+                android:text="关注"
+                android:visibility="gone"
+                android:textColor="@color/text_color_level_three"
+                android:textSize="@dimen/bar_h_text_size" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/bar_h_split_2"
+            style="@style/split_line_vetical_view"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/bar_h_unit_3"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/btn_selector_bg"
+            android:gravity="center"
+            android:visibility="gone"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/bar_h_img_3"
+                android:layout_width="@dimen/bar_h_icon_size"
+                android:layout_height="@dimen/bar_h_icon_size"
+                android:src="@drawable/self_note_label_icon"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/bar_h_text_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/unit_margin_level_three"
+                android:text="查看"
+                android:visibility="gone"
+                android:textColor="@color/text_color_level_three"
+                android:textSize="@dimen/bar_h_text_size" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/bar_h_split_3"
+            style="@style/split_line_vetical_view"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/bar_h_unit_4"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/btn_selector_bg"
+            android:gravity="center"
+            android:visibility="gone"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/bar_h_img_4"
+                android:layout_width="@dimen/bar_h_icon_size"
+                android:layout_height="@dimen/bar_h_icon_size"
+                android:src="@drawable/self_note_label_icon"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/bar_h_text_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/unit_margin_level_three"
+                android:text="删除"
+                android:visibility="gone"
+                android:textColor="@color/text_color_level_three"
+                android:textSize="@dimen/bar_h_text_size" />
+        </LinearLayout>
+          <ImageView
+            android:id="@+id/bar_h_split_4"
+            style="@style/split_line_vetical_view"
+            android:visibility="gone" />
+        <LinearLayout
+            android:id="@+id/bar_h_unit_5"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/btn_selector_bg"
+            android:gravity="center"
+            android:visibility="gone"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/bar_h_img_5"
+                android:layout_width="@dimen/bar_h_icon_size"
+                android:layout_height="@dimen/bar_h_icon_size"
+                android:src="@drawable/self_note_label_icon"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/bar_h_text_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/unit_margin_level_three"
+                android:text="删除"
+                android:visibility="gone"
+                android:textColor="@color/text_color_level_three"
+                android:textSize="@dimen/bar_h_text_size" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/bar_split_h_bottom_view"
+        style="@style/split_line_view"
+        android:visibility="gone" />
+
+</LinearLayout>

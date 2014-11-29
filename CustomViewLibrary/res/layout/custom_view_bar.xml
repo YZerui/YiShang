@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e0dfdf"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/bar_h_layout"
+        layout="@layout/include_bar_horizontal_layout"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/bar_v_layout"
+        layout="@layout/include_bar_vetical_layout"
+        android:visibility="gone" />
+
+    
+
+</RelativeLayout>

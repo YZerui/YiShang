@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.ruifeng.yishang"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <!--
+    <LinearLayout
+        android:id="@+id/list_item_back"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal" >
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@color/page_bg_level_one" />
+
+        <RelativeLayout
+            android:id="@+id/backBtn_1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:background="@drawable/btn_gray_style" >
+
+            <ImageView
+                android:layout_width="@dimen/icon_default_size"
+                android:layout_height="@dimen/icon_default_size"
+                android:layout_centerInParent="true"
+                android:src="@drawable/back_item_share_icon" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/backBtn_2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:background="@drawable/btn_red_style" >
+
+            <ImageView
+                android:layout_width="@dimen/icon_default_size"
+                android:layout_height="@dimen/icon_default_size"
+                android:layout_centerInParent="true"
+                android:src="@drawable/back_item_delete_icon" />
+        </RelativeLayout>
+    </LinearLayout>-->
+  
+
+    <com.customview.view.CustomListItemView
+        android:id="@+id/item"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        custom:LIST_ITEM_MODE="FIX_DOUBLE_LINE"
+        custom:list_item_head_mode="FIX_HEAD_RECT" >
+    </com.customview.view.CustomListItemView>
+
+</FrameLayout>

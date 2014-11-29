@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/topSector"
+        style="@style/sector_btn_style"
+        android:layout_marginBottom="@dimen/unit_margin_level_three"
+        android:background="@drawable/btn_sector_top_style"
+        android:text="标题"
+        android:textColor="@color/color_theme"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/firstSector"
+        style="@style/sector_btn_style"
+        android:background="@drawable/btn_sector_center_style"
+        android:text="选择一"
+        android:visibility="gone" />
+
+    <View
+        android:id="@+id/split_1"
+        style="@style/split_line_view"
+        android:layout_marginLeft="@dimen/unit_margin_level_three"
+        android:layout_marginRight="@dimen/unit_margin_level_three"
+        android:background="@color/text_color_level_three" />
+
+    <TextView
+        android:id="@+id/secondSector"
+        style="@style/sector_btn_style"
+        android:background="@drawable/btn_sector_center_style"
+        android:text="选择二"
+        android:visibility="gone" />
+
+    <View
+        android:id="@+id/split_2"
+        style="@style/split_line_view"
+        android:layout_marginLeft="@dimen/unit_margin_level_three"
+        android:layout_marginRight="@dimen/unit_margin_level_three"
+        android:background="@color/text_color_level_three"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/thirdSector"
+        style="@style/sector_btn_style"
+        android:background="@drawable/btn_sector_center_style"
+        android:text="选择三"
+        android:visibility="gone" />
+
+    <View
+        android:id="@+id/split_3"
+        style="@style/split_line_view"
+        android:layout_marginLeft="@dimen/unit_margin_level_three"
+        android:layout_marginRight="@dimen/unit_margin_level_three"
+        android:background="@color/text_color_level_three"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/fourthSector"
+        style="@style/sector_btn_style"
+        android:background="@drawable/btn_sector_center_style"
+        android:text="选择四"
+        android:visibility="gone" />
+
+    <View
+        android:id="@+id/split_4"
+        style="@style/split_line_view"
+        android:layout_marginLeft="@dimen/unit_margin_level_three"
+        android:layout_marginRight="@dimen/unit_margin_level_three"
+        android:background="@color/text_color_level_three"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/fifthSector"
+        style="@style/sector_btn_style"
+        android:background="@drawable/btn_sector_center_style"
+        android:text="选择五"
+        android:visibility="gone" />
+   <View
+        android:id="@+id/split_5"
+        style="@style/split_line_view"
+        android:layout_marginLeft="@dimen/unit_margin_level_three"
+        android:layout_marginRight="@dimen/unit_margin_level_three"
+        android:background="@color/text_color_level_three"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/sixSector"
+        style="@style/sector_btn_style"
+        android:background="@drawable/btn_sector_center_style"
+        android:text="选择六"
+        android:visibility="gone" />
+    <TextView
+        android:id="@+id/bottomBtn"
+        style="@style/sector_btn_style"
+        android:layout_marginBottom="@dimen/unit_margin_level_three"
+        android:background="@drawable/btn_sector_bottom_style"
+        android:text="取消"
+        android:layout_marginTop="@dimen/unit_margin_level_three"
+        android:visibility="gone" />
+
+  
+
+</LinearLayout>

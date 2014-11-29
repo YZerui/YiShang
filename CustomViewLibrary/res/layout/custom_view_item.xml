@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:id="@+id/item_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/item_height_level_second"
+        android:background="@drawable/list_item_bg" >
+
+        <LinearLayout
+            android:id="@+id/normal_mode"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="5" >
+
+                <TextView
+                    android:id="@+id/text_note"
+                    style="@style/item_note_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/unit_margin_level_three"
+                    android:text="姓名" />
+
+                <ImageView
+                    android:id="@+id/img_note"
+                    android:layout_width="@dimen/icon_default_size"
+                    android:layout_height="@dimen/icon_default_size"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/unit_margin_level_three"
+                    android:src="@drawable/app_icon"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/text_content"
+                    style="@style/item_content_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/unit_margin_level_one"
+                    android:text="你的真实姓名" />
+
+                <View
+                    android:id="@+id/split_line_part_bottom"
+                    style="@style/split_line_view"
+                    android:layout_alignParentBottom="true"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="你的真实姓名"
+            android:textColor="@color/text_color_level_one"
+            android:textSize="@dimen/text_btn_level_three"
+            android:visibility="invisible" />
+
+        <RelativeLayout
+            android:id="@+id/lineMode"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="invisible" >
+
+            <TextView
+                android:id="@+id/line_left_text"
+                style="@style/item_note_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/unit_margin_level_one"
+                android:text="左边文字" >
+            </TextView>
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/split_line_total_top"
+            style="@style/split_line_view"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible" />
+
+        <View
+            android:id="@+id/split_line_total_bottom"
+            style="@style/split_line_view"
+            android:layout_alignParentBottom="true"
+            android:visibility="invisible" />
+
+        <RelativeLayout
+            android:id="@+id/right_note_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/unit_margin_level_three" >
+
+            <TextView
+                android:id="@+id/text_right_note"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="更多"
+                android:textSize="@dimen/text_btn_level_four"
+                android:textColor="@color/text_color_level_two"
+                android:visibility="invisible" />
+
+            <com.customview.view.ImageView_Rounded
+                android:id="@+id/icon_right_note"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/app_icon"
+                android:visibility="invisible" >
+            </com.customview.view.ImageView_Rounded>
+
+            <ImageView
+                android:id="@+id/img_right_note"
+                style="@style/self_set_item_note_style"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/text_right_note"
+                android:visibility="invisible"
+                android:src="@drawable/note_more_icon" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/unit_margin_level_two" >
+
+            <com.widget.SlipButton
+                android:id="@+id/slipButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="invisible" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

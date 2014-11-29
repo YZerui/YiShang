@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:background="@drawable/btn_selector_bg"
+    >
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="@dimen/icon_default_size"
+        android:layout_height="@dimen/icon_default_size"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5dp"
+        />
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:text="选项一"
+        android:layout_toRightOf="@id/img"
+        android:layout_marginLeft="5dp"
+        android:textColor="#fff"
+        android:padding="5dp"
+        android:layout_centerVertical="true"
+        />
+
+</RelativeLayout>

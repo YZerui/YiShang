@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.ruifeng.yishang"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <com.customview.view.CustomListItemView
+        android:id="@+id/customListItem"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        custom:LIST_ITEM_MODE="FIX_DOUBLE_LINE"
+        custom:list_item_head_mode="FIX_HEAD_RECT"
+        custom:list_item_note_text_color="CHECK"
+        custom:list_item_right_note_text="关联" >
+    </com.customview.view.CustomListItemView>
+
+</FrameLayout>

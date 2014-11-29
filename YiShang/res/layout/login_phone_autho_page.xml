@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_bg_level_one"
+    android:orientation="vertical" >
+
+    <RelativeLayout style="@style/topbar_bg" >
+
+        <RelativeLayout
+            android:id="@+id/backLayout"
+            style="@style/topbar_back_layout"
+            android:layout_alignParentLeft="true" >
+
+            <ImageView
+                android:id="@+id/backIcon"
+                style="@style/topbar_back_note"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true" />
+
+            <TextView
+                android:id="@+id/backText"
+                style="@style/topbar_back_text"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/back_text_margin"
+                android:layout_toRightOf="@id/backIcon"
+                android:text="手机注册" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/topbar_title"
+            style="@style/topbar_title"
+            android:layout_centerInParent="true"
+            android:text="提交验证码" />
+
+        <View
+            style="@style/split_line_view"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/unit_margin_level_one"
+        android:text="已发送验证码到该手机" />
+
+    <TextView
+        android:id="@+id/regiPhoneText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="2dp"
+        android:text="(+86)xxx****xxxx" />
+
+    <EditText
+        android:id="@+id/codeText"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/item_height_level_second"
+        android:layout_margin="@dimen/unit_margin_level_one"
+        android:background="@drawable/edit_text_bg"
+        android:ellipsize="end"
+        android:hint="请输入验证码"
+        android:numeric="integer" />
+
+    <Button
+        android:id="@+id/submitBtn"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/item_height_level_third"
+        android:layout_margin="@dimen/unit_margin_level_one"
+        android:background="@drawable/btn_green_style"
+        android:text="提交"
+        android:textColor="#fff"
+        android:textSize="@dimen/text_btn_level_two" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/unit_margin_level_one" >
+
+        <com.yishang.E.view.CustomDigitalClock
+            android:id="@+id/authoTimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/text_color_level_two"
+            android:textSize="18dp" />
+        <TextView
+            android:id="@+id/repeatSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_btn_level_four"
+            android:textColor="@color/note_color_light" 
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            android:text="点击重新发送"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

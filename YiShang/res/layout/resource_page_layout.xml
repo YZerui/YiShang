@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:swipe="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res/com.ruifeng.yishang"
+    android:id="@+id/overallLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_bg_level_two"
+    android:orientation="vertical" >
+
+    <com.customview.view.CustomTopbarView
+        android:id="@+id/topBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        custom:topbar_left_img_src="@drawable/edit_search_icon"
+        custom:topbar_right_text="来源"
+        custom:topbar_title="资源" >
+    </com.customview.view.CustomTopbarView>
+
+    <com.customview.view.CustomBarView
+        android:id="@+id/barView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:layout_marginTop="@dimen/unit_margin_level_three"
+        custom:bar_mode="Horizontal"
+        custom:bar_split_view_visible="SHOW"
+        custom:bar_unit_four_img="@drawable/res_filter_often"
+        custom:bar_unit_four_text="常用"
+        custom:bar_unit_num="FOUR"
+        custom:bar_unit_one_img="@drawable/res_filter_default"
+        custom:bar_unit_one_text="默认"
+        custom:bar_unit_three_img="@drawable/res_filter_time"
+        custom:bar_unit_three_text="时间"
+        custom:bar_unit_two_img="@drawable/res_filter_interest"
+        custom:bar_unit_two_text="密切度" >
+    </com.customview.view.CustomBarView>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="@dimen/unit_margin_level_three"
+        android:background="@color/page_bg_level_one" >
+
+        <!--
+        <com.yishang.E.view.swipelistview.SwipeListView
+            android:id="@+id/listView"
+            style="@style/list_style"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            swipe:swipeBackView="@+id/list_item_back"
+            swipe:swipeFrontView="@+id/list_item_front" >
+        </com.yishang.E.view.swipelistview.SwipeListView>
+        -->
+
+        <com.yishang.E.view.swipelistview.XListView
+            android:id="@+id/listView"
+            style="@style/default_list_style"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+        </com.yishang.E.view.swipelistview.XListView>
+
+        <com.customview.view.CustomPageView
+            android:id="@+id/pageView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+</LinearLayout>

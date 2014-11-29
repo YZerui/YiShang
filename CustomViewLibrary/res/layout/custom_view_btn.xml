@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/btn_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/item_height_level_third"
+        android:background="@drawable/btn_gray_style" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/btn_img"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/app_icon"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/btn_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/unit_margin_level_two"
+                android:gravity="center"
+                android:text="测试控件"
+                android:textColor="@color/page_bg_level_one"
+                android:textSize="@dimen/text_btn_level_three"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/bottomSplitLine"
+            style="@style/split_line_view"
+            android:visibility="gone"
+            android:layout_alignParentBottom="true" >
+        </View>
+
+        <View
+            android:id="@+id/topSplitLine"
+            style="@style/split_line_view"
+            android:visibility="gone"
+            android:layout_alignParentTop="true" >
+        </View>
+    </RelativeLayout>
+
+</LinearLayout>

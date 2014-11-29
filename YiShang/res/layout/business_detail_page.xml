@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.ruifeng.yishang"
+    xmlns:swipe="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_bg_level_one"
+    android:orientation="vertical" >
+
+    <com.customview.view.CustomTopbarView
+        android:id="@+id/topBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        custom:topbar_back_text="企业"
+        custom:topbar_title="企业名称" >
+    </com.customview.view.CustomTopbarView>
+	<com.customview.view.CustomPageView
+	    android:id="@+id/overallView"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent" 
+	    ></com.customview.view.CustomPageView>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/unit_margin_level_one" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.5" >
+
+            <com.customview.view.ImageView_Rect
+                android:id="@+id/com_icon"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/app_icon" >
+            </com.customview.view.ImageView_Rect>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/com_title"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:textColor="@color/text_color_level_one"
+                android:textSize="@dimen/text_btn_level_two" />
+
+            <TextView
+                android:id="@+id/com_keyword"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/com_title"
+                android:background="@drawable/btn_selector_bg"
+                android:lines="2"
+                android:textColor="@color/text_color_level_two"
+                android:textSize="14dp" />
+
+            <ImageView
+                android:layout_width="@dimen/icon_default_size"
+                android:layout_height="fill_parent"
+                android:layout_alignBottom="@id/com_keyword"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/com_title"
+                android:src="@drawable/note_more_icon" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <com.customview.view.CustomBtnView
+        android:id="@+id/correlateBtn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/unit_margin_level_two"
+        android:layout_marginRight="@dimen/unit_margin_level_two"
+        android:layout_marginTop="@dimen/unit_margin_level_three"
+        custom:btn_color_style="BG_GREEN"
+        custom:btn_text="" >
+    </com.customview.view.CustomBtnView>
+
+    <TextView
+        android:id="@+id/noteText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/unit_margin_level_one"
+        android:layout_marginRight="@dimen/unit_margin_level_one"
+        android:textColor="@color/color_note"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/com_detail"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/unit_margin_level_one"
+        android:layout_marginRight="@dimen/unit_margin_level_one"
+        android:textColor="@color/text_color_level_two"
+        android:textSize="@dimen/text_btn_level_four"
+        android:visibility="gone" />
+
+    <com.customview.view.CustomItemView
+        android:id="@+id/bookMoreBtn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/unit_margin_level_three"
+        custom:item_line_mode="企业文档"
+        custom:item_rightNoteText="更多"
+        custom:item_splitBottomShow="SHOW"
+        custom:item_splitTopShow="SHOW" >
+    </com.customview.view.CustomItemView>
+    <!--
+    <com.yishang.E.view.swipelistview.SwipeListView
+        android:id="@+id/bookListView"
+        style="@style/list_style"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="@dimen/unit_margin_level_three"
+        swipe:swipeBackView="@+id/list_item_back"
+        swipe:swipeFrontView="@+id/list_item_front" >
+    </com.yishang.E.view.swipelistview.SwipeListView>    -->
+  <com.customview.view.CustomPageView
+        android:id="@+id/pageView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="gone" >
+    </com.customview.view.CustomPageView>
+    <com.yishang.E.view.swipelistview.XListView
+        android:id="@+id/listView"
+        style="@style/default_list_style"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+    </com.yishang.E.view.swipelistview.XListView>
+
+  
+
+</LinearLayout>

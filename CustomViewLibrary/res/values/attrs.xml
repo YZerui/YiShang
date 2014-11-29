@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="SmoothProgressBar">
+        <attr name="spbStyle" format="reference" />
+        <attr name="spb_color" format="color" />
+        <attr name="spb_stroke_width" format="dimension" />
+        <attr name="spb_stroke_separator_length" format="dimension" />
+        <attr name="spb_sections_count" format="integer" />
+        <attr name="spb_speed" format="float" />
+        <attr name="spb_progressiveStart_speed" format="float" />
+        <attr name="spb_progressiveStop_speed" format="float" />
+        <attr name="spb_interpolator" format="enum">
+            <enum name="spb_interpolator_accelerate" value="0" />
+            <enum name="spb_interpolator_linear" value="1" />
+            <enum name="spb_interpolator_acceleratedecelerate" value="2" />
+            <enum name="spb_interpolator_decelerate" value="3" />
+        </attr>
+        <attr name="spb_reversed" format="boolean" />
+        <attr name="spb_mirror_mode" format="boolean" />
+        <attr name="spb_colors" format="reference" />
+        <attr name="spb_progressiveStart_activated" format="boolean" />
+        <attr name="spb_background" format="reference" />
+        <attr name="spb_generate_background_with_colors" format="boolean" />
+    </declare-styleable>
+    <!-- 自定义Item样式 -->
+    <declare-styleable name="CustomItemView">
+        <attr name="item_textNote" format="string" />
+        <attr name="item_textContent" format="string" />
+        <attr name="item_imgRightNote" format="integer"></attr>
+        <attr name="item_splitTopShow">
+            <enum name="SHOW" value="1"></enum>
+            <enum name="HIDE" value="0"></enum>
+        </attr>
+        <attr name="item_splitBottomShow">
+            <enum name="SHOW" value="1"></enum>
+            <enum name="HIDE" value="0"></enum>
+        </attr>
+        <attr name="item_splitPartBottomShow">
+            <enum name="SHOW" value="1"></enum>
+            <enum name="HIDE" value="0"></enum>
+        </attr>
+        <attr name="item_slipButtonShow">
+            <enum name="SHOW" value="1"></enum>
+            <enum name="HIDE" value="0"></enum>
+        </attr>
+        <attr name="item_rightNoteShow">
+            <enum name="SHOW" value="1"></enum>
+            <enum name="HIDE" value="0"></enum>
+        </attr>
+        <attr name="item_rightNoteTextShow">
+            <enum name="SHOW" value="1"></enum>
+            <enum name="HIDE" value="0"></enum>
+        </attr>
+        <attr name="item_rightNoteIconShow">
+            <enum name="SHOW" value="1"></enum>
+            <enum name="HIDE" value="0"></enum>
+        </attr>
+        <attr name="item_rightNoteText" format="string"></attr>
+        <attr name="item_rightNoteIcon" format="integer"></attr>
+        <attr name="item_imgNote" format="integer"></attr>
+        <attr name="item_itemHight" format="dimension"></attr>
+        <attr name="item_text_mode" format="string"></attr>
+        <attr name="item_line_mode" format="string"></attr>
+    </declare-styleable>
+
+    <!-- 自定义TopBar样式 -->
+    <declare-styleable name="CustomTopBarView">
+        <attr name="topbar_title" format="string"></attr>
+        <attr name="topbar_height" format="dimension"></attr>
+        <attr name="topbar_bg_color" format="color"></attr>
+        <attr name="topbar_back_visibility">
+            <enum name="SHOW" value="1"></enum>
+            <enum name="HIDE" value="0"></enum>
+        </attr>
+        <attr name="topbar_back_text" format="string"></attr>
+        <attr name="topbar_right_img_src" format="integer"></attr>
+        <attr name="topbar_left_img_src" format="integer"></attr>
+        <attr name="topbar_progress_visibility">
+            <enum name="SHOW" value="1"></enum>
+            <enum name="HIDE" value="0"></enum>
+        </attr>
+        <attr name="topbar_right_btn_visibility">
+            <enum name="SHOW" value="1"></enum>
+            <enum name="HIDE" value="0"></enum>
+        </attr>
+        <attr name="topbar_left_btn_visibility">
+            <enum name="SHOW" value="1"></enum>
+            <enum name="HIDE" value="0"></enum>
+        </attr>
+        <attr name="topbar_left_text_btn_visibility">
+            <enum name="SHOW" value="1"></enum>
+            <enum name="HIDE" value="0"></enum>
+        </attr>
+        <attr name="topbar_right_text_btn_visibility">
+            <enum name="SHOW" value="1"></enum>
+            <enum name="HIDE" value="0"></enum>
+        </attr>
+        <attr name="topbar_right_text" format="string"></attr>
+        <attr name="topbar_left_text" format="string"></attr>
+        <attr name="topbar_title_color" format="color"></attr>
+        <attr name="topbar_text_color" format="color"></attr>
+
+        <!-- 相对按钮控件而言 -->
+        <attr name="topbar_right_second_btn" format="integer"></attr>
+        <!-- 相对文本控件而已 -->
+        <attr name="topbar_right_second_btn_text" format="integer"></attr>
+        <attr name="topbar_right_second_text_btn" format="string"></attr>
+        <attr name="topbar_right_second_text_btn_text" format="string"></attr>
+    </declare-styleable>
+
+    <!-- ********************************列表项******************************** -->
+
+    <declare-styleable name="CustomListItemView">
+
+        <!-- 列表样式 -->
+        <attr name="LIST_ITEM_MODE">
+            <enum name="FIX_SINGLE_LINE" value="0"></enum>
+            <enum name="FIX_DOUBLE_LINE" value="1"></enum>
+            <enum name="UNFIX" value="2"></enum>
+        </attr>
+        <attr name="list_item_content_clickable">
+            <enum name="YES" value="1"></enum>
+            <enum name="NO" value="0"></enum>
+        </attr>
+        <attr name="list_item_total_clickable">
+            <enum name="YES" value="1"></enum>
+            <enum name="NO" value="0"></enum>
+        </attr>
+
+        <!-- 非固定列表样式 -->
+        <attr name="list_item_unfix_icon" format="integer"></attr>
+        <attr name="list_item_unfix_title" format="string"></attr>
+        <attr name="list_item_unfix_content" format="string"></attr>
+        <attr name="list_item_unfix_timer" format="string"></attr>
+
+        <!-- 固定列表样式 -->
+        <attr name="list_item_fix_icon" format="integer"></attr>
+        <attr name="list_item_fix_double_title" format="string"></attr>
+        <attr name="list_item_fix_double_content" format="string"></attr>
+        <attr name="list_item_fix_double_timer" format="string"></attr>
+        <attr name="list_item_fix_single_title" format="string"></attr>
+
+        <!-- 列表项高度 -->
+        <attr name="list_item_height" format="dimension"></attr>
+
+        <!-- 列表项底部线条的可见性 -->
+        <attr name="list_item_split_visible">
+            <enum name="SHOW" value="1"></enum>
+            <enum name="HIDE" value="0"></enum>
+        </attr>
+        <!-- 标识箭头 -->
+        <attr name="list_item_more_note_icon">
+            <enum name="SHOW" value="1"></enum>
+            <enum name="HIDE" value="0"></enum>
+        </attr>
+        <attr name="list_item_head_mode">
+            <enum name="FIX_HEAD_CIRCLE" value="0"></enum>
+            <enum name="FIX_HEAD_RECT" value="1"></enum>
+        </attr>
+        <!-- 是否显示下载checkBox -->
+        <attr name="list_item_checkbox_download_file">
+            <enum name="SHOW" value="1"></enum>
+            <enum name="HIDE" value="0"></enum>
+        </attr>
+        <!-- 是否显示下载checkBox -->
+        <attr name="list_item_checkbox_select">
+            <enum name="SHOW" value="1"></enum>
+            <enum name="HIDE" value="0"></enum>
+        </attr>
+        <!-- 是否显示状态标识文本 -->
+        <attr name="list_item_note_text_visible">
+            <enum name="SHOW" value="1"></enum>
+            <enum name="HIDE" value="0"></enum>
+        </attr>
+        <attr name="list_item_right_note_text" format="string"></attr>
+
+        <!-- 状态标识文本的颜色选择 -->
+        <attr name="list_item_note_text_color">
+            <enum name="CHECK" value="1"></enum>
+            <enum name="UNCHECK" value="0"></enum>
+            <enum name="WARN" value="2"></enum>
+        </attr>
+        <attr name="list_item_unFixLlayout_bg" format="integer"></attr>
+        <attr name="list_item_fixLayout_bg" format="integer"></attr>
+        <!-- 底部分割线 -->
+        <attr name="list_item_bottom_split_line">
+            <enum name="SHOW" value="1"></enum>
+            <enum name="HIDE" value="0"></enum>
+        </attr>
+        <attr name="list_item_fix_split_line">
+            <enum name="SHOW" value="1"></enum>
+            <enum name="HIDE" value="0"></enum>
+        </attr>
+
+        <!-- 底部控件 -->
+        <attr name="list_item_bottom_visible">
+            <enum name="SHOW" value="1"></enum>
+            <enum name="HIDE" value="0"></enum>
+        </attr>
+        <attr name="list_item_bottom_unit_num">
+            <enum name="ONE" value="1"></enum>
+            <enum name="TWO" value="2"></enum>
+            <enum name="THREE" value="3"></enum>
+            <enum name="FOUR" value="4"></enum>
+        </attr>
+        <attr name="list_item_bottom_unit_img_1" format="integer"></attr>
+        <attr name="list_item_bottom_unit_img_2" format="integer"></attr>
+        <attr name="list_item_bottom_unit_img_3" format="integer"></attr>
+        <attr name="list_item_bottom_unit_img_4" format="integer"></attr>
+        <attr name="list_item_bottom_unit_text_1" format="string"></attr>
+        <attr name="list_item_bottom_unit_text_2" format="string"></attr>
+        <attr name="list_item_bottom_unit_text_3" format="string"></attr>
+        <attr name="list_item_bottom_unit_text_4" format="string"></attr>
+    </declare-styleable>
+
+    <!-- 控件样式 -->
+    <declare-styleable name="CustomBtnView">
+        <attr name="btn_color_style">
+            <enum name="BG_GREEN" value="0"></enum>
+            <enum name="BG_GRAY" value="1"></enum>
+            <enum name="BG_RED" value="2"></enum>
+            <enum name="BG_OUTLINE" value="3"></enum>
+            <enum name="BG_NULL" value="4"></enum>
+        </attr>
+        <attr name="btn_text_color" format="color"></attr>
+        <attr name="btn_text" format="string"></attr>
+        <attr name="btn_img" format="integer"></attr>
+        <attr name="btn_bg" format="integer"></attr>
+        <attr name="btn_bottom_splitline_visible">
+            <enum name="SHOW" value="1"></enum>
+            <enum name="HIDE" value="0"></enum>
+        </attr>
+        <attr name="btn_top_splitline_visible">
+            <enum name="SHOW" value="1"></enum>
+            <enum name="HIDE" value="0"></enum>
+        </attr>
+        <attr name="btn_text_size" format="dimension"></attr>
+        <attr name="btn_img_size" format="dimension"></attr>
+    </declare-styleable>
+    <declare-styleable name="CustomTextView">
+        <attr name="text_progress_mode">
+            <enum name="PRO_LEFT" value="0"></enum>
+            <enum name="PRO_RIGHT" value="1"></enum>
+            <enum name="PRO_NULL" value="2"></enum>
+        </attr>
+        <attr name="text_content" format="string"></attr>
+    </declare-styleable>
+    <declare-styleable name="CustomPageView">
+        <attr name="page_error_img" format="integer"></attr>
+        <attr name="page_error_text" format="string"></attr>
+        <attr name="page_error_text_size" format="dimension"></attr>
+        <attr name="page_bottom_visible">
+            <enum name="SHOW" value="1"></enum>
+            <enum name="HIDE" value="0"></enum>
+        </attr>
+        <attr name="page_bottom_refresh_img" format="integer"></attr>
+        <attr name="page_visible">
+            <enum name="SHOW" value="1"></enum>
+            <enum name="HIDE" value="0"></enum>
+        </attr>
+        <attr name="page_error_img_visible">
+            <enum name="SHOW" value="1"></enum>
+            <enum name="HIDE" value="0"></enum>
+        </attr>
+    </declare-styleable>
+
+    <!-- 底部选项控件样式 -->
+    <declare-styleable name="CustomSectorView">
+        <attr name="sector_unit_num">
+            <enum name="ONE" value="1"></enum>
+            <enum name="TWO" value="2"></enum>
+            <enum name="THREE" value="3"></enum>
+            <enum name="FOUR" value="4"></enum>
+            <enum name="FIFTH" value="5"></enum>
+            <enum name="SIX" value="6"></enum>
+        </attr>
+        <attr name="sector_top_visible">
+            <enum name="SHOW" value="1"></enum>
+            <enum name="HIDE" value="0"></enum>
+        </attr>
+        <attr name="sector_bottom_visible">
+            <enum name="SHOW" value="1"></enum>
+            <enum name="HIDE" value="0"></enum>
+        </attr>
+        <attr name="sector_top_text" format="string"></attr>
+        <attr name="sector_first_text" format="string"></attr>
+        <attr name="sector_second_text" format="string"></attr>
+        <attr name="sector_third_text" format="string"></attr>
+        <attr name="sector_fourth_text" format="string"></attr>
+        <attr name="sector_sixth_text" format="string"></attr>
+        <attr name="sector_fifth_text" format="string"></attr>
+        <attr name="sector_bottom_text" format="string"></attr>
+    </declare-styleable>
+    <declare-styleable name="CustomBarView">
+        <attr name="bar_mode">
+            <enum name="Horizontal" value="0"></enum>
+            <enum name="Vetical" value="1"></enum>
+        </attr>
+        <attr name="bar_unit_num">
+            <enum name="ONE" value="1"></enum>
+            <enum name="TWO" value="2"></enum>
+            <enum name="THREE" value="3"></enum>
+            <enum name="FOUR" value="4"></enum>
+            <enum name="FIVE" value="5"></enum>
+        </attr>
+        <attr name="bar_split_view_visible">
+            <enum name="SHOW" value="1"></enum>
+            <enum name="HIDE" value="0"></enum>
+        </attr>
+        <attr name="bar_t_split_view_visible">
+            <enum name="SHOW" value="1"></enum>
+            <enum name="HIDE" value="0"></enum>
+        </attr>
+        <attr name="bar_b_split_view_visible">
+            <enum name="SHOW" value="1"></enum>
+            <enum name="HIDE" value="0"></enum>
+        </attr>
+        <attr name="bar_unit_one_img" format="integer"></attr>
+        <attr name="bar_unit_two_img" format="integer"></attr>
+        <attr name="bar_unit_three_img" format="integer"></attr>
+        <attr name="bar_unit_four_img" format="integer"></attr>
+        <attr name="bar_unit_five_img" format="integer"></attr>
+        <attr name="bar_unit_one_text" format="string"></attr>
+        <attr name="bar_unit_two_text" format="string"></attr>
+        <attr name="bar_unit_three_text" format="string"></attr>
+        <attr name="bar_unit_four_text" format="string"></attr>
+        <attr name="bar_unit_five_text" format="string"></attr>
+        <attr name="bar_unit_one_bg" format="integer"></attr>
+        <attr name="bar_unit_two_bg" format="integer"></attr>
+        <attr name="bar_unit_three_bg" format="integer"></attr>
+        <attr name="bar_unit_four_bg" format="integer"></attr>
+        <attr name="bar_unit_five_bg" format="integer"></attr>
+        <attr name="bar_text_color" format="color"></attr>
+        <attr name="bar_h_item_heigth" format="dimension"></attr>
+        <attr name="bar_v_item_heigth" format="dimension"></attr>
+        <attr name="bar_img_size" format="dimension"></attr>
+    </declare-styleable>
+
+</resources>

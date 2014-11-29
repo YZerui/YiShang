@@ -1,0 +1,281 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <!-- *******************************全局样式************************** -->
+
+
+    <!-- 普通圆进度圈样式 -->
+    <style name="progress_default_load_img_style">
+        <item name="android:layout_width">@dimen/progress_bar_default_length</item>
+        <item name="android:layout_height">@dimen/progress_bar_default_length</item>
+        <item name="android:indeterminateDrawable">@anim/progress_default_img_loading</item>
+    </style>
+
+    <!-- 进度圈提示文本属性 -->
+    <style name="progress_default_text_style">
+        <item name="android:textColor">@color/note_color_light</item>
+        <item name="android:textSize">@dimen/custom_progress_text_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="split_line_view">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/split_line_height</item>
+        <item name="android:background">@color/page_bg_level_three</item>
+    </style>
+
+    <style name="split_line_vetical_view">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:src">@drawable/split_line_vertical</item>
+    </style>
+
+    <style name="split_line_vetical_bg_view">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:background">@color/text_color_level_three</item>
+    </style>
+    <!-- xListView -->
+    <style name="customListProgressBar" parent="@android:style/Widget.ProgressBar">
+        <item name="android:indeterminateDrawable">@drawable/custom_list_loading</item>
+    </style>
+
+    <!-- CheckBox样式 -->
+    <style name="CheckBoxStyle_Default" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:button">@drawable/btn_null</item>
+    </style>
+    <!-- 动画对话框样式 -->
+    <style name="dialog_untran" parent="dialog_tran">
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    <!-- item更多标识箭头样式 -->
+    <style name="item_note_more_icon_style">
+        <item name="android:layout_width">@dimen/icon_default_size</item>
+        <item name="android:layout_height">@dimen/icon_default_size</item>
+        <item name="android:src">@drawable/note_more_icon</item>
+    </style>
+
+    <style name="list_item_head_layout">
+        <item name="android:layout_height">@dimen/list_item_head_layout_length</item>
+        <item name="android:layout_width">@dimen/list_item_head_layout_length</item>
+    </style>
+
+    <style name="dialog_tran" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:backgroundDimAmount">0.4</item>
+    </style>
+    <!-- 列表内容样式 -->
+    <style name="list_item_content_base_firstlevel_style">
+        <item name="android:textColor">@color/text_color_level_one</item>
+        <item name="android:textSize">@dimen/list_item_firstlevel_content_size</item>
+    </style>
+
+    <!-- item文字样式 -->
+    <style name="item_note_text_style">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/text_color_level_one</item>
+    </style>
+
+    <style name="item_content_text_style">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/text_color_level_two</item>
+    </style>
+
+    <style name="list_item_content_base_secondlevel_style">
+        <item name="android:textColor">@color/text_color_level_two</item>
+        <item name="android:textSize">@dimen/list_item_secondlevel_content_size</item>
+    </style>
+    <!-- 列表中一级图标样式 -->
+    <style name="list_item_img_firstlevel_style">
+        <item name="android:layout_width">@dimen/list_item_firstlevel_content_size</item>
+        <item name="android:layout_height">@dimen/list_item_firstlevel_content_size</item>
+    </style>
+    <!-- 列表中二级图标样式 -->
+    <style name="list_item_img_second_style">
+        <item name="android:layout_width">@dimen/list_item_secondlevel_content_size</item>
+        <item name="android:layout_height">@dimen/list_item_secondlevel_content_size</item>
+    </style>
+    
+    <!-- 列表内容中标识字体样式 -->
+    <style name="list_item_content_note_style" parent="list_item_content_base_firstlevel_style">
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxEms">6</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <!-- 列表内容中一级标题样式 -->
+    <style name="list_item_content_firstlevel_style" parent="list_item_content_base_firstlevel_style">
+        <item name="android:maxEms">8</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <!-- 列表内容中二级标题样式 -->
+    <style name="list_item_content_secondlevel_style" parent="list_item_content_base_secondlevel_style">
+         <item name="android:maxEms">12</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <!-- 列表中内容右上角标识文字样式 -->
+    <style name="list_item_content_righttop_style">
+        <item name="android:textSize">@dimen/list_item_thirdlevel_content_size</item>
+        <item name="android:textColor">@color/text_color_level_three</item>
+    </style>
+    <!-- 列表样式 -->
+    <style name="default_list_style">
+        <item name="android:layout_marginLeft">@dimen/list_margin</item>
+        <item name="android:layout_marginRight">@dimen/list_margin</item>
+        <item name="android:cacheColorHint">@color/list_cache_color</item>
+        <item name="android:divider">@color/list_divide_line_color</item>
+        <item name="android:dividerHeight">@dimen/list_divide_height</item>
+    </style>
+
+    <!-- 搜索框样式 -->
+    <style name="search_box_style">
+        <item name="android:layout_margin">@dimen/unit_margin_level_three</item>
+        <item name="android:drawableLeft">@drawable/edit_search_icon</item>
+        <item name="android:drawablePadding">@dimen/unit_margin_level_three</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textSize">@dimen/search_box_text_size</item>
+    </style>
+
+    <!-- 文本最大允许显示字体数限制 -->
+    <style name="text_max_num_firstlevel">
+        <item name="android:maxEms">7</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="text_max_num_secondlevel">
+        <item name="android:maxEms">12</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="text_max_num_thirdlevel">
+        <item name="android:maxEms">15</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <!-- Pop 窗口下拉动画 -->
+    <style name="popwin_anim_style">
+        <item name="android:windowEnterAnimation">@anim/pop_enter</item>
+        <item name="android:windowExitAnimation">@anim/pop_out</item>
+    </style>
+    <style name="popwin_horizontal_img_style">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:padding">3dp</item>
+    </style>
+    <style name="popwin_horizontal_text_style">
+        <item name="android:textColor">@color/color_note</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+    
+    <!-- 底部弹出选项控件的样式 -->
+    <style name="sector_btn_style">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/item_height_level_third</item>
+        <item name="android:textSize">@dimen/text_btn_level_three</item>
+        <item name="android:textColor">@color/text_color_level_one</item>
+        <item name="android:layout_marginLeft">@dimen/unit_margin_level_three</item>
+        <item name="android:layout_marginRight">@dimen/unit_margin_level_three</item>
+        <item name="android:gravity">center</item>
+    </style>
+    
+    <!-- *********************************顶部Bar样式********************************** -->
+    <style name="topbar_bg">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/topbar_height</item>
+        <item name="android:background">@color/color_theme</item>
+    </style>
+
+    <style name="topbar_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/topbar_title_size</item>
+        <item name="android:textColor">@color/color_topbar</item>
+        <item name="android:maxEms">6</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="topbar_btn_style">
+        <item name="android:layout_width">@dimen/topbar_img_width</item>
+        <item name="android:layout_height">@dimen/topbar_img_height</item>
+        <item name="android:background">@drawable/btn_selector_bg</item>
+    </style>
+
+    <style name="topbar_back_layout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:background">@drawable/btn_selector_bg</item>
+    </style>
+
+    <style name="topbar_back_note">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/back_note_icon_height</item>
+        <item name="android:background">@drawable/topbar_back_icon_white</item>
+    </style>
+
+    <style name="topbar_back_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/back_note_text_size</item>
+        <item name="android:textColor">@color/color_topbar</item>
+    </style>
+    <!-- ***************************self(个人模块)************************ -->
+    <style name="self_set_item_layout_style">
+        <item name="android:layout_height">@dimen/item_height_level_second</item>
+        <item name="android:background">@drawable/list_item_bg</item>
+    </style>
+
+    <style name="self_set_item_note_text_style">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/text_color_level_two</item>
+    </style>
+
+    <style name="self_set_item_content_text_style">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/text_color_level_three</item>
+    </style>
+
+    <style name="self_set_item_note_style">
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">20dp</item>
+    </style>
+
+    <style name="self_note_icon_size">
+        <item name="android:layout_width">@dimen/icon_default_size</item>
+        <item name="android:layout_height">@dimen/icon_default_size</item>
+    </style>
+
+    <style name="self_item_text_style">
+        <item name="android:textColor">@color/text_color_level_two</item>
+        <item name="android:textSize">@dimen/text_page_level_three</item>
+    </style>
+
+</resources>

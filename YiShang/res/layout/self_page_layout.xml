@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.ruifeng.yishang"
+    xmlns:custom="http://schemas.android.com/apk/res/com.ruifeng.yishang"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_bg_level_one"
+    android:orientation="vertical" >
+
+    <com.customview.view.CustomTopbarView
+        android:id="@+id/topBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        custom:topbar_text_color="@color/text_color_level_one"
+   
+        custom:topbar_title="我" >
+    </com.customview.view.CustomTopbarView>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <ImageView
+            android:id="@+id/background_img"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="-100dp"
+            android:contentDescription="@null"
+            android:scaleType="fitXY" />
+
+        <com.yishang.E.view.PullScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            app:headerHeight="300dp"
+            app:headerVisibleHeight="100dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:id="@+id/scroll_view_head"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:orientation="vertical" >
+
+                    <!-- 头像设定 -->
+
+                    <RelativeLayout
+                        android:id="@+id/self_icon_layout"
+                        android:layout_width="@dimen/self_head_show_size"
+                        android:layout_height="@dimen/self_head_show_size"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/unit_margin_level_big" >
+
+                        <com.customview.view.ImageView_Rounded
+                            android:id="@+id/self_Icon"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:src="@drawable/default_img_head" />
+
+                        <ImageView
+                            android:id="@+id/img_set"
+                            android:layout_width="@dimen/self_head_edit_icon_size"
+                            android:layout_height="@dimen/self_head_edit_icon_size"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginBottom="3dp"
+                            android:layout_marginRight="3dp"
+                            android:background="@drawable/self_img_set_btn_bg"
+                            android:padding="@dimen/unit_margin_level_three"
+                            android:src="@drawable/self_note_camera_icon_white" />
+                    </RelativeLayout>
+                    <!-- 名字设定 -->
+
+                    <RelativeLayout
+                        android:id="@+id/selfNameLayout"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/self_icon_layout"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/self_Name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:text="游经理"
+                            android:textColor="@color/text_color_level_two"
+                            android:textSize="@dimen/text_page_level_two"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/selfGenderIcon"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@id/self_Name" >
+                        </ImageView>
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/itemsLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/unit_margin_level_one"
+                    android:orientation="vertical" >
+
+
+                    <!-- 标签 -->
+
+                    <com.customview.view.CustomItemView
+                        android:id="@+id/rank_item"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        custom:item_imgNote="@drawable/self_note_business_card"
+                        custom:item_rightNoteShow="SHOW"
+                        custom:item_splitPartBottomShow="SHOW"
+                        custom:item_splitTopShow="SHOW"
+                        custom:item_textContent="头衔" >
+                    </com.customview.view.CustomItemView>
+                    <!-- 状态 -->
+
+                    <com.customview.view.CustomItemView
+                        android:id="@+id/phone_item"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        custom:item_imgNote="@drawable/self_note_phone_icon"
+                        custom:item_rightNoteShow="SHOW"
+                        custom:item_splitPartBottomShow="SHOW"
+                        android:visibility="gone"
+                        custom:item_textContent="电话" >
+                    </com.customview.view.CustomItemView>
+
+                    
+                    <com.customview.view.CustomItemView
+                        android:id="@+id/label_item"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        custom:item_imgNote="@drawable/self_note_label_icon"
+                        custom:item_rightNoteShow="SHOW"
+                        custom:item_splitPartBottomShow="SHOW"
+                        custom:item_textContent="个人标签" >
+                    </com.customview.view.CustomItemView>
+                   <com.customview.view.CustomItemView
+                        android:id="@+id/note_item"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        custom:item_imgNote="@drawable/self_note_more_icon"
+                        custom:item_rightNoteShow="SHOW"
+                        custom:item_splitBottomShow="SHOW"
+                        custom:item_textContent="更多信息" >
+                    </com.customview.view.CustomItemView>
+                   
+                  
+                </LinearLayout>
+            </LinearLayout>
+        </com.yishang.E.view.PullScrollView>
+    </RelativeLayout>
+
+</LinearLayout>

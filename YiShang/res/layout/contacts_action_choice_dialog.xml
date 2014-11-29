@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.ruifeng.yishang"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <com.customview.view.CustomSectorView
+        android:id="@+id/sector"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        custom:sector_unit_num="TWO"
+        custom:sector_first_text="添加为新朋友"
+        custom:sector_second_text="添加为新朋友并转发文档"
+        custom:sector_top_visible="SHOW"
+        custom:sector_top_text="对所选用户进行以下操作"
+        
+        ></com.customview.view.CustomSectorView>
+
+</LinearLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/totalLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/page_bg_level_one"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <!-- 可变Item -->
+
+        <include
+            android:id="@+id/unFixLayout"
+            layout="@layout/include_listitem_unfix_layout"
+            android:visibility="gone" />
+        <!-- 固定Item -->
+
+        <include
+            android:id="@+id/fixLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/list_item_height_default"
+            layout="@layout/include_listitem_fix_layout"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/bottom_split_line"
+        style="@style/split_line_view"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/bottom_text_content"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/unit_margin_level_two"
+        android:layout_marginLeft="@dimen/unit_margin_level_one"
+        android:layout_marginRight="@dimen/unit_margin_level_two"
+        android:background="@color/page_bg_level_one"
+        android:textColor="@color/text_color_level_two"
+        android:textSize="16dp"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/bottomLayout"
+        layout="@layout/include_listitem_bottom_bar"
+        android:visibility="gone" />
+
+    <com.customview.view.CustomBarView
+        android:id="@+id/bottomBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    </com.customview.view.CustomBarView>
+
+</LinearLayout>

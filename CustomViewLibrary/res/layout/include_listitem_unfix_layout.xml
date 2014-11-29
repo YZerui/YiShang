@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/page_bg_level_one"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            style="@style/list_item_head_layout"
+            android:padding="@dimen/unit_margin_level_three" >
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <ImageView
+                    android:id="@+id/unfix_icon"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:src="@drawable/app_icon"
+                  />
+
+                <ImageView
+                    android:id="@+id/unfix_outer"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/list_crop_cricle" />
+            </FrameLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/unFixItem"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+              >
+
+            <RelativeLayout
+                android:id="@+id/unfix_contentLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/unit_margin_level_three"
+                android:layout_marginRight="@dimen/unit_margin_level_three"
+                android:layout_marginTop="@dimen/unit_margin_level_two" >
+
+                <TextView
+                    android:id="@+id/unfix_title"
+                    style="@style/list_item_content_firstlevel_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="1dp"
+                    android:text="系统通知" />
+
+                <TextView
+                    android:id="@+id/unfix_timer"
+                    style="@style/list_item_content_righttop_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="18:30"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/unfix_content"
+                style="@style/list_item_content_base_secondlevel_style"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/unfix_contentLayout"
+                android:layout_marginLeft="@dimen/unit_margin_level_three"
+                android:layout_marginRight="@dimen/unit_margin_level_three"
+                android:layout_marginTop="@dimen/unit_margin_level_four"
+                android:paddingBottom="@dimen/unit_margin_level_three"
+                
+                android:text="你因转发获得了50积分" />
+        </RelativeLayout>
+    </LinearLayout>
+	   <View
+        android:id="@+id/unfix_bottom_split_line"
+        style="@style/split_line_view"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone" />
+</RelativeLayout>
