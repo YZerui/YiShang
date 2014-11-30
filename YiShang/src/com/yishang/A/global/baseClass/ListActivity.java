@@ -1,7 +1,5 @@
 package com.yishang.A.global.baseClass;
 
-import zrc.widget.SimpleFooter;
-import zrc.widget.SimpleHeader;
 
 import com.ruifeng.yishang.R;
 import com.yishang.A.global.constant.CONSTANT;
@@ -46,8 +44,6 @@ public abstract class ListActivity extends SuperActivity {
 	// protected int requestMode;
 	protected int limit;// 每次请求的页数
 	protected int start;// 每次请求的起始位置
-	protected SimpleHeader header;
-	protected  SimpleFooter footer; 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -58,13 +54,8 @@ public abstract class ListActivity extends SuperActivity {
 		start = 0;
 
 		//设定列表刷新头部样式
-		header = new SimpleHeader(this);
-		header.setTextColor(getResources().getColor(R.color.color_note));
-		header.setCircleColor(getResources().getColor(R.color.color_note));
 		
 		// 设置加载更多的样式（可选）
-        footer = new SimpleFooter(this);
-        footer.setCircleColor(0xff33bbee);
 //        handler=new Handler();
     	super.onCreate(savedInstanceState);
 	}

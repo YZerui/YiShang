@@ -1,8 +1,7 @@
 # cache for current jar dependency. DO NOT EDIT.
 # format is <lastModified> <length> <SHA-1> <path>
 # Encoding is UTF-8
-1408103455860 283216 8f68604e5fc8dfb67c2d89c2065cddc3b8eca7dc C:\Users\MM_Zerui\Desktop\易商\项目空间\YiShang(11.22)\libs\xUtils-2.6.10.jar
-1408103455860 283216 8f68604e5fc8dfb67c2d89c2065cddc3b8eca7dc C:\Users\MM_Zerui\Desktop\易商\项目空间\UtilsLibrary\libs\xUtils-2.6.10.jar
-1409124666000 627582 db0f122c99ef9f90dbab3fada6d191f2880cbb8e C:\Users\MM_Zerui\Desktop\易商\项目空间\AVOSCloud-Push\libs\android-support-v4.jar
-1414433555741 627582 db0f122c99ef9f90dbab3fada6d191f2880cbb8e C:\Users\MM_Zerui\Desktop\易商\项目空间\ZrcListView\libs\android-support-v4.jar
-1414433555741 627582 db0f122c99ef9f90dbab3fada6d191f2880cbb8e C:\Users\MM_Zerui\Desktop\易商\项目空间\YiShang(11.22)\libs\android-support-v4.jar
+1408103455860 283216 8f68604e5fc8dfb67c2d89c2065cddc3b8eca7dc G:\Git\yishang\YiShang\libs\xUtils-2.6.10.jar
+1408103455860 283216 8f68604e5fc8dfb67c2d89c2065cddc3b8eca7dc G:\Git\yishang\UtilsLibrary\libs\xUtils-2.6.10.jar
+1414433555741 627582 db0f122c99ef9f90dbab3fada6d191f2880cbb8e G:\Git\yishang\YiShang\libs\android-support-v4.jar
+1409124666000 627582 db0f122c99ef9f90dbab3fada6d191f2880cbb8e G:\Git\yishang\AVOSCloud-Push\libs\android-support-v4.jar

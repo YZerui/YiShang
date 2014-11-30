@@ -8,9 +8,9 @@ package customview.library;
 
 public final class R {
 	public static final class anim {
-		public static final int pop_enter = 0x7f04000a;
-		public static final int pop_out = 0x7f04000b;
-		public static final int progress_default_img_loading = 0x7f04000c;
+		public static final int pop_enter = 0x7f040009;
+		public static final int pop_out = 0x7f04000a;
+		public static final int progress_default_img_loading = 0x7f04000b;
 	}
 	public static final class attr {
 		public static final int LIST_ITEM_MODE = 0x7f010033;
