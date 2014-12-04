@@ -40,8 +40,8 @@ public class T_Msg extends EntityBase{
 	
 	@Column(column="msg_resName")
 	private String msg_resName;
-
-	@Column(column="msg_success")
+	
+	@Column(column="msg_success",defaultValue="1")
 	private int msg_success;
 	
 	@Column(column="msg_type")

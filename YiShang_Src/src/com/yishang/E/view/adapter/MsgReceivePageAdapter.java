@@ -107,7 +107,7 @@ public class MsgReceivePageAdapter extends SuperAdapter {
 			break;
 		}
 		holder.item.getBottomBar().setCallBack(callBar, position);
-		holder.item.setBottomTextContent(msg.getMsg_resName());
+		holder.item.setBottomTextContent(W_Msg.getContentDetail(tEnum, msg));
 		holder.item.setFixSingle_timer(FormatUtils.getListItemTime(msg.getMsg_time()));
 		return convertView;
 	}

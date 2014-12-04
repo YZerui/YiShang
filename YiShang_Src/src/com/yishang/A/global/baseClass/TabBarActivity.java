@@ -16,6 +16,10 @@ import com.yishang.B.module.b.ContactsUI.ContactsActivity;
 import com.yishang.B.module.c.ResourceUi.ResourceActivity;
 import com.yishang.B.module.d.BusinessUi.BusinessActivity;
 import com.yishang.B.module.e.SelfUi.SelfActivity;
+import com.yishang.B.module.f.LoginUi.LoginHomePage;
+import com.yishang.B.module.f.LoginUi.LoginPage;
+import com.yishang.B.module.f.LoginUi.RegisterPasswordPage;
+import com.yishang.B.module.f.LoginUi.RegisterPhonePage;
 import com.yishang.C.dao.daoImpl.Dao_MsgSeq;
 import com.yishang.D.service.sync.SYNCMsgService;
 import com.yishang.D.service.sync.SYNCRelateCompanyService;
@@ -34,6 +38,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.ContactsContract;
 import android.view.KeyEvent;
 import android.view.View;
@@ -170,6 +175,21 @@ public class TabBarActivity extends TabActivity {
 		badgeView.setBadgeMargin(3);
 		badgeView.show(true);
 		
+		
+//		//πÿ±’ª∫¥Ê“≥√Ê
+//		Handler handler=new Handler();
+//		handler.postDelayed(new Runnable() {
+//			
+//			@Override
+//			public void run() {
+//				// TODO Auto-generated method stub
+//				AppManager.getAppManager().finishActivity(AppStartActivity.class);
+////				AppManager.getAppManager().finishActivity(LoginHomePage.class);
+////				AppManager.getAppManager().finishActivity(LoginPage.class);
+////				AppManager.getAppManager().finishActivity(RegisterPasswordPage.class);
+////				AppManager.getAppManager().finishActivity(RegisterPhonePage.class);
+//			}
+//		}, 800);
 
 	}
 

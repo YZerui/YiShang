@@ -127,7 +127,7 @@ public class ContactsItemAdapter extends SuperAdapter {
 		
 		
 //		ImageLoader.getInstance().
-//			displayImage("https://dn-dev.qbox.me/avatar/37e25cf8-64fe-440b-a9c1-7a0ac8d2b840?imageView2/1/w/120/h/120", holder.imageAware, loadOptions);
+//			displayImage("http://www.0065.me/bbs/data/attachment/forum/201108/01/153822523lisaaau9jn25w.jpg", holder.imageAware, loadOptions);
 		
 		
 //		Benchmark.end("convertViewData");

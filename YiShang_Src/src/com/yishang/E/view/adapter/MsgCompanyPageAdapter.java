@@ -82,30 +82,32 @@ public class MsgCompanyPageAdapter extends SuperAdapter {
 		case COM_BAOBEI:// 企业报备信息
 			holder.item.getFixIcon().setImageResource(R.drawable.msg_com_baobei);
 			holder.item.setFixSingle_title("报备通知");
-			if(success.equals("true")){
-				holder.item.setBottomTextContent("你对该企业的报备成功");
-			}else {
-				holder.item.setBottomTextContent("你对该企业的报备失败");
-			}
+//			if(success.equals("true")){
+//				holder.item.setBottomTextContent("你对该企业的报备成功");
+//			}else {
+//				holder.item.setBottomTextContent("你对该企业的报备失败");
+//			}
+		
 			break;
 		case COM_CHECK:// 企业审核信息
 			holder.item.getFixIcon().setImageResource(R.drawable.msg_com_note);
 			holder.item.setFixSingle_title("关联通知");
-			if(success.equals("true")){
-				holder.item.setBottomTextContent("你已和该企业实现了关联");
-			}else {
-				holder.item.setBottomTextContent("你和该企业的关联失败");
-			}
+//			if(success.equals("true")){
+//				holder.item.setBottomTextContent("你已和该企业实现了关联");
+//			}else {
+//				holder.item.setBottomTextContent("你和该企业的关联失败");
+//			}
 			break;
 		case COM_INFORM:// 企业通知信息
 			holder.item.setFixSingle_title("企业通知");
 			holder.item.getFixIcon().setImageResource(R.drawable.msg_com_inform);
-			holder.item.setBottomTextContent("你和该企业的关联失败");
+//			holder.item.setBottomTextContent("你和该企业的关联失败");
 			break;
 
 		default:
 			break;
 		}
+		holder.item.setBottomTextContent(W_Msg.getContentDetail(tEnum, msg));
 //		holder.item.setFixSingle_title(W_Msg.getNote(msg.getMsg_comName(),
 //				msg.getMsg_success()==1?true:false, tEnum));
 //		holder.item.setBottomTextContent(W_Msg.getNote(msg.getMsg_comName(),

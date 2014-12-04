@@ -2,6 +2,7 @@ package com.yishang.A.global.writting;
 
 import com.format.utils.DataValidate;
 import com.yishang.A.global.Enum.push.Enum_PushType;
+import com.yishang.C.dao.daoModel.T_Msg;
 import com.yishang.C.dao.daoModel.T_MsgSeq;
 
 /**
@@ -121,6 +122,64 @@ public class W_Msg {
 			content="未知消息";
 			break;
 
+		default:
+			break;
+		}
+		return content;
+	}
+	/**
+	 * 消息详情
+	 * @param tEnum
+	 * @param bean
+	 * @return
+	 */
+	public static String getContentDetail(Enum_PushType tEnum,T_Msg bean){
+		String content=new String();
+		switch (tEnum) {
+			//奖赏
+		case COM_AWARD:
+			
+			break;
+			//报备
+		case COM_BAOBEI:
+			if(bean.getMsg_success()==1){
+				content="恭喜您，"+bean.getMsg_comName()+
+							"通过了您的关联申请，现在您可以代表"+bean.getMsg_comName()+"开展营销了。";
+			}else {
+				content="很抱歉，"+bean.getMsg_comName()+"没有通过您的关联申请，如有疑问请联系相关人员。";
+			}
+			break;
+			//关联审查
+		case COM_CHECK:
+			if(bean.getMsg_success()==1){
+				content="恭喜您，您在"+bean.getMsg_comName()+"成功报备客户"+bean.getMsg_sendName()+
+						"，在n个月内（n由企业设置）该用户由您负责跟进。";
+			}else {
+				content="很抱歉，您在"+bean.getMsg_comName()+"报备的客户"+bean.getMsg_sendName()+
+						"没有获得批准，如有疑问请联系相关人员。";
+			}
+			break;
+			//企业通知
+		case COM_INFORM:
+			content=bean.getMsg_content();
+			break;
+			//资源感兴趣
+		case RES_INTEREST:
+			content=bean.getMsg_sendName()+"对由您的文档《"+bean.getMsg_resName()+"》表示感兴趣，请确认该用户信息。";
+			break;
+			//收到文档
+		case RES_RECEV:
+			content="您收到"+bean.getMsg_sendName()+"转发给您的文档《"+bean.getMsg_resName()+"》，请查阅。";
+			break;
+			//系统通知
+		case SYS_INFORM:
+			content=bean.getMsg_content();
+			break;
+			//未知消息
+		case DEFAULT:
+			content="未知消息";
+			break;
+			
 		default:
 			break;
 		}

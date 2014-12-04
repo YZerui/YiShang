@@ -63,11 +63,14 @@ public class AppManager {
 	 * 结束指定类名的Activity
 	 */
 	public void finishActivity(Class<?> cls){
-		for (Activity activity : activityStack) {
-			if(activity.getClass().equals(cls) ){
-				finishActivity(activity);
+		synchronized (activityStack) {
+			for (Activity activity : activityStack) {
+				if(activity.getClass().equals(cls) ){
+					finishActivity(activity);
+				}
 			}
 		}
+		
 	}
 	/**
 	 * 结束所有Activity

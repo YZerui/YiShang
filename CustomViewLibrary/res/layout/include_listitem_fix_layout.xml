@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="wrap_content" >
+    android:layout_height="fill_parent" >
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -17,16 +17,15 @@
 
             <RelativeLayout
                 android:id="@+id/listitem_head_layout"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="@dimen/list_item_height_default"
+                android:layout_height="@dimen/list_item_height_default"
                 android:layout_centerInParent="true"
-                
                 android:padding="@dimen/unit_margin_level_three" >
 
                 <ImageView
                     android:id="@+id/fixIcon"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
+                    android:layout_width="@dimen/list_item_height_default"
+                    android:layout_height="@dimen/list_item_height_default"
                     android:layout_centerInParent="true"
                     />
 
@@ -34,7 +33,7 @@
                     android:id="@+id/fixCropOuter"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                   android:layout_centerInParent="true"
+                    android:layout_centerInParent="true"
                     android:background="@drawable/list_crop_cricle" />
             </RelativeLayout>
 
@@ -172,7 +171,7 @@
                 <TextView
                     android:id="@+id/fixSingle_title"
                     style="@style/list_item_content_firstlevel_style"
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:textColor="@color/text_color_level_one"
@@ -181,7 +180,8 @@
                 <TextView
                     android:id="@+id/fixSingle_timer"
                     style="@style/list_item_content_righttop_style"
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:gravity="right"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true" />
