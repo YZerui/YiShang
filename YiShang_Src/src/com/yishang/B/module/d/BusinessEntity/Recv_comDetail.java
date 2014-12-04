@@ -26,11 +26,19 @@ public class Recv_comDetail {
 	private String com_province;
 	private String com_st;
 	private String com_status;
+	private String com_remark;
 	private String com_welfare;
 	private String uc_in;
 	private String uc_status;
 	private String uc_time;
 	
+	
+	public String getCom_remark() {
+		return com_remark;
+	}
+	public void setCom_remark(String com_remark) {
+		this.com_remark = com_remark;
+	}
 	public String getCom_email() {
 		return com_email;
 	}

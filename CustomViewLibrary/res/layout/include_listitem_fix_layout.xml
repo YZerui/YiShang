@@ -98,6 +98,7 @@
                         style="@style/list_item_content_firstlevel_style"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
+                        android:text="标题"
                        />
 
 
@@ -113,6 +114,7 @@
 
                 <TextView
                     android:id="@+id/fixDouble_content"
+                    android:text="内容"
                     style="@style/list_item_content_secondlevel_style"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
