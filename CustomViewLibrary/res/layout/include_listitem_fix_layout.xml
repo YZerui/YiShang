@@ -1,35 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="fill_parent"
     android:layout_height="wrap_content" >
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:gravity="center"
         android:orientation="horizontal" >
 
         <RelativeLayout
+            
             android:layout_width="@dimen/list_item_height_default"
-            android:layout_height="fill_parent"
+            android:layout_height="@dimen/list_item_height_default"
             android:background="@color/page_bg_level_one" >
 
-            <FrameLayout
+            <RelativeLayout
                 android:id="@+id/listitem_head_layout"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
+                android:layout_centerInParent="true"
+                
                 android:padding="@dimen/unit_margin_level_three" >
 
                 <ImageView
                     android:id="@+id/fixIcon"
                     android:layout_width="fill_parent"
-                    android:layout_height="fill_parent" />
+                    android:layout_height="fill_parent"
+                    android:layout_centerInParent="true"
+                    />
 
                 <ImageView
                     android:id="@+id/fixCropOuter"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
+                   android:layout_centerInParent="true"
                     android:background="@drawable/list_crop_cricle" />
-            </FrameLayout>
+            </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/fix_unreadLayout"
@@ -79,71 +86,79 @@
 
             <!-- *****************双行内容形式********************** -->
 
-            <RelativeLayout
+            <LinearLayout
                 android:id="@+id/fixDouble_layout"
                 android:layout_width="fill_parent"
                 android:layout_height="@dimen/list_item_content_height"
                 android:layout_centerVertical="true"
-                android:layout_margin="@dimen/unit_margin_level_three" >
+                android:layout_margin="@dimen/unit_margin_level_three"
+                android:orientation="horizontal" >
 
                 <RelativeLayout
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginTop="1dp" >
+                    android:layout_weight="1" >
 
                     <TextView
                         android:id="@+id/fixDouble_title"
                         style="@style/list_item_content_firstlevel_style"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:text="标题"
-                       />
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="1dp"
+                        android:text="标题" />
 
+                    <TextView
+                        android:id="@+id/fixDouble_content"
+                        style="@style/list_item_content_secondlevel_style"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginBottom="1dp"
+                        android:text="内容" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="3" >
 
                     <TextView
                         android:id="@+id/fixDouble_title_right"
                         style="@style/list_item_content_firstlevel_style"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_alignBaseline="@id/fixDouble_title"
                         android:layout_alignParentRight="true"
-                        android:visibility="gone" />
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="1dp"
+                        android:gravity="right"
+                        />
+
+                    <TextView
+                        android:id="@+id/fixDouble_timer"
+                        style="@style/list_item_content_righttop_style"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:gravity="right"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:id="@+id/fixDouble_bottom_right_text"
+                        style="@style/list_item_content_secondlevel_style"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginBottom="1dp"
+                           android:gravity="right"
+                        android:textColor="@color/color_note"
+                        android:visibility="invisible" />
                 </RelativeLayout>
-
-                <TextView
-                    android:id="@+id/fixDouble_content"
-                    android:text="内容"
-                    style="@style/list_item_content_secondlevel_style"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginBottom="1dp"
-                     />
-
-                <TextView
-                    android:id="@+id/fixDouble_timer"
-                    style="@style/list_item_content_righttop_style"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentTop="true"
-                    android:gravity="right"
-                    android:visibility="invisible" />
-
-                <TextView
-                    android:id="@+id/fixDouble_bottom_right_text"
-                    style="@style/list_item_content_secondlevel_style"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginBottom="1dp"
-                    android:textColor="@color/color_note"
-                    android:visibility="invisible" />
-            </RelativeLayout>
+            </LinearLayout>
             <!-- *****************单行内容形式********************** -->
 
             <RelativeLayout
@@ -193,8 +208,8 @@
                 android:layout_centerVertical="true"
                 android:layout_marginRight="@dimen/unit_margin_level_three"
                 android:background="@drawable/checkbox_file_download"
-                android:focusable="false"
                 android:button="@drawable/btn_null"
+                android:focusable="false"
                 android:visibility="invisible" />
 
             <CheckBox
@@ -203,10 +218,10 @@
                 android:layout_height="23dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                 android:focusable="false"
                 android:layout_marginRight="@dimen/unit_margin_level_three"
                 android:background="@drawable/checkbox_select_style"
                 android:button="@drawable/btn_null"
+                android:focusable="false"
                 android:padding="5dp"
                 android:visibility="invisible" />
 

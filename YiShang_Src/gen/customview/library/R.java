@@ -462,11 +462,11 @@ public final class R {
 		public static final int first_item_text = 0x7f06006c;
 		public static final int fixCropOuter = 0x7f060101;
 		public static final int fixDouble_bottom_right_text = 0x7f06010c;
-		public static final int fixDouble_content = 0x7f06010a;
+		public static final int fixDouble_content = 0x7f060109;
 		public static final int fixDouble_layout = 0x7f060107;
 		public static final int fixDouble_timer = 0x7f06010b;
 		public static final int fixDouble_title = 0x7f060108;
-		public static final int fixDouble_title_right = 0x7f060109;
+		public static final int fixDouble_title_right = 0x7f06010a;
 		public static final int fixDown_checkbox = 0x7f060111;
 		public static final int fixIcon = 0x7f060100;
 		public static final int fixItem_layout = 0x7f060106;

@@ -122,7 +122,10 @@ public class ContactsItemAdapter extends SuperAdapter {
 //			}
 //		});
 		// System.out.println(bean.getRela_head());
+		
 		ImageLoader.getInstance().displayImage(bean.getRela_head(), holder.imageAware, loadOptions);
+		
+		
 //		ImageLoader.getInstance().
 //			displayImage("https://dn-dev.qbox.me/avatar/37e25cf8-64fe-440b-a9c1-7a0ac8d2b840?imageView2/1/w/120/h/120", holder.imageAware, loadOptions);
 		

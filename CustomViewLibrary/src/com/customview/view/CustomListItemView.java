@@ -11,6 +11,7 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -34,8 +35,8 @@ public class CustomListItemView extends LinearLayout {
 
 	private ImageView unFix_icon;
 	private TextView unFix_title, unFix_content, unFix_timer;
-
-	private RelativeLayout fix_doubleLayout, fix_singleLayout, fixUnreadLayout,
+	private LinearLayout  fix_doubleLayout;
+	private RelativeLayout fix_singleLayout, fixUnreadLayout,
 			fixUnreadNumLayout;
 	private View unFixItem, fixItem;
 	private ImageView fix_icon, fix_more_note, fixUnreadNote, fixOuter,
@@ -85,7 +86,7 @@ public class CustomListItemView extends LinearLayout {
 		fixItem = (RelativeLayout) view.findViewById(R.id.fixItem_layout);
 		// unFixItem = (RelativeLayout) view
 		// .findViewById(R.id.unFixItem);
-		fix_doubleLayout = (RelativeLayout) view
+		fix_doubleLayout = (LinearLayout) view
 				.findViewById(R.id.fixDouble_layout);
 		fix_singleLayout = (RelativeLayout) view
 				.findViewById(R.id.fixSingle_layout);
@@ -143,6 +144,13 @@ public class CustomListItemView extends LinearLayout {
 						R.styleable.CustomListItemView_list_item_height,
 						Util.dip2px(context, 60));
 				fixLayout.setLayoutParams(new RelativeLayout.LayoutParams(LayoutParams.FILL_PARENT, size));
+//				fix_icon.setI
+				 ViewGroup.LayoutParams params =  fix_icon.getLayoutParams();        
+//				params.height=size;       
+//				params.width =size;        
+				params.height=Util.dip2px(context, 30);       
+				params.width =Util.dip2px(context, 30);        
+				fix_icon.setLayoutParams(params);
 				break;
 //			case R.styleable.CustomListItemView_list_item_split_visible:
 //				
@@ -295,7 +303,10 @@ public class CustomListItemView extends LinearLayout {
 			case R.styleable.CustomListItemView_list_item_head_mode:
 				resourceId = typedArray.getInt(
 						R.styleable.CustomListItemView_list_item_head_mode, 0);
+				fixOuter.setVisibility(View.VISIBLE);
+				unFixOuter.setVisibility(View.VISIBLE);
 				if (resourceId == 1) {
+					
 					fixOuter.setBackgroundResource(R.drawable.clip_rect_bg);
 					unFixOuter.setBackgroundResource(R.drawable.clip_rect_bg);
 				} else {

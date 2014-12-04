@@ -55,8 +55,8 @@ public class AppContextApplication extends Application {
     private void initBugCrash() {
 		// TODO Auto-generated method stub
     	// 启用崩溃日志记录
-		CrashHandler crashHandler = CrashHandler.getInstance();
-		crashHandler.init(this);
+//		CrashHandler crashHandler = CrashHandler.getInstance();
+//		crashHandler.init(this);
 	}
 
 	private void initImageLoader() {

@@ -440,11 +440,11 @@ int id first_item_layout 0x7f05002b
 int id first_item_text 0x7f05002d
 int id fixCropOuter 0x7f0500c3
 int id fixDouble_bottom_right_text 0x7f0500ce
-int id fixDouble_content 0x7f0500cc
+int id fixDouble_content 0x7f0500cb
 int id fixDouble_layout 0x7f0500c9
 int id fixDouble_timer 0x7f0500cd
 int id fixDouble_title 0x7f0500ca
-int id fixDouble_title_right 0x7f0500cb
+int id fixDouble_title_right 0x7f0500cc
 int id fixDown_checkbox 0x7f0500d3
 int id fixIcon 0x7f0500c2
 int id fixItem_layout 0x7f0500c8

@@ -1690,11 +1690,11 @@ containing a value of this type.
         public static int first_item_text=0x7f05002d;
         public static int fixCropOuter=0x7f0500c3;
         public static int fixDouble_bottom_right_text=0x7f0500ce;
-        public static int fixDouble_content=0x7f0500cc;
+        public static int fixDouble_content=0x7f0500cb;
         public static int fixDouble_layout=0x7f0500c9;
         public static int fixDouble_timer=0x7f0500cd;
         public static int fixDouble_title=0x7f0500ca;
-        public static int fixDouble_title_right=0x7f0500cb;
+        public static int fixDouble_title_right=0x7f0500cc;
         public static int fixDown_checkbox=0x7f0500d3;
         public static int fixIcon=0x7f0500c2;
         public static int fixItem_layout=0x7f0500c8;
