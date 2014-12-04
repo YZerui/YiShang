@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.ruifeng.yishang"
+    android:id="@+id/OverallLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/search_page_default_bg"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/item_height_level_second"
+        android:background="@color/page_bg_level_three" >
+
+        <com.yishang.E.view.ClearEditText
+            android:id="@+id/editText"
+            style="@style/search_box_style"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:background="@drawable/edit_text_outer_rect_bg"
+            android:hint="搜索企业" >
+
+            <requestFocus />
+        </com.yishang.E.view.ClearEditText>
+
+        <Button
+            android:id="@+id/cancelBtn"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="5"
+            android:background="#0000"
+            android:text="取消"
+            android:textColor="@color/text_color_level_one"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/localLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/unit_margin_level_one"
+                android:layout_marginTop="@dimen/unit_margin_level_one"
+                android:text="本地结果"
+                android:textColor="@color/text_color_level_two"
+                android:textSize="@dimen/text_page_level_two" />
+
+            <View
+                style="@style/split_line_view"
+                android:layout_marginLeft="@dimen/unit_margin_level_one"
+                android:background="@color/text_color_level_three" />
+
+            <TextView
+                android:id="@+id/localResultNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/unit_margin_level_three"
+                android:text="没有相关结果"
+                android:textColor="@color/text_color_level_three"
+                android:textSize="@dimen/text_page_level_three" />
+
+            <ListView
+                android:id="@+id/localResultList"
+                style="@style/default_list_style"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/unit_margin_level_one"
+                android:visibility="gone" >
+            </ListView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/netLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/unit_margin_level_one"
+                android:layout_marginTop="@dimen/unit_margin_level_one"
+                android:text="来自系统"
+                android:textColor="@color/text_color_level_two"
+                android:textSize="@dimen/text_page_level_two" />
+
+            <View
+                style="@style/split_line_view"
+                android:layout_marginLeft="@dimen/unit_margin_level_one"
+                android:background="@color/text_color_level_two" />
+
+            <com.yishang.E.view.swipelistview.XListView            
+                android:id="@+id/netResultList"
+                style="@style/default_list_style"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:padding="@dimen/unit_margin_level_one" >
+            </com.yishang.E.view.swipelistview.XListView>
+
+            <com.customview.view.CustomTextView
+                android:id="@+id/customText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/unit_margin_level_three"
+                custom:text_content="正在搜索..."
+                custom:text_progress_mode="PRO_LEFT" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.ruifeng.yishang"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_bg_level_three"
+    android:orientation="vertical" >
+
+    <com.customview.view.CustomTopbarView
+        android:id="@+id/topBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        custom:topbar_title="更多信息"
+        custom:topbar_back_text="返回"
+        ></com.customview.view.CustomTopbarView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/unit_margin_level_two"
+        android:text="商务信息"
+        android:visibility="gone"
+        android:textColor="@color/text_color_level_one"
+        android:textSize="@dimen/text_btn_level_three" />
+
+    <com.customview.view.CustomItemView
+        android:id="@+id/rank_item"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        custom:item_splitPartBottomShow="SHOW"
+        custom:item_splitTopShow="SHOW"
+        custom:item_textContent="编辑你的职位"
+        android:visibility="gone"
+        custom:item_textNote="头衔" >
+    </com.customview.view.CustomItemView>
+
+    <com.customview.view.CustomItemView
+        android:id="@+id/label_item"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        custom:item_splitBottomShow="SHOW"
+        custom:item_textContent="有哪些个人标签呢"
+        android:visibility="gone"
+        custom:item_textNote="标签" >
+    </com.customview.view.CustomItemView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/unit_margin_level_two"
+        android:text="联系方式"
+        android:textColor="@color/text_color_level_one"
+        android:textSize="@dimen/text_btn_level_three" />
+
+    <com.customview.view.CustomItemView
+        android:id="@+id/email_item"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        custom:item_splitPartBottomShow="SHOW"
+        custom:item_splitTopShow="SHOW"
+        custom:item_textContent="常用邮箱"
+        custom:item_textNote="Email" >
+    </com.customview.view.CustomItemView>
+
+    <com.customview.view.CustomItemView
+        android:id="@+id/fax_item"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        custom:item_splitPartBottomShow="SHOW"
+        custom:item_textContent="传真号码"
+        custom:item_textNote="传真" >
+    </com.customview.view.CustomItemView>
+
+    <com.customview.view.CustomItemView
+        android:id="@+id/address_item"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        custom:item_splitBottomShow="SHOW"
+        custom:item_textContent="所在地"
+        custom:item_textNote="地址" >
+    </com.customview.view.CustomItemView>
+
+</LinearLayout>

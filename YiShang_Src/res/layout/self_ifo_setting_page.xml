@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.ruifeng.yishang"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_bg_level_three"
+    android:orientation="vertical" >
+
+    <com.customview.view.CustomTopbarView
+        android:id="@+id/topBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        custom:topbar_back_text="我"
+        custom:topbar_title="完成初始设置" >
+    </com.customview.view.CustomTopbarView>
+    <!-- 头像设定 -->
+
+    <RelativeLayout
+        android:id="@+id/icon_layout"
+        android:layout_width="@dimen/self_head_show_size"
+        android:layout_height="@dimen/self_head_show_size"
+        android:layout_below="@id/topBar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/unit_margin_level_big" >
+
+        <com.customview.view.ImageView_Rounded
+            android:id="@+id/self_Icon"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:src="@drawable/default_img_head" />
+
+        <ImageView
+            android:id="@+id/img_set"
+            android:layout_width="@dimen/self_head_edit_icon_size"
+            android:layout_height="@dimen/self_head_edit_icon_size"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="3dp"
+            android:layout_marginRight="3dp"
+            android:background="@drawable/self_img_set_btn_bg"
+            android:padding="@dimen/unit_margin_level_three"
+            android:src="@drawable/self_note_camera_icon_white" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/item_height_level_second"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/btn_bg_theme"
+        android:gravity="center"
+        android:text="进入主页"
+        android:textColor="@color/note_color_light"
+        android:textSize="18dp" />
+
+    <com.yishang.E.view.StretchScrollView
+        android:id="@+id/center"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/bottom"
+        android:layout_below="@id/icon_layout"
+        android:layout_marginBottom="@dimen/unit_margin_level_two" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/unit_margin_level_two"
+                android:layout_marginTop="@dimen/unit_margin_level_one"
+                android:text="基本资料"
+                android:textColor="@color/text_color_level_one"
+                android:textSize="@dimen/text_btn_level_three" />
+
+            <com.customview.view.CustomItemView
+                android:id="@+id/head_item"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                custom:item_itemHight="@dimen/item_height_level_first"
+                custom:item_rightNoteIconShow="SHOW"
+                custom:item_rightNoteShow="SHOW"
+                custom:item_splitPartBottomShow="SHOW"
+                custom:item_splitTopShow="SHOW"
+                custom:item_textContent="你的个人头像"
+                custom:item_textNote="头像" >
+            </com.customview.view.CustomItemView>
+
+            <com.customview.view.CustomItemView
+                android:id="@+id/nickname_item"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                custom:item_rightNoteShow="SHOW"
+                custom:item_splitPartBottomShow="SHOW"
+                custom:item_textContent="你的真实姓名"
+                custom:item_textNote="姓名" >
+            </com.customview.view.CustomItemView>
+
+            <com.customview.view.CustomItemView
+                android:id="@+id/gender_item"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                custom:item_rightNoteShow="SHOW"
+                custom:item_splitPartBottomShow="SHOW"
+                custom:item_textContent="你的性别"
+                custom:item_textNote="性别" >
+            </com.customview.view.CustomItemView>
+
+
+            <com.customview.view.CustomItemView
+                android:id="@+id/birthday_item"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                custom:item_rightNoteShow="SHOW"
+                custom:item_splitBottomShow="SHOW"
+                custom:item_textContent="出生年月"
+                custom:item_textNote="生日" >
+            </com.customview.view.CustomItemView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/unit_margin_level_two"
+                android:text="商务信息"
+                android:textColor="@color/text_color_level_one"
+                android:textSize="@dimen/text_btn_level_three" />
+
+            <com.customview.view.CustomItemView
+                android:id="@+id/rank_item"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                custom:item_rightNoteShow="SHOW"
+                custom:item_splitTopShow="SHOW"
+                custom:item_splitPartBottomShow="SHOW"
+                custom:item_textContent="编辑你的职位"
+                custom:item_textNote="头衔" >
+            </com.customview.view.CustomItemView>
+
+            <com.customview.view.CustomItemView
+                android:id="@+id/label_item"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                custom:item_rightNoteShow="SHOW"
+                custom:item_splitBottomShow="SHOW"
+                custom:item_textContent="有哪些个人标签呢"
+                custom:item_textNote="标签" >
+            </com.customview.view.CustomItemView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/unit_margin_level_two"
+                android:text="联系方式"
+                android:textColor="@color/text_color_level_one"
+                android:textSize="@dimen/text_btn_level_three" />
+            
+            
+            <com.customview.view.CustomItemView
+                android:id="@+id/email_item"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                custom:item_rightNoteShow="SHOW"
+                custom:item_splitTopShow="SHOW"
+                custom:item_splitPartBottomShow="SHOW"
+                custom:item_textContent="常用邮箱"
+                custom:item_textNote="Email" >
+            </com.customview.view.CustomItemView>
+            <com.customview.view.CustomItemView
+                android:id="@+id/fax_item"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                custom:item_rightNoteShow="SHOW"
+                custom:item_splitPartBottomShow="SHOW"
+                custom:item_textContent="传真号码"
+                custom:item_textNote="传真" >
+            </com.customview.view.CustomItemView>
+            <com.customview.view.CustomItemView
+                android:id="@+id/address_item"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                custom:item_rightNoteShow="SHOW"
+                custom:item_splitBottomShow="SHOW"
+                custom:item_textContent="所在地"
+                custom:item_textNote="地址" >
+            </com.customview.view.CustomItemView>
+            
+            <com.customview.view.CustomItemView
+                android:id="@+id/about_item"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                custom:item_line_mode="关于易商"
+                custom:item_rightNoteShow="SHOW"
+                custom:item_splitBottomShow="SHOW" >
+            </com.customview.view.CustomItemView>
+        </LinearLayout>
+    </com.yishang.E.view.StretchScrollView>
+
+</RelativeLayout>

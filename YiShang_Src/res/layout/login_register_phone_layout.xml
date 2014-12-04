@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.ruifeng.yishang"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_bg_level_one"
+    android:orientation="vertical" >
+
+    <com.customview.view.CustomTopbarView
+        android:id="@+id/topBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        custom:topbar_back_text="返回"
+        custom:topbar_title="手机注册" >
+    </com.customview.view.CustomTopbarView>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/item_height_level_third"
+        android:layout_marginLeft="@dimen/unit_margin_level_one"
+        android:layout_marginRight="@dimen/unit_margin_level_one"
+        android:layout_marginTop="@dimen/unit_margin_level_one" >
+
+        <TextView
+            android:id="@+id/phonePreText"
+            android:layout_width="45dp"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:text="+86"
+            android:textSize="@dimen/text_btn_level_two" />
+
+        <com.yishang.E.view.ClearEditText
+            android:id="@+id/phoneText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/phonePreText"
+            android:background="#fff"
+            android:drawableLeft="@drawable/split_line_vertical"
+            android:drawablePadding="10dp"
+            android:ellipsize="end"
+            android:hint="输入手机号码"
+            android:numeric="integer"
+            android:singleLine="true" />
+    </RelativeLayout>
+
+    <View
+        style="@style/split_line_view"
+        android:layout_marginTop="3dp" />
+
+    <com.customview.view.CustomBtnView
+        android:id="@+id/submitBtn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/unit_margin_level_one"
+        custom:btn_color_style="BG_GREEN"
+        custom:btn_text="下一步" >
+    </com.customview.view.CustomBtnView>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/unit_margin_level_big"
+        android:gravity="center_horizontal"
+        android:text="@string/phone_regi_hint"
+        android:textColor="@color/text_color_level_two" />
+
+</LinearLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.ruifeng.yishang"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.customview.view.CustomListItemView
+        android:id="@+id/item"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        custom:LIST_ITEM_MODE="FIX_SINGLE_LINE"
+        custom:list_item_fix_split_line="HIDE"
+        custom:list_item_head_mode="FIX_HEAD_RECT"
+        custom:list_item_height="@dimen/msg_item_header_height" >
+    </com.customview.view.CustomListItemView>
+
+</LinearLayout>

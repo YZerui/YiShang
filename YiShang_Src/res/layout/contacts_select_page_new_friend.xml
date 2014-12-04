@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.ruifeng.yishang"
+    xmlns:swipe="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_bg_level_one"
+    android:orientation="vertical" >
+
+    <com.customview.view.CustomTopbarView
+        android:id="@+id/topBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        custom:topbar_left_text="0位"
+        custom:topbar_right_text="确定"
+        custom:topbar_title="选择新朋友" >
+    </com.customview.view.CustomTopbarView>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <com.customview.view.CustomBarView
+            android:id="@+id/bottomBar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            custom:bar_img_size="20dp"
+            custom:bar_mode="Vetical"
+            custom:bar_t_split_view_visible="SHOW"
+            custom:bar_text_color="@color/color_note"
+            custom:bar_unit_num="THREE"
+            custom:bar_unit_one_img="@drawable/bar_select_all_icon"
+            custom:bar_unit_one_text="全选"
+            custom:bar_unit_three_img="@drawable/bar_dismiss_all_icon"
+            custom:bar_unit_three_text="取消"
+            custom:bar_unit_two_img="@drawable/bar_reverse_all_icon"
+            custom:bar_unit_two_text="反选"
+            custom:bar_v_item_heigth="@dimen/custom_bar_height" >
+        </com.customview.view.CustomBarView>
+
+        <com.yishang.E.view.swipelistview.XListView
+            android:id="@+id/listView"
+            style="@style/default_list_style"
+            android:layout_above="@id/bottomBar"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+        </com.yishang.E.view.swipelistview.XListView>
+
+        <com.customview.view.CustomPageView
+            android:id="@+id/pageView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="invisible" >
+        </com.customview.view.CustomPageView>
+        <!--
+        <com.yishang.E.view.swipelistview.SwipeListView
+            android:id="@+id/listView"
+            style="@style/list_style"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@id/bottomBar"
+
+            android:layout_margin="@dimen/unit_margin_level_three"
+            swipe:swipeBackView="@+id/list_item_back"
+            swipe:swipeFrontView="@+id/list_item_front" >
+        </com.yishang.E.view.swipelistview.SwipeListView>
+        -->
+    </RelativeLayout>
+
+</LinearLayout>

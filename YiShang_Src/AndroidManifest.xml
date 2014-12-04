@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ruifeng.yishang"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="11" />
+
+    <application
+        android:name="com.yishang.A.global.application.AppContextApplication"
+        android:icon="@drawable/app_icon"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.NoTitleBar" >
+        <activity
+            android:name="com.yishang.A.global.baseClass.TabBarActivity"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity android:name="com.yishang.A.global.baseClass.AppStartActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.yishang.B.module.e.SelfUi.TestActivity" >
+        </activity>
+        <activity
+            android:name="com.yishang.A.global.baseClass.SharePage"
+            android:theme="@style/Theme_dialog" >
+        </activity>
+        <!-- ******************************全局的服务类*********************************** -->
+        <service android:name="com.yishang.D.service.sync.SYNCUserIfoService" >
+        </service>
+        <service android:name="com.yishang.D.service.sync.SYNCUserLocPointService" >
+        </service>
+        <service android:name="com.yishang.D.service.sync.SYNCAvosIfoService" >
+        </service>
+        <service android:name="com.yishang.D.service.sync.SYNCWifiMacService" >
+        </service>
+        <service android:name="com.yishang.D.service.sync.SYNCRelateCompanyService" >
+        </service>
+        <service android:name="com.yishang.D.service.sync.SYNCMsgService" >
+        </service>
+        <service android:name="com.yishang.D.service.sync.SYNCDbMsgService" >
+        </service>
+        <!-- ******************************登录模块*********************************** -->
+        <activity android:name="com.yishang.B.module.f.LoginUi.LoginHomePage" >
+        </activity>
+        <activity
+            android:name="com.yishang.B.module.f.LoginUi.LoginPage"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|adjustResize" >
+        </activity>
+        <activity
+            android:name="com.yishang.B.module.f.LoginUi.RegisterAuthoPage"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|adjustResize" >
+        </activity>
+        <activity
+            android:name="com.yishang.B.module.f.LoginUi.RegisterPasswordPage"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|adjustResize" >
+        </activity>
+        <activity
+            android:name="com.yishang.B.module.f.LoginUi.RegisterPhonePage"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|adjustResize" >
+        </activity>
+        <!-- ******************************msg(商机模块)****************************** -->
+
+        <activity android:name="com.yishang.B.module.a.MsgUi.MsgActivity" >
+        </activity>
+        <activity android:name="com.yishang.B.module.a.MsgUi.MsgDetailActivity" >
+        </activity>
+        <activity android:name="com.yishang.B.module.a.MsgUi.MsgSystemPage" >
+        </activity>
+        <activity android:name="com.yishang.B.module.a.MsgUi.MsgCompanyPage" >
+        </activity>
+        <activity android:name="com.yishang.B.module.a.MsgUi.MsgReceivePage" >
+        </activity>
+        <activity android:name="com.yishang.B.module.a.MsgUi.MsgNewFriendPage" >
+        </activity>
+        <activity
+            android:name="com.yishang.B.module.a.MsgUi.MsgFilterDialog"
+            android:theme="@style/Theme_dialog" >
+        </activity>
+        <!-- ***************************contacts(人脉模块) *************************** -->
+
+        <activity android:name="com.yishang.B.module.b.ContactsUI.ContactsActivity" >
+        </activity>
+        <activity android:name="com.yishang.B.module.b.ContactsUI.ContactsLocalPage" >
+        </activity>
+        <activity android:name="com.yishang.B.module.b.ContactsUI.ContactsWifiPage" >
+        </activity>
+        <activity
+            android:name="com.yishang.B.module.b.ContactsUI.ContactsNewPhoneDialog"
+            android:theme="@style/Theme_dialog" >
+        </activity>
+        <activity
+            android:name="com.yishang.B.module.b.ContactsUI.ContactsSearchActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.yishang.B.module.b.ContactsUI.ContactsFilterDialog"
+            android:theme="@style/Theme_dialog" >
+        </activity>
+        <activity android:name="com.yishang.B.module.b.ContactsUI.ContactsNearbyPage" >
+        </activity>
+        <activity android:name="com.yishang.B.module.b.ContactsUI.ContactsAtCityPage" >
+        </activity>
+        <activity
+            android:name="com.yishang.B.module.b.ContactsUI.ContactsSelectPage"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name="com.yishang.B.module.b.ContactsUI.ContactsSelectPage_newFriend"
+            android:theme="@style/Theme_dialog" >
+        </activity>
+        <activity
+            android:name="com.yishang.B.module.b.ContactsUI.ContactsActionDialog"
+            android:theme="@style/Theme_dialog" >
+        </activity>
+        <activity
+            android:name="com.yishang.B.module.b.ContactsUI.ContactsSearchActivity_Contacts"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <service android:name="com.yishang.D.service.sync.SYNCLocalContactsService" >
+        </service>
+        <service android:name="com.yishang.D.service.sync.SYNCRelationshipService" >
+        </service>
+        <service android:name="com.yishang.D.service.sync.SYNCLocalContactsService" >
+        </service>
+        <!-- ****************************resource(资源模块)*************************** -->
+
+        <activity android:name="com.yishang.B.module.c.ResourceUi.ResourceActivity" >
+        </activity>
+        <activity
+            android:name="com.yishang.B.module.c.ResourceUi.ResourceSearchActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|adjustResize" >
+        </activity>
+        <activity android:name="com.yishang.B.module.c.ResourceUi.ResourceDetailPage" >
+        </activity>
+        <activity
+            android:name="com.yishang.B.module.c.ResourceUi.ResourceSelectPage"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity android:name="com.yishang.B.module.c.ResourceUi.ResourceComPage" >
+        </activity>
+        <activity
+            android:name="com.yishang.B.module.c.ResourceUi.ResourceFilterDialog"
+            android:theme="@style/Theme_dialog" >
+        </activity>
+        <activity
+            android:name="com.yishang.B.module.c.ResourceUi.ResourceSearchActivity_Select"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|adjustResize" >
+        </activity>
+        <activity android:name="com.yishang.B.module.c.ResourceUi.ResourceSelectPage_Single" >
+        </activity>
+        <!-- ****************************business(企业模块)*************************** -->
+
+        <activity android:name="com.yishang.B.module.d.BusinessUi.BusinessActivity" >
+        </activity>
+        <activity
+            android:name="com.yishang.B.module.d.BusinessUi.BusinessSearchActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|adjustResize" >
+        </activity>
+        <activity android:name="com.yishang.B.module.d.BusinessUi.BusinessDetailPge" >
+        </activity>
+        <activity android:name="com.yishang.B.module.d.BusinessUi.BusinessRelatePage" >
+        </activity>
+        <activity
+            android:name="com.yishang.B.module.d.BusinessUi.BusinessFilterDialog"
+            android:theme="@style/Theme_dialog" >
+        </activity>
+        <!-- ******************************self(个人模块)***************************** -->
+        <activity android:name="com.yishang.B.module.e.SelfUi.SelfIfoSettingPage" 
+             android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity android:name="com.yishang.B.module.e.SelfUi.SelfActivity" >
+        </activity>
+        <activity
+            android:name="com.yishang.B.module.e.SelfUi.SelfUnitSetPage"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|adjustResize" >
+        </activity>
+        <activity
+            android:name="com.yishang.B.module.e.SelfUi.SelfGenderSetDialog"
+            android:theme="@style/Theme_dialog" >
+        </activity>
+        <activity
+            android:name="com.yishang.B.module.e.SelfUi.SelfBirthdaySetDialog"
+            android:theme="@style/Theme_dialog" >
+        </activity>
+        <activity
+            android:name="com.yishang.B.module.e.SelfUi.SelfImgSetDialog"
+            android:theme="@style/Theme_dialog" >
+        </activity>
+        <activity android:name="com.yishang.B.module.e.SelfUi.UserIfoPage" >
+        </activity>
+        <activity
+            android:name="com.yishang.B.module.e.SelfUi.UserIfoDetailPage"
+           >
+        </activity>
+
+        <!-- **********************************AVOS模块***************************** -->
+
+        <service android:name="com.avos.avoscloud.PushService" />
+
+        <receiver android:name="com.avos.avoscloud.AVBroadcastReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.avos.avoscloud.AVDefaultNotificationReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="com.avos.UPDATE_STATUS" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.yishang.F.receive.AVOSCustomReceiver" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="YiShang" />
+            </intent-filter>
+        </receiver>
+        <!-- ShareSDK 模块 -->
+        <activity
+            android:name="cn.sharesdk.framework.ShareSDKUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
+
+            <!--
+            如果集成QQ分享，或者使用QQ客户端来进行QQ空间的
+            分享，须要在此处添加一个对ACTION_VIEW事件的过滤器，
+            其中的scheme是“tencent”前缀再开发者应用的加上appId。
+            如果此过滤器不设置，则分享结束以后不能得到正确的回调
+            -->
+            <intent-filter>
+                <data android:scheme="tencent1103298563" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="QZoneWebShareAdapter"
+                android:value="cn.sharesdk.demo.MyQZoneWebShareAdapter" />
+        </activity>
+        <!-- 百度地图定位服务 -->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" >
+            <intent-filter>
+                <action android:name="com.baidu.location.service_v2.2" >
+                </action>
+            </intent-filter>
+        </service>
+        <!-- meta-data需要写在application中 -->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="TUpWhleb7toAPu64x5cGQ4Cw" />
+
+        <activity
+            android:name="com.ruifeng.yishang.TestActivity"
+            android:label="@string/title_activity_test" >
+        </activity>
+    </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!-- 震动标识 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <!-- 关于获取当前运行任务的权限 -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.READ_LOGS" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- 发送短信权限 -->
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <!-- 写入联系人到通讯录 -->
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <!-- 打电话 -->
+    <uses-permission android:name="android.permission.CALL_PHONE" >
+    </uses-permission>
+
+</manifest>

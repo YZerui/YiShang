@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.ruifeng.yishang"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_bg_level_three"
+    android:orientation="vertical" >
+
+    <com.customview.view.CustomTopbarView
+        android:id="@+id/topBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        custom:topbar_back_text="返回"
+        custom:topbar_right_text="保存"
+        custom:topbar_title="编辑信息" >
+    </com.customview.view.CustomTopbarView>
+
+    <com.yishang.E.view.ClearEditText
+        android:id="@+id/editText"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/item_height_level_second"
+        android:layout_marginTop="@dimen/unit_margin_level_one"
+        android:background="@color/page_bg_level_one"
+        
+        android:padding="@dimen/unit_margin_level_two" />
+    <TextView
+        android:id="@+id/note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_color_level_two"
+        android:textSize="@dimen/text_btn_level_four" 
+        android:layout_margin="@dimen/unit_margin_level_two"
+        />
+
+</LinearLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.ruifeng.yishang"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:id="@+id/list_item_back"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#975" >
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/list_item_front"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <com.customview.view.CustomListItemView
+            android:id="@+id/item"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            custom:list_item_checkbox_select="SHOW"
+            custom:list_item_head_mode="FIX_HEAD_RECT"
+            custom:LIST_ITEM_MODE="FIX_DOUBLE_LINE" >
+        </com.customview.view.CustomListItemView>
+    </RelativeLayout>
+
+</FrameLayout>

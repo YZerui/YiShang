@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.ruifeng.yishang"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_bg_level_one"
+    android:orientation="vertical" >
+
+    <com.customview.view.CustomTopbarView
+        android:id="@+id/topBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        custom:topbar_back_text="所有资源"
+     
+        custom:topbar_title="文档标题" >
+    </com.customview.view.CustomTopbarView>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <com.customview.view.CustomBarView
+            android:id="@+id/bottomBar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            custom:bar_img_size="20dp"
+            custom:bar_mode="Vetical"
+            custom:bar_t_split_view_visible="SHOW"
+            custom:bar_text_color="@color/color_note"
+            custom:bar_unit_four_img="@drawable/res_download_icon"
+            custom:bar_unit_four_text="下载"
+            custom:bar_unit_num="THREE"
+            custom:bar_unit_one_img="@drawable/res_share_icon"
+            custom:bar_unit_one_text="转发"
+            custom:bar_unit_three_img="@drawable/res_company_icon"
+            custom:bar_unit_three_text="查看企业"
+            custom:bar_unit_two_img="@drawable/res_interest_icon"
+            custom:bar_unit_two_text="感兴趣"
+             custom:bar_v_item_heigth="@dimen/custom_bar_height"
+             >
+        </com.customview.view.CustomBarView>
+
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@id/bottomBar" />
+    </RelativeLayout>
+
+</LinearLayout>

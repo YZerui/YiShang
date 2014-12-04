@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+	<RelativeLayout
+	    android:id="@+id/list_item_back"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:background="#975" 
+	    ></RelativeLayout>
+    <LinearLayout
+        android:id="@+id/list_item_front"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/page_bg_level_one"
+        android:gravity="center_vertical"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/catalog"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/page_bg_level_two"
+            android:paddingBottom="5dip"
+            android:paddingLeft="5dip"
+            android:paddingTop="5dip"
+            android:textColor="@color/text_color_level_two" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:background="@color/page_bg_level_one"
+            
+            >
+
+            <RelativeLayout
+                android:layout_width="@dimen/contacts_local_list_item_height"
+                android:layout_height="@dimen/contacts_local_list_item_height" 
+                android:padding="@dimen/unit_margin_level_three"
+                android:background="@color/page_bg_level_one">
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    >
+
+                    <ImageView
+                        android:id="@+id/icon"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/app_icon" />
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/list_crop_cricle" />
+                </FrameLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/contacts_local_list_item_height"
+                android:background="@drawable/list_item_bg" >
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/contacts_local_list_content_height"
+                    android:layout_centerVertical="true"
+                     android:padding="@dimen/unit_margin_level_three" >
+
+                    <TextView
+                        android:id="@+id/name"
+                        style="@style/list_item_content_firstlevel_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="1dp"
+                        android:text="小瑞瑞"
+                        android:textColor="@color/text_color_level_one" />
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/contactAddBtn"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="30dp"
+                    android:text="添加"
+                    android:textColor="#fff"
+                    android:textSize="16dp"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/contactFollowText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="30dp"
+                    android:text="已关注"
+                    android:textColor="@color/text_color_level_two"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:visibility="invisible" />
+
+                <View
+                    style="@style/split_line_view"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginRight="10dp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

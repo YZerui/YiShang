@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.ruifeng.yishang"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_bg_level_one"
+    android:orientation="vertical" >
+
+ 
+	<com.customview.view.CustomTopbarView
+	    android:id="@+id/topBar"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	     custom:topbar_back_text="返回"
+        custom:topbar_title="登录" 
+	    ></com.customview.view.CustomTopbarView>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/item_height_level_third"
+        android:background="#fff" >
+
+        <ImageView
+            android:id="@+id/phone_login_edit_icon"
+            android:layout_width="@dimen/icon_default_size"
+            android:layout_height="@dimen/icon_default_size"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/unit_margin_level_one"
+            android:src="@drawable/login_phone_btn_icon" />
+
+        <com.yishang.E.view.ClearEditText
+            android:id="@+id/account_edit"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/unit_margin_level_two"
+            android:layout_marginRight="@dimen/unit_margin_level_two"
+            android:layout_toRightOf="@id/phone_login_edit_icon"
+            android:background="#fff"
+            android:drawableLeft="#fff"
+            android:hint="账号或手机号"
+            android:numeric="integer"
+            android:paddingLeft="@dimen/unit_margin_level_three"
+            android:singleLine="true" />
+
+        <View
+            style="@style/split_line_view"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/item_height_level_third"
+        android:background="#fff" >
+
+        <ImageView
+            android:id="@+id/phone_login_password_edit_icon"
+            android:layout_width="@dimen/icon_default_size"
+            android:layout_height="@dimen/icon_default_size"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/unit_margin_level_one"
+            android:src="@drawable/login_phone_password_icon" />
+
+        <com.yishang.E.view.ClearEditText
+            android:id="@+id/password_edit"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/unit_margin_level_two"
+            android:layout_marginRight="@dimen/unit_margin_level_two"
+            android:layout_toRightOf="@id/phone_login_password_edit_icon"
+            android:background="#fff"
+            android:drawableLeft="#fff"
+            android:hint="密码"
+            android:paddingLeft="@dimen/unit_margin_level_three"
+            android:password="true"
+            android:singleLine="true" />
+
+        <View
+            style="@style/split_line_view"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="@dimen/unit_margin_level_one"
+        android:layout_marginTop="@dimen/unit_margin_level_two"
+        android:text="忘记密码？" />
+
+    <com.customview.view.CustomBtnView
+        android:id="@+id/loginBtn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/unit_margin_level_one"
+        custom:btn_color_style="BG_GREEN"
+        custom:btn_text="登录" >
+    </com.customview.view.CustomBtnView>
+
+
+</LinearLayout>

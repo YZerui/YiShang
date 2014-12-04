@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ***************************全局属性********************** -->
+    <!-- 背景全局颜色分级 -->
+    <color name="page_bg_level_one">#fff</color>
+    <color name="page_bg_level_two">#f4f4f4</color>
+    <color name="page_bg_level_three">#ebebeb</color>
+    <color name="page_bg_level_four">#99f6f5f4</color>
+    <!-- 文字颜色分级 -->
+    <color name="text_color_level_one">#6c6c6c</color>
+    <color name="text_color_level_two">#a3a3a3</color>
+    <color name="text_color_level_three">#bcbcbc</color>
+    <!-- 底部tabbar -->
+    <color name="tabbar_item_bg_normal">#8c8c8c</color>
+    <color name="tabbar_item_bg_check">#ff8000</color>
+
+    <!-- 标识颜色 -->
+    <color name="note_color_light">#ff7e00</color>
+    <color name="note_color_uncheck">#f4f4f4</color>
+	<!-- 控件颜色 -->
+	<color name="color_btn_green">#37cd69</color>
+	<color name="color_btn_green_deep">#2a994f</color>
+	
+	<color name="color_btn_gray">#a1a1a1</color>
+	<color name="color_btn_gray_deep">#848484</color>
+	
+	<color name="color_btn_red">#e94b4b</color>
+	<color name="color_btn_red_deep">#c03d3d</color>
+	
+    <!-- 顶部topbar -->
+
+
+    <!-- 控件样式 -->
+    <color name="btn_state_normal_color">#0000</color>
+    <color name="btn_state_select_color">#1000</color>
+
+    <!-- 列表样式 -->
+    <color name="listview_strech_text_color">#60b2c6</color>
+    <color name="list_cache_color">#0000</color>
+    <color name="list_divide_line_color">#fff</color>
+
+    <!-- 搜索页面默认背景颜色 -->
+    <color name="search_page_default_bg">#5000</color>
+     <!-- 搜索结果页面背景色 -->
+    <color name="search_result_page_bg">#efff</color>
+    <!-- 自定义Toast背景颜色 -->
+    <color name="custom_toast_bg">#bb434242</color>
+    
+    <!-- 进度圈背景颜色 -->
+    <color name="progress_page_bg">#1000</color>
+    
+   
+
+</resources>

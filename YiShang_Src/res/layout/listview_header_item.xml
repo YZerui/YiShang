@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#f0f0f6"
+    android:orientation="vertical" >
+    
+	<TextView
+	    android:id="@+id/text"
+	    android:layout_width="fill_parent"
+	    android:layout_height="@dimen/item_height_level_fifth" 
+	    android:text="关联企业"
+	    android:textColor="@color/text_color_level_two"
+	    android:gravity="center_vertical"
+	    android:textSize="@dimen/text_btn_level_four"
+	    android:paddingLeft="@dimen/unit_margin_level_two"
+	    />
+</LinearLayout>

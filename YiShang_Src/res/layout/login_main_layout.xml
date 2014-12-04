@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.ruifeng.yishang"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <ImageView
+            android:id="@+id/app_logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/app_logo" />
+
+        <TextView
+            android:id="@+id/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/app_logo"
+            android:layout_centerHorizontal="true"
+            android:text="易商"
+            android:textColor="#fff"
+            android:textSize="25dp" />
+
+        <LinearLayout
+            android:id="@+id/cus_sign_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/item_height_level_second"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="50dp"
+            android:layout_marginLeft="@dimen/unit_margin_level_one"
+            android:layout_marginRight="@dimen/unit_margin_level_one"
+            android:orientation="horizontal" >
+
+            <com.customview.view.CustomBtnView
+                android:id="@+id/registerBtn"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="@dimen/unit_margin_level_one"
+                android:layout_weight="1"
+                app:btn_text="注册"
+                app:btn_color_style="BG_OUTLINE"
+               >
+            </com.customview.view.CustomBtnView>
+			
+            <com.customview.view.CustomBtnView
+                android:id="@+id/loginBtn"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="@dimen/unit_margin_level_one"
+                android:layout_weight="1"
+                app:btn_text="登录"
+                app:btn_color_style="BG_OUTLINE"
+                >
+            </com.customview.view.CustomBtnView>
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

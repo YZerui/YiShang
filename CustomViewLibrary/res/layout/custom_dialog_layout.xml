@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:background="@color/page_bg_level_one"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/dialog_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="About to call 323"
+            android:textColor="@color/text_color_level_one"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/dialog_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Are you sure you want to proceed?"
+            android:textColor="@color/text_color_level_two"
+            android:textSize="16dp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/split_line_horizontal" />
+
+        <FrameLayout
+            android:id="@+id/switchBtnLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:background="#0fff"
+            android:visibility="gone"
+             >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/cancel"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_selector_bg"
+                    android:text="算了"
+                    android:textColor="@color/text_color_level_one"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/ok"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_bg_theme"
+                    android:text="好的"
+                    android:textColor="@color/text_color_level_one"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <View
+                android:layout_gravity="center_horizontal"
+                style="@style/split_line_vetical_bg_view"/>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/singleBtnLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:background="#0fff"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/confirmBtn"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/btn_bg_theme"
+                android:gravity="center"
+                android:text="我知道了"
+                android:textColor="#a000"
+                android:textStyle="bold" />
+        </FrameLayout>
+    </LinearLayout>
+
+</RelativeLayout>

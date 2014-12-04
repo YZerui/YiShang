@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ProgressWheel="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/progress_page_bg"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="@dimen/custom_progress_layout_length"
+        android:layout_height="@dimen/custom_progress_layout_length"
+        android:layout_centerInParent="true" >
+
+        <com.yishang.E.view.ProgressWheel
+            android:id="@+id/bar_Wheel"
+            android:layout_width="@dimen/custom_progress_bar_length"
+            android:layout_height="@dimen/custom_progress_bar_length"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            ProgressWheel:barColor="#fff"
+            ProgressWheel:barLength="20dp"
+            ProgressWheel:barWidth="8dp"
+            ProgressWheel:rimColor="#fa723a"
+            ProgressWheel:rimWidth="10dp"
+            ProgressWheel:spinSpeed="5dp"
+            ProgressWheel:textColor="#fff"
+            android:visibility="invisible"
+            ProgressWheel:textSize="14sp"
+            android:background="#0fff" >
+        </com.yishang.E.view.ProgressWheel>
+
+        <ProgressBar
+            android:id="@+id/bar_circel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminateDrawable="@drawable/progress_circle_style"
+            android:indeterminateDuration="1500"
+            android:visibility="invisible" />
+
+        <ProgressBar
+            android:id="@+id/bar_Sector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminateDrawable="@drawable/listview_loading_360"
+            android:indeterminateDuration="1500"
+            android:visibility="invisible" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/progressText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/frameLayout"
+        android:layout_centerHorizontal="true"
+        android:text="正在加载..."
+        style="@style/progress_default_text_style"
+        android:visibility="invisible" />
+
+</RelativeLayout>
