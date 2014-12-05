@@ -191,7 +191,6 @@ public class MsgActivity extends ListActivity {
 						list.get(position).setMsg_seq_unReadNum(0);
 						adapter.notifyDataSetChanged();
 					} catch (DbException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 						P.v("清除用户未读数失败");
 					}

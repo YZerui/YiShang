@@ -43,6 +43,7 @@
         </service>
         <service android:name="com.yishang.D.service.sync.SYNCDbMsgService" >
         </service>
+        <service android:name="com.yishang.D.service.DefaultInitService"></service>
         <!-- ******************************登录模块*********************************** -->
         <activity android:name="com.yishang.B.module.f.LoginUi.LoginHomePage" >
         </activity>
@@ -72,7 +73,8 @@
         </activity>
         <activity android:name="com.yishang.B.module.a.MsgUi.MsgDetailActivity" >
         </activity>
-        <activity android:name="com.yishang.B.module.a.MsgUi.MsgSystemPage" >
+        <activity android:name="com.yishang.B.module.a.MsgUi.MsgSystemPage" 
+            android:windowSoftInputMode="adjustPan">
         </activity>
         <activity android:name="com.yishang.B.module.a.MsgUi.MsgCompanyPage" >
         </activity>
@@ -84,6 +86,8 @@
             android:name="com.yishang.B.module.a.MsgUi.MsgFilterDialog"
             android:theme="@style/Theme_dialog" >
         </activity>
+        <activity android:name="com.yishang.B.module.a.MsgUi.FeedBackDialog"
+            android:theme="@style/Theme_dialog"></activity>
         <!-- ***************************contacts(人脉模块) *************************** -->
 
         <activity android:name="com.yishang.B.module.b.ContactsUI.ContactsActivity" >
@@ -140,7 +144,8 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustUnspecified|adjustResize" >
         </activity>
-        <activity android:name="com.yishang.B.module.c.ResourceUi.ResourceDetailPage" >
+        <activity android:name="com.yishang.B.module.c.ResourceUi.ResourceDetailPage" 
+            android:windowSoftInputMode="adjustPan">
         </activity>
         <activity
             android:name="com.yishang.B.module.c.ResourceUi.ResourceSelectPage"
@@ -168,7 +173,8 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustUnspecified|adjustResize" >
         </activity>
-        <activity android:name="com.yishang.B.module.d.BusinessUi.BusinessDetailPge" >
+        <activity android:name="com.yishang.B.module.d.BusinessUi.BusinessDetailPge" 
+            >
         </activity>
         <activity android:name="com.yishang.B.module.d.BusinessUi.BusinessRelatePage" >
         </activity>
@@ -199,10 +205,12 @@
             android:name="com.yishang.B.module.e.SelfUi.SelfImgSetDialog"
             android:theme="@style/Theme_dialog" >
         </activity>
-        <activity android:name="com.yishang.B.module.e.SelfUi.UserIfoPage" >
+        <activity android:name="com.yishang.B.module.e.SelfUi.UserIfoPage"
+            android:windowSoftInputMode="adjustPan" >
         </activity>
         <activity
             android:name="com.yishang.B.module.e.SelfUi.UserIfoDetailPage"
+            android:windowSoftInputMode="adjustPan"
            >
         </activity>
 

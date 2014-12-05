@@ -8,7 +8,7 @@ package com.avos.avoscloud.PushDemo;
 
 public final class R {
 	public static final class drawable {
-		public static final int notification = 0x7f02007f;
+		public static final int notification = 0x7f020082;
 	}
 	public static final class id {
 		public static final int channel = 0x7f060132;

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.ruifeng.yishang"
+    android:layout_width="match_parent"
+    android:background="@color/page_bg_level_one"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.customview.view.CustomTopbarView
+        android:id="@+id/topBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        custom:topbar_left_text="取消"
+        custom:topbar_right_text="提交"
+        custom:topbar_title="提交反馈" >
+    </com.customview.view.CustomTopbarView>
+	 <EditText
+	     android:id="@+id/editText"
+	     android:layout_width="fill_parent"
+	     android:layout_height="fill_parent"
+	     android:background="@color/page_bg_level_one"
+	     android:padding="@dimen/unit_margin_level_three" 
+	     android:lines="6"
+	     android:gravity="top"
+	     android:maxLength="120"
+	     android:hint="提交你的宝贵意见,让我们一起成长,最好在120个字以内"
+	     />
+</LinearLayout>

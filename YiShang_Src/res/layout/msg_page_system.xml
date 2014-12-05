@@ -4,30 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:swipe="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:background="@color/page_bg_level_two"
     android:layout_height="match_parent"
+    android:background="@color/page_bg_level_two"
     android:orientation="vertical" >
-	<!-- 系统通知页面 -->
+
+    <!-- 系统通知页面 -->
+
     <com.customview.view.CustomTopbarView
         android:id="@+id/topBar"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         custom:topbar_back_text="商机"
-      
         custom:topbar_title="系统通知" >
     </com.customview.view.CustomTopbarView>
 
-    <com.yishang.E.view.swipelistview.SwipeListView
-        android:id="@+id/listView"
-        style="@style/list_style"
+    <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
-        android:divider="@color/page_bg_level_two"
-        android:dividerHeight="@dimen/unit_margin_level_two"
-        swipe:swipeBackView="@+id/list_item_back"
-        swipe:swipeFrontView="@+id/list_item_front" >
-    </com.yishang.E.view.swipelistview.SwipeListView>
+        android:layout_height="fill_parent" >
+
+        <TextView
+            android:id="@+id/feedBack"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/item_height_level_third"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/btn_white_bg"
+            android:text="提交反馈"
+            android:textSize="@dimen/text_btn_level_three"
+            android:textColor="@color/color_note" />
+
+        <com.yishang.E.view.swipelistview.SwipeListView
+            android:id="@+id/listView"
+            style="@style/list_style"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:divider="@color/page_bg_level_two"
+            android:dividerHeight="@dimen/unit_margin_level_two"
+            swipe:swipeBackView="@+id/list_item_back"
+            android:layout_above="@id/feedBack"
+            swipe:swipeFrontView="@+id/list_item_front" >
+        </com.yishang.E.view.swipelistview.SwipeListView>
+    </RelativeLayout>
 
 </LinearLayout>

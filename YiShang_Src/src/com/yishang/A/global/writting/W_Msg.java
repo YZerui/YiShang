@@ -185,7 +185,15 @@ public class W_Msg {
 		}
 		return content;
 	}
-
+	/**
+	 * 小秘书默认提示
+	 */
+	public final static String SYSDefault="感谢您使用易商！易商是一款移动商务应用，" +
+			"能够帮助您高效传播信息，快速增长人脉，最终帮助您提升业绩。更具体的介绍您可" +
+			"以查看资源栏目中的《易商-让业绩飞》这份移动画册。关于易商的任何问题或建议，" +
+			"您都可以在这里告诉我，或者发邮件到peter@wisdomeng.com，让我们和您一起进步！" +
+			"易商祝您业绩长虹！"; 
+	
 	// public static String msgDoc
 
 }

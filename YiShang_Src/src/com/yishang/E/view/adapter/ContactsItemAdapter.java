@@ -12,6 +12,8 @@ import com.nostra13.universalimageloader.core.imageaware.ImageAware;
 import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
 import com.nostra13.universalimageloader.core.imageaware.NonViewAware;
 import com.ruifeng.yishang.R;
+import com.yishang.A.global.Enum.db.Enum_RelaType;
+import com.yishang.A.global.Enum.db.Enum_ResSource;
 import com.yishang.A.global.baseClass.SuperAdapter;
 import com.yishang.A.global.writting.W_UserIfo;
 import com.yishang.C.dao.daoModel.T_Relationships;
@@ -19,6 +21,7 @@ import com.yishang.Z.utils.Benchmark;
 
 import android.content.Context;
 import android.graphics.Bitmap.CompressFormat;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -104,26 +107,20 @@ public class ContactsItemAdapter extends SuperAdapter {
 		T_Relationships bean = datas.get(position);
 		holder.item.setFixDouble_title(bean.getRela_name());
 		holder.item.setFixDouble_content(W_UserIfo.rank(bean.getRela_rank()));
-//		P.v("ËÑË÷Í·ÏÎ:" + W_UserIfo.rank(bean.getRela_rank()));
-//		holder.backItem1.setOnClickListener(new OnClickListener() {
-//
-//			@Override
-//			public void onClick(View v) {
-//				// TODO Auto-generated method stub
-//				callBar.onBackClick_1(position);
-//			}
-//		});
-//		holder.backItem2.setOnClickListener(new OnClickListener() {
-//
-//			@Override
-//			public void onClick(View v) {
-//				// TODO Auto-generated method stub
-//				callBar.onBackClick_2(position);
-//			}
-//		});
-		// System.out.println(bean.getRela_head());
-		
+		Enum_RelaType enumType=Enum_RelaType.valueOf(bean.getRela_typeResult());
 		ImageLoader.getInstance().displayImage(bean.getRela_head(), holder.imageAware, loadOptions);
+		switch (enumType) {
+		case SYSTEM:
+			holder.item.getFixIcon().setImageResource(R.drawable.msg_system_icon);
+			P.v("SYSTEM IMG");
+			break;
+
+		default:
+			
+			break;
+		}
+		
+		
 		
 		
 //		ImageLoader.getInstance().

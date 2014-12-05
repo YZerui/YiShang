@@ -183,7 +183,7 @@ public class BusinessDetailPge extends SuperActivity {
 		topBar.setTitle(bean.getCom_name());
 		imageLoader.displayImage(bean.getCom_logo(), comIcon, loadOptions);
 		//∆Û“µœÍ«È
-		comKeyWord.setText(bean.getCom_kw());
+		comKeyWord.setText(bean.getCom_remark());
 		comTitle.setText(bean.getCom_abb());
 		comDetail.setText(bean.getCom_industry());
 		Enum_ComRela rEnum = Enum_ComRela.DEFAULT.getEnum(Integer.valueOf(bean

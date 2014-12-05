@@ -21,6 +21,7 @@ import com.yishang.B.module.f.LoginUi.LoginPage;
 import com.yishang.B.module.f.LoginUi.RegisterPasswordPage;
 import com.yishang.B.module.f.LoginUi.RegisterPhonePage;
 import com.yishang.C.dao.daoImpl.Dao_MsgSeq;
+import com.yishang.D.service.DefaultInitService;
 import com.yishang.D.service.sync.SYNCMsgService;
 import com.yishang.D.service.sync.SYNCRelateCompanyService;
 import com.yishang.D.service.sync.SYNCRelationshipService;
@@ -97,6 +98,9 @@ public class TabBarActivity extends TabActivity {
 		//同步关联企业信息
 		ViewSwitchUtils.startService(TabBarActivity.this, SYNCRelateCompanyService.class);
 		
+		
+		//默认内容的初始化
+		ViewSwitchUtils.startService(TabBarActivity.this, DefaultInitService.class);
 		
 	}
 

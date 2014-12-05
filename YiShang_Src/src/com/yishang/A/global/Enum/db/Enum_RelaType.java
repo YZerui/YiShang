@@ -6,7 +6,7 @@ package com.yishang.A.global.Enum.db;
  *
  */
 public enum Enum_RelaType {
-	
+	SYSTEM(8),//–°√ÿ È
 	CLIENT_SUPPLIER(0),  
 	CLIENT(1),
 	SUPPLIER(2),
@@ -44,6 +44,8 @@ public enum Enum_RelaType {
 			return DEFAULT;
 		case 7:
 			return ADDRESSLIST;
+		case 8:
+			return SYSTEM;
 		default:
 			return UNKNOW;
 		}

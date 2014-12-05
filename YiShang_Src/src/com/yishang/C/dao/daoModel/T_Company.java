@@ -21,6 +21,9 @@ public class T_Company extends EntityBase{
 	@Column(column="com_name")
 	private String com_name;
 	
+	@Column(column="com_remark")
+	private String com_remark;
+	
 	@Column(column="com_icon")
 	private String com_icon;
 	
@@ -44,6 +47,12 @@ public class T_Company extends EntityBase{
 	
 	
 
+	public String getCom_remark() {
+		return com_remark;
+	}
+	public void setCom_remark(String com_remark) {
+		this.com_remark = com_remark;
+	}
 	public String getSelf_id() {
 		return self_id;
 	}

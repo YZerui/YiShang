@@ -35,6 +35,9 @@ public class Dao_Msg extends SuperDaoImpl {
 	 * @throws DbException
 	 */
 	private static void addRecord(T_Msg msg) throws DbException {
+		if(ifMsgExist(msg.getMsg_id())){
+			return;
+		}
 		msg.setSelf_id(Dao_Self.getInstance().getUser_id());
 		msg.setMsg_recvTime(FormatUtils.getCurrentDateValue());
 		db.save(msg);
@@ -52,6 +55,7 @@ public class Dao_Msg extends SuperDaoImpl {
 	private static void addRecord(List<T_Msg> list) throws DbException {
 		db.saveAll(list);
 	}
+
 
 	/**
 	 * 判断关于某企业信息是否存在

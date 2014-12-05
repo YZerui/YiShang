@@ -205,7 +205,7 @@ public class Dao_Relationship extends SuperDaoImpl {
 		}
 		return false;
 	}
-
+	
 	/**
 	 * 更新已经注册的手机用户
 	 * 
@@ -249,6 +249,21 @@ public class Dao_Relationship extends SuperDaoImpl {
 		T_Relationships rBean = parseC2R(bean);
 		rBean.setRela_register(Enum_IfRegister.UNREGIST.value());
 		addPhoneContact(rBean);
+	}
+	/**
+	 * 添加小秘书联系人
+	 * @param tBean
+	 */
+	public static void addSysContact(T_Relationships tBean){
+		try {
+			if(checkExist(tBean.getRela_id())){
+				return;
+			}
+			addRecord(tBean);
+		} catch (DbException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public static void addUnRegiPhoneContact(List<T_Contacts> list)

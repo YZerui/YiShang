@@ -28,6 +28,9 @@ public class Utils_DBRNote {
 		return handle(Integer.parseInt(value));
 	}
 	public static int handle(int param){
+		if(param==0){
+			return Enum_RelaType.SYSTEM.value();
+		}
 		if (param % 10 == 1) { //****1
 			return Enum_RelaType.BLACKLIST.value();
 		} else if (param / 1000 == 11) { // 11000

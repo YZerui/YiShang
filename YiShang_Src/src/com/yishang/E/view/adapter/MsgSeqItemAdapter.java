@@ -101,8 +101,8 @@ public class MsgSeqItemAdapter extends SuperAdapter {
 		
 		case SYSTEM:
 			name="易商小秘书";
-			title ="";
-//			title = W_Msg.getNote(bean.getMsg_seq_success()==1?true:false, tEnum);
+			title =W_Msg.getNote(true, tEnum);
+			
 			holder.itemView.getFixIcon().setImageResource(
 					R.drawable.msg_system_icon);
 			break;

@@ -4,12 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 import com.customview.callBack.topBarCallBack;
 import com.customview.view.CustomTopbarView;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.exception.DbException;
 import com.lidroid.xutils.view.annotation.ViewInject;
+import com.lidroid.xutils.view.annotation.event.OnClick;
 import com.ruifeng.yishang.R;
 import com.thread.HandlerExtend;
 import com.thread.HandlerExtend.handleCallBack;
@@ -38,6 +41,8 @@ public class MsgSystemPage extends SuperActivity{
 	private CustomTopbarView topBar;
 	@ViewInject(R.id.listView)
 	private SwipeListView listView;
+	@ViewInject(R.id.feedBack)
+	private TextView feedBack;
 	
 	private List<T_Msg> list;
 	private MsgSystemPageAdapter adapter;
@@ -163,6 +168,10 @@ public class MsgSystemPage extends SuperActivity{
 			listView.stopLoadMore();
 		};
 	});
+	@OnClick(R.id.feedBack)
+	public void feedBackClick(View v){
+		ViewSwitchUtils.in2TopIntent(context, FeedBackDialog.class);
+	}
 	public void finish() {
 		super.finish();
 		ViewSwitchUtils.finishOut2Right(context);

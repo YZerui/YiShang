@@ -124,7 +124,7 @@ public class BusinessItemAdapter extends SuperAdapter implements StickyListHeade
 			holder.text.setText("关联企业");
 			break;
 		case COM_SUPPLIER:
-			holder.text.setText("供应商");
+			holder.text.setText("我关注的");
 			break;
 //		case COM_RELA_ING:
 //			holder.text.setText("申请关联中的企业");

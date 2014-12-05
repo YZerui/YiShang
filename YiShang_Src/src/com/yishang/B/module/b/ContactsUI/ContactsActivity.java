@@ -49,6 +49,7 @@ import com.yishang.A.global.Enum.db.Enum_RelaType;
 import com.yishang.A.global.baseClass.ListActivity;
 import com.yishang.A.global.baseClass.SharePage;
 import com.yishang.A.global.callBack.listHttpCallBack;
+import com.yishang.B.module.a.MsgUi.FeedBackDialog;
 import com.yishang.B.module.c.ResourceUi.ResourceSelectPage;
 import com.yishang.B.module.e.SelfUi.UserIfoPage;
 import com.yishang.C.dao.daoModel.T_Relationships;
@@ -169,12 +170,21 @@ public class ContactsActivity extends ListActivity {
 			public void onItemClick(AdapterView<?> arg0, View arg1,
 					int position, long arg3) {
 				// TODO Auto-generated method stub
-
 				T_Relationships bean = list.get(position - 1);
-				ViewSwitchUtils.tab_in2LeftIntent(context, UserIfoPage.class,
-						bean.getRela_id(),
-						String.valueOf(bean.getRela_register()),
-						bean.getRela_phone());
+				Enum_RelaType enumType=Enum_RelaType.valueOf(bean.getRela_typeResult());
+				switch (enumType) {
+				case SYSTEM:
+					ViewSwitchUtils.tab_in2TopIntent(context, FeedBackDialog.class);
+					break;
+
+				default:
+					ViewSwitchUtils.tab_in2LeftIntent(context, UserIfoPage.class,
+							bean.getRela_id(),
+							String.valueOf(bean.getRela_register()),
+							bean.getRela_phone());
+					break;
+				}
+			
 			}
 		});
 		listView.setOnItemLongClickListener(new OnItemLongClickListener() {

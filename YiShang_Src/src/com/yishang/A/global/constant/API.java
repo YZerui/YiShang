@@ -17,6 +17,8 @@ public class API {
 	final public static String COMMON_USER_IFO=SERVER_DOMAIN+"/user/find.action";
 	//文档详情查询
 	final public static String COMMON_BOOK_IFO=SERVER_DOMAIN+"/book/find.action";
+	//提交反馈
+	final public static String FEEDBACK_COMMIT=SERVER_DOMAIN+"/user/submitOpinion.action";
 	
 	//提交手机号码到服务端验证
 	final public static String PHONE_SUBMIT_AUTHO=SERVER_DOMAIN+"/user/reg_1.action";
