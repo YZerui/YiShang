@@ -2,7 +2,7 @@
 <resources>
 
     <style name="Theme.NoTitleBar" parent="@android:style/Theme.Translucent.NoTitleBar">
-          <item name="android:windowBackground">@android:color/white</item>
+          <item name="android:windowBackground">@color/white_light</item>
         <!--
              Note that we use the base animation style here (that is no
              animations) because we really have no idea how this kind of

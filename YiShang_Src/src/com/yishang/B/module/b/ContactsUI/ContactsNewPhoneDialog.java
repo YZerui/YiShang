@@ -20,8 +20,11 @@ import com.lidroid.xutils.view.annotation.ViewInject;
 import com.ruifeng.yishang.R;
 import com.thread.HandlerExtend;
 import com.thread.HandlerExtend.handleCallBack;
+import com.yishang.A.global.Enum.Enum_BackSytle;
+import com.yishang.A.global.Enum.Enum_ReceiverAction;
 import com.yishang.A.global.Enum.constant.Enum_Color;
 import com.yishang.A.global.Enum.db.Enum_IfRegister;
+import com.yishang.A.global.Enum.push.Enum_PushSource;
 import com.yishang.A.global.baseClass.SuperDialogActivity;
 import com.yishang.B.module.b.ContactsEntity.Recv_contacts;
 import com.yishang.B.module.b.ContactsEntity.Recv_phoneCheck;
@@ -35,6 +38,7 @@ import com.yishang.D.service.httpRequest.HttpReq_GetRelationship.CallBack_Rela;
 import com.yishang.D.service.httpRequest.HttpReq_SYNCLocalContact.CallBack_CheckPhone;
 import com.yishang.E.view.ClearEditText;
 import com.yishang.E.view.MyDialog;
+import com.yishang.Z.utils.BroadcastUtil;
 import com.yishang.Z.utils.DeviceUtils;
 import com.yishang.Z.utils.ViewSwitchUtils;
 
@@ -147,7 +151,7 @@ public class ContactsNewPhoneDialog extends SuperDialogActivity{
 						// TODO Auto-generated method stub
 						myDialog.dismiss();
 						ViewSwitchUtils.in2TopIntent(context, UserIfoPage.class,bean.getRela_id(),
-								String.valueOf(bean.getRela_register()),bean.getRela_phone());
+								String.valueOf(bean.getRela_register()),bean.getRela_phone(),Enum_BackSytle.VETICAL.toString());
 					}
 				}).withShow();
 				topBar.setTitle("添加新号码").setProVisibility(false).setRighTextVisibility(true);
@@ -256,12 +260,15 @@ public class ContactsNewPhoneDialog extends SuperDialogActivity{
 			try {
 				Dao_Relationship.addUnRegiPhoneContact(bean);
 				toast.setText("添加成功");
+				
 			} catch (DbException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		};
 		public void call_onFinally() {
+			//通知人脉列表更新
+			BroadcastUtil.sendBroadCast(context, Enum_ReceiverAction.CONTACTS_PAGE.name());
 			finish();
 		};
 	});

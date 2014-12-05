@@ -46,9 +46,10 @@ public class ContactsItemAdapter extends SuperAdapter {
 		.showImageForEmptyUri(R.drawable.default_img_head)
 //		.showStubImage(R.drawable.default_img_msg)
 //		.showStubImage(R.drawable.app_icon)
-		.displayer(new FadeInBitmapDisplayer(600))
+//		.displayer(new FadeInBitmapDisplayer(600))
 		.cacheInMemory(true)
-                    .cacheOnDisk(true)
+           .cacheOnDisk(true)
+           .considerExifParams(true)
                     .build();					
 //		.cacheOnDisc(true)						
 //		.build();	
@@ -108,7 +109,7 @@ public class ContactsItemAdapter extends SuperAdapter {
 		holder.item.setFixDouble_title(bean.getRela_name());
 		holder.item.setFixDouble_content(W_UserIfo.rank(bean.getRela_rank()));
 		Enum_RelaType enumType=Enum_RelaType.valueOf(bean.getRela_typeResult());
-		ImageLoader.getInstance().displayImage(bean.getRela_head(), holder.imageAware, loadOptions);
+	
 		switch (enumType) {
 		case SYSTEM:
 			holder.item.getFixIcon().setImageResource(R.drawable.msg_system_icon);
@@ -116,7 +117,7 @@ public class ContactsItemAdapter extends SuperAdapter {
 			break;
 
 		default:
-			
+			ImageLoader.getInstance().displayImage(bean.getRela_head(), holder.imageAware, loadOptions);
 			break;
 		}
 		

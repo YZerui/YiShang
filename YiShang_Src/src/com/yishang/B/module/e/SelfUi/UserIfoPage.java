@@ -466,12 +466,19 @@ public class UserIfoPage extends SuperActivity {
 	public void finish() {
 		// TODO Auto-generated method stub
 		super.finish();
-		if (SOURCE_PAGE != null
-				&& SOURCE_PAGE.equals(Enum_PageSource.MsgReceivePage.name())) {
+		if(SOURCE_PAGE==null){
+			ViewSwitchUtils.finishOut2Right(context);
+			return;
+		}
+		if(SOURCE_PAGE.equals(Enum_BackSytle.VETICAL.toString())){
 			ViewSwitchUtils.finishOut2Bottom(context);
 			return;
 		}
-		if(SOURCE_PAGE != null&&SOURCE_PAGE.equals(Enum_BackSytle.VETICAL.toString())){
+		if (SOURCE_PAGE.equals(Enum_PageSource.MsgReceivePage.name())) {
+			ViewSwitchUtils.finishOut2Bottom(context);
+			return;
+		}
+		if(SOURCE_PAGE.equals(Enum_BackSytle.VETICAL.toString())){
 			ViewSwitchUtils.finishOut2Bottom(context);
 			return;
 		}

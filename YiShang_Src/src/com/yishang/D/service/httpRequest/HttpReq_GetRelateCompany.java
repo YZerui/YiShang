@@ -28,6 +28,7 @@ public class HttpReq_GetRelateCompany extends HttpRequestClass{
 	private Req_comSearch reqBean;
 	private CallBack_RelaCom callBack;
 	private Enum_ComRela enumType;
+	private boolean ifLoad;
 	public HttpReq_GetRelateCompany(String uId){
 		super();
 		
@@ -41,6 +42,9 @@ public class HttpReq_GetRelateCompany extends HttpRequestClass{
 		reqBean.setLimit(String.valueOf(limit));
 		return this;
 	}
+	public boolean isIfLoad() {
+		return ifLoad;
+	}
 	public HttpReq_GetRelateCompany setType(Enum_ComRela enumType){
 		this.enumType=enumType;
 		return this;
@@ -49,7 +53,7 @@ public class HttpReq_GetRelateCompany extends HttpRequestClass{
 		this.callBack=callBack;
 		return this;
 	}
-	public void httpRequest(Req_comSearch reqBean,final boolean ifLoad){
+	public void httpRequest(Req_comSearch reqBean){
 		switch (enumType) {
 		case CORRE_ING:
 			
@@ -113,12 +117,14 @@ public class HttpReq_GetRelateCompany extends HttpRequestClass{
 	}
 	public void onLoad(){
 		reqBean.setStart(String.valueOf((start++)*limit));
-		httpRequest(reqBean,true);
+		ifLoad=true;
+		httpRequest(reqBean);
 	}
 	public void onInit(){
 		start=0;
 		reqBean.setStart(String.valueOf((start++)*limit));
-		httpRequest(reqBean, false);
+		ifLoad=false;
+		httpRequest(reqBean);
 	}
 	public static abstract class CallBack_RelaCom{
 		public abstract void onFinally();

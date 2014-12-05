@@ -76,15 +76,15 @@ public class ContactsSearchActivity extends SearchBoxActivity {
 		// TODO Auto-generated method stub
 		editText.setHint("搜索联系人(姓名/头衔/手机号)");
 		editText.requestFocus();	
-		Timer timer = new Timer(); //设置定时器
-		timer.schedule(new TimerTask() {
-		@Override
-			public void run() { //弹出软键盘的代码
-			InputMethodManager inputManager =  
-		               (InputMethodManager)editText.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);  
-		           inputManager.showSoftInput(editText, 0);  
-			}
-		}, 300);
+//		Timer timer = new Timer(); //设置定时器
+//		timer.schedule(new TimerTask() {
+//		@Override
+//			public void run() { //弹出软键盘的代码
+//			InputMethodManager inputManager =  
+//		               (InputMethodManager)editText.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);  
+//		           inputManager.showSoftInput(editText, 0);  
+//			}
+//		}, 300);
 		
 		list = new ArrayList<T_Relationships>();
 		adapter = new ContactsSearchAdapter(context);

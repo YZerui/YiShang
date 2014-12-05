@@ -379,7 +379,7 @@ public class BusinessDetailPge extends SuperActivity {
 	 */
 	@OnClick(R.id.com_keyword)
 	public void detailClick(View v){
-		toast.setText("跳转到企业详情页面");
+		ViewSwitchUtils.in2LeftIntent(context, BusinessIntroPage.class,bean.getCom_remark());
 	}
 	@Override
 	public void finish() {

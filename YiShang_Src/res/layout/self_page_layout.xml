@@ -122,7 +122,6 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         custom:item_imgNote="@drawable/self_note_business_card"
-                        custom:item_rightNoteShow="SHOW"
                         custom:item_splitPartBottomShow="SHOW"
                         custom:item_splitTopShow="SHOW"
                         custom:item_textContent="头衔" >
@@ -134,7 +133,6 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         custom:item_imgNote="@drawable/self_note_phone_icon"
-                        custom:item_rightNoteShow="SHOW"
                         custom:item_splitPartBottomShow="SHOW"
                         android:visibility="gone"
                         custom:item_textContent="电话" >
@@ -146,7 +144,6 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         custom:item_imgNote="@drawable/self_note_label_icon"
-                        custom:item_rightNoteShow="SHOW"
                         custom:item_splitPartBottomShow="SHOW"
                         custom:item_textContent="个人标签" >
                     </com.customview.view.CustomItemView>
@@ -157,7 +154,7 @@
                         custom:item_imgNote="@drawable/self_note_more_icon"
                         custom:item_rightNoteShow="SHOW"
                         custom:item_splitBottomShow="SHOW"
-                        custom:item_textContent="更多信息" >
+                        custom:item_textContent="我的设置" >
                     </com.customview.view.CustomItemView>
                    
                   

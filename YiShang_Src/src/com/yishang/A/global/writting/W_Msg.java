@@ -99,12 +99,12 @@ public class W_Msg {
 			
 			break;
 		case COM_CHECK:
-//			if(bean.getMsg_seq_success()==1){
-//				content="您和本公司的关联成功";
-//			}else {
-//				content="您和本公司的关联失败";
-//			}
-			content= bean.getMsg_seq_content();
+			if(bean.getMsg_seq_success()==1){
+				content="您和本公司的关联成功";
+			}else {
+				content="您和本公司的关联失败";
+			}
+//			content= bean.getMsg_seq_content();
 			break;
 		case COM_INFORM:
 			content=bean.getMsg_seq_content();

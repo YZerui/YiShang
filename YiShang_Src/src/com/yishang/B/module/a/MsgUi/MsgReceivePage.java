@@ -10,6 +10,7 @@ import android.widget.AdapterView.OnItemClickListener;
 
 import com.customview.callBack.topBarCallBack;
 import com.customview.view.CustomBarView.callBack_Bar;
+import com.customview.view.CustomPageView;
 import com.customview.view.CustomTopbarView;
 import com.exception.utils.P;
 import com.format.utils.DataValidate;
@@ -55,7 +56,9 @@ public class MsgReceivePage extends SuperActivity {
 	private CustomTopbarView topBar;
 	@ViewInject(R.id.listView)
 	private SwipeListView listView;
-
+	@ViewInject(R.id.pageView)
+	private CustomPageView pageView;
+	
 	private List<T_Msg> list;
 	private MsgReceivePageAdapter adapter;
 	private String uID;
@@ -291,7 +294,9 @@ public class MsgReceivePage extends SuperActivity {
 		}
 
 		public void call_onFail() {
-
+			topBar.setTitle("来往记录");
+			pageView.setDefaultPage().setBottomLayoutVisible(false)
+				.setTextOnly("无相关记录").setVisibility(View.VISIBLE);
 		};
 
 		public void call_onFinally() {

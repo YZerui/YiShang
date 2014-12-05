@@ -24,6 +24,8 @@ import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.lidroid.xutils.view.annotation.event.OnClick;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.ruifeng.yishang.R;
 import com.yishang.A.global.Enum.Enum_Gender;
 import com.yishang.A.global.Enum.Enum_IfoType;
@@ -55,7 +57,7 @@ public class SelfActivity extends SuperActivity {
 	private TextView name;
 	@ViewInject(R.id.selfGenderIcon)
 	private ImageView selfGenderIcon;
-	
+
 	private Bitmap uplodBitmap;
 
 	@Override
@@ -76,6 +78,12 @@ public class SelfActivity extends SuperActivity {
 	protected void initResource() {
 		// TODO Auto-generated method stub
 		scrollView.setHeader(headIcon);
+		loadOptions = new DisplayImageOptions.Builder()
+				.showImageForEmptyUri(R.drawable.default_img_head)
+				.showImageOnFail(R.drawable.default_img_head)
+				.showImageForEmptyUri(R.drawable.default_img_head)
+				.cacheInMemory(true)
+				.cacheOnDisk(true).build();
 	}
 
 	@Override
@@ -85,20 +93,31 @@ public class SelfActivity extends SuperActivity {
 
 		});
 	}
+
 	@Override
 	protected void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
-		name.setText(W_UserIfo.name(Dao_Self.getInstance().getUser_name()));
-		//刷新界面
-		imageLoader.displayImage(Dao_Self.getInstance().getUser_head(),headIcon, loadOptions);
-		rankItem.setTextContent(W_UserIfo.rank(Dao_Self.getInstance().getUser_title1()));
-		phoneItem.setTextContent(W_UserIfo.phone(Dao_Self.getInstance().getUser_phone()));
-		labelItem.setTextContent(W_UserIfo.label(Dao_Self.getInstance().getUser_lable()));
-		if(Dao_Self.getInstance().getUser_sex().equals(Enum_Gender.MAN.value())){
-			selfGenderIcon.setImageResource(R.drawable.gender_man);
-		}else {
-			selfGenderIcon.setImageResource(R.drawable.gender_women);
+		try {
+			name.setText(W_UserIfo.name(Dao_Self.getInstance().getUser_name()));
+			// 刷新界面
+			imageLoader.displayImage(Dao_Self.getInstance().getUser_head(),
+					headIcon, loadOptions);
+			rankItem.setTextContent(W_UserIfo.rank(Dao_Self.getInstance()
+					.getUser_title1()));
+			phoneItem.setTextContent(W_UserIfo.phone(Dao_Self.getInstance()
+					.getUser_phone()));
+			labelItem.setTextContent(W_UserIfo.label(Dao_Self.getInstance()
+					.getUser_lable()));
+			if (Dao_Self.getInstance().getUser_sex()
+					.equals(Enum_Gender.MAN.value())) {
+				selfGenderIcon.setImageResource(R.drawable.gender_man);
+			} else {
+				selfGenderIcon.setImageResource(R.drawable.gender_women);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			toast.setText("个人信息有误");
 		}
 	}
 
@@ -122,7 +141,7 @@ public class SelfActivity extends SuperActivity {
 		switch (requestCode) {
 		case PARAMS.PHOTO_REQUEST:
 			if (PARAMS.REQUEST_CODE != PARAMS.PHOTO_CAPTURE_SUCCESS) {
-//				toast.locatBottom().setText("头像文件出错,上传失败");
+				// toast.locatBottom().setText("头像文件出错,上传失败");
 				return;
 			}
 			String savePath = Environment.getExternalStorageDirectory() + "/"

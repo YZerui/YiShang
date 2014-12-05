@@ -65,6 +65,7 @@ public class DefaultInitService extends Service{
 		msgBean.setMsg_source(Enum_PushSource.SYSTEM.value());
 		msgBean.setMsg_type(Enum_PushType.SYS_INFORM.value());
 		msgBean.setMsg_content(W_Msg.SYSDefault);
+		msgBean.setMsg_sendName("易商小秘书");
 		msgBean.setMsg_time(FormatUtils.getCurrentDateValue());
 		msgBean.setSelf_id(Dao_Self.getInstance().getUser_id());
 		//默认内容的ID为-1

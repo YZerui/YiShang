@@ -30,6 +30,7 @@ import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
 import android.graphics.Bitmap.CompressFormat;
+import android.util.Config;
 
 public class AppContextApplication extends Application {
 	private static AppContextApplication instance;
@@ -55,8 +56,8 @@ public class AppContextApplication extends Application {
     private void initBugCrash() {
 		// TODO Auto-generated method stub
     	// 启用崩溃日志记录
-//		CrashHandler crashHandler = CrashHandler.getInstance();
-//		crashHandler.init(this);
+		CrashHandler crashHandler = CrashHandler.getInstance();
+		crashHandler.init(this);
 	}
 
 	private void initImageLoader() {
@@ -84,6 +85,7 @@ public class AppContextApplication extends Application {
                 .diskCacheSize(50 * 1024 * 1024)
                 .diskCacheFileCount(100)
                 .defaultDisplayImageOptions(defaultOptions)
+                .tasksProcessingOrder(QueueProcessingType.LIFO)
                 .build();
         ImageLoader.getInstance().init(configuration);
     }

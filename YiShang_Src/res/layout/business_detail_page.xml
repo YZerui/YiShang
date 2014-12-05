@@ -48,17 +48,20 @@
 
             <TextView
                 android:id="@+id/com_title"
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
+              	android:singleLine="true"
                 android:textColor="@color/text_color_level_one"
                 android:textSize="@dimen/text_btn_level_two" />
-
+		
             <TextView
                 android:id="@+id/com_keyword"
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/com_title"
+                  android:maxEms="15"
+                android:ellipsize="end"
                 android:background="@drawable/btn_selector_bg"
                 android:lines="2"
                 android:textColor="@color/text_color_level_two"

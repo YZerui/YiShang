@@ -32,7 +32,7 @@ import android.os.IBinder;
 public class SYNCMsgService extends Service{
 	private HttpReq_GetMsg httpReq;
 	private String getWeekBeforeTimeStamp(){
-		return String.valueOf(FormatUtils.getCurrentDateValue_long()-Enum_Timestamp.DAY.value()*7);
+		return String.valueOf(FormatUtils.getCurrentDateValue_long()-Enum_Timestamp.DAY.value()*10);
 	}
 	@Override
 	public void onStart(Intent intent, int startId) {
@@ -53,6 +53,7 @@ public class SYNCMsgService extends Service{
 				if(DataValidate.checkDataValid(msgBean)){
 					//这里加一,表示获取该商机之后的数据
 					httpReq.setMsgID(msgBean.getMsg_id()+1);
+					httpReq.setTime(getWeekBeforeTimeStamp());
 				}else {
 					//如果为初始登录
 					httpReq.setTime(getWeekBeforeTimeStamp());

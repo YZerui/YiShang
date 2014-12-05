@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.ruifeng.yishang"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_bg_level_one"
+    android:orientation="vertical" >
+
+    <com.customview.view.CustomTopbarView
+        android:id="@+id/topBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        custom:topbar_back_text="返回"
+        custom:topbar_title="企业介绍" >
+    </com.customview.view.CustomTopbarView>
+	<TextView
+	    android:id="@+id/text"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:textSize="@dimen/text_btn_level_three"
+	    android:textColor="@color/text_color_level_two"
+	    android:layout_margin="@dimen/unit_margin_level_two"
+	    />
+	<View
+	    android:layout_marginLeft="@dimen/unit_margin_level_two"
+	    android:layout_marginRight="@dimen/unit_margin_level_two"
+	    style="@style/split_line_view"
+	    />
+</LinearLayout>

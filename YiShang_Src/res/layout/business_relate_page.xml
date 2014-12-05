@@ -14,7 +14,12 @@
         custom:topbar_back_text="用户详情"
         custom:topbar_title="用户关联企业" >
     </com.customview.view.CustomTopbarView>
-
+	<com.customview.view.CustomPageView
+	    android:id="@+id/pageView"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:visibility="gone"
+	    ></com.customview.view.CustomPageView>
     <com.yishang.E.view.swipelistview.SwipeListView
         android:id="@+id/listView"
         style="@style/list_style"

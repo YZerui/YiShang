@@ -457,6 +457,9 @@ public class Dao_MsgSeq extends SuperDaoImpl {
 	 * @throws DbException
 	 */
 	public static void createRecord(T_Msg msg) throws DbException {
+		if(!DataValidate.checkDataValid(msg.getMsg_sendName())){
+			return;
+		}
 		T_MsgSeq sBean = new T_MsgSeq();
 		sBean.setMsg_seq_sendId(msg.getMsg_sendId());
 		sBean.setMsg_seq_comId(msg.getMsg_comId());
@@ -472,6 +475,7 @@ public class Dao_MsgSeq extends SuperDaoImpl {
 		sBean.setMsg_seq_sendName(msg.getMsg_sendName());
 		sBean.setMsg_seq_comName(msg.getMsg_comName());
 		sBean.setMsg_seq_comLogo(msg.getMsg_comLogo());
+		sBean.setMsg_seq_success(msg.getMsg_success());
 		// sBean.setMsg_seq_comLogo("");
 		// sBean.setMsg_seq_comName("");
 		// sBean.setMsg_seq_recvTime(msg_seq_recvTime)

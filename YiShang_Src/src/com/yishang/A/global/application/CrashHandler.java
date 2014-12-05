@@ -198,7 +198,7 @@ public class CrashHandler implements UncaughtExceptionHandler {
 //						.withTextColor(COMMON.COLOR_WHITE).withShowLong().show();
 				new CustomToast(mContext)
 					.locatCenter().withShowLong()
-					.setText("应用出状况了,我们将此错误反馈给功城狮");
+					.setText("应用出状况了,我们将此错误反馈给功城狮处理");
 				
 				Looper.loop();
 			}

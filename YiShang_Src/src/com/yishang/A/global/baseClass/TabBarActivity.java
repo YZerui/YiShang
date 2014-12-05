@@ -181,19 +181,25 @@ public class TabBarActivity extends TabActivity {
 		
 		
 //		//关闭缓存页面
-//		Handler handler=new Handler();
-//		handler.postDelayed(new Runnable() {
-//			
-//			@Override
-//			public void run() {
-//				// TODO Auto-generated method stub
-//				AppManager.getAppManager().finishActivity(AppStartActivity.class);
-////				AppManager.getAppManager().finishActivity(LoginHomePage.class);
-////				AppManager.getAppManager().finishActivity(LoginPage.class);
-////				AppManager.getAppManager().finishActivity(RegisterPasswordPage.class);
-////				AppManager.getAppManager().finishActivity(RegisterPhonePage.class);
-//			}
-//		}, 800);
+		Handler handler=new Handler();
+		handler.postDelayed(new Runnable() {
+			
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				try{
+				AppManager.getAppManager().finishActivity(AppStartActivity.class);
+				AppManager.getAppManager().finishActivity(LoginHomePage.class);
+				AppManager.getAppManager().finishActivity(LoginPage.class);
+				AppManager.getAppManager().finishActivity(RegisterPasswordPage.class);
+					AppManager.getAppManager().finishActivity(
+							RegisterPhonePage.class);
+				} catch (Exception e) {
+					// TODO: handle exception
+					System.out.println("消除Activity出现错误");
+				}
+			}
+		}, 800);
 
 	}
 
@@ -276,7 +282,7 @@ public class TabBarActivity extends TabActivity {
 				badgeView.show();
 				System.out.println("...1");
 			} else if (unRead >= 10) {
-				badgeView.setText("New");
+				badgeView.setText("N");
 				badgeView.show();
 				System.out.println("...2");
 			} else {

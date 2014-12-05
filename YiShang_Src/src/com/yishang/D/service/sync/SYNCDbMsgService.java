@@ -20,6 +20,7 @@ import com.yishang.A.global.Enum.db.Enum_RelaType;
 import com.yishang.A.global.Enum.push.Enum_PushSource;
 import com.yishang.A.global.Enum.push.Enum_PushType;
 import com.yishang.A.global.baseClass.SuperDaoImpl;
+import com.yishang.A.global.writting.W_Msg;
 import com.yishang.B.module.c.ResourceEntity.Recv_bookIfo;
 import com.yishang.B.module.d.BusinessEntity.Recv_comDetail;
 import com.yishang.C.dao.daoImpl.Dao_Company;
@@ -27,6 +28,7 @@ import com.yishang.C.dao.daoImpl.Dao_Msg;
 import com.yishang.C.dao.daoImpl.Dao_MsgBuffer;
 import com.yishang.C.dao.daoImpl.Dao_Relationship;
 import com.yishang.C.dao.daoImpl.Dao_Resource;
+import com.yishang.C.dao.daoImpl.Dao_Self;
 import com.yishang.C.dao.daoModel.T_Company;
 import com.yishang.C.dao.daoModel.T_Msg;
 import com.yishang.C.dao.daoModel.T_MsgBuffer;
@@ -110,7 +112,19 @@ public class SYNCDbMsgService extends Service {
 	 * @param item
 	 */
 	private void handleSystem(T_MsgBuffer item) {
-		
+		T_Msg msgBean=new T_Msg();
+		msgBean.setMsg_source(Enum_PushSource.SYSTEM.value());
+		msgBean.setMsg_type(item.getMsg_type());
+		msgBean.setMsg_content(item.getMsg_content());
+		msgBean.setMsg_sendName("易商小秘书");
+		msgBean.setMsg_time(FormatUtils.getCurrentDateValue());
+		msgBean.setSelf_id(Dao_Self.getInstance().getUser_id());
+		try {
+			Dao_Msg.addPushRecord(msgBean);
+		} catch (DbException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -128,6 +142,10 @@ public class SYNCDbMsgService extends Service {
 		msgBean.setMsg_time(FormatUtils.getDateValue_Default(item.getMsg_time()));
 		msgBean.setMsg_id(item.getMsg_id());
 		msgBean.setMsg_source(Enum_PushSource.COMPANY.value());
+		//处理成功、错误消息
+		if(msgBean.getMsg_content().equals("true")){
+			msgBean.setMsg_success(1);
+		}
 		try {
 			Dao_Msg.addPushRecord(msgBean);
 		} catch (DbException e) {

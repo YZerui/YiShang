@@ -68,8 +68,10 @@ public class AVOSCustomReceiver extends BroadcastReceiver {
 			if (json == null) {
 				return;
 			}
-//			String msgID = json.getString(Enum_PushModel.m_d.name());
+			String msgIfo = json.getString(Enum_PushModel.msg_ifo.name());
+			
 			ViewSwitchUtils.startService(context, SYNCMsgService.class);
+			brocastMethod(msgIfo);
 
 		}
 	}
@@ -413,23 +415,23 @@ public class AVOSCustomReceiver extends BroadcastReceiver {
 //
 //	}
 //
-//	private void brocastMethod(String msg) {
-//		// TODO Auto-generated method stub
-//		/*
-//		 * @tip_1 当在应用界面时，不显示通知栏，只震动
-//		 * 
-//		 * 
-//		 * 
-//		 * @tip_3 当不在本应用时，震动、弹出通知栏
-//		 */
-//		if (DeviceUtils.getRunningActivity().equals(
-//				TabBarActivity.class.getName())) {
-//			System.out.println("Receiver TarBarActivity...");
-//			// 震动
-//			FunUtils.AcquireWakeLock(context);
-//		} else {
-//			FunUtils.setNotification(context, TabBarActivity.class, "易商",
-//					"你有新的商机了", msg, R.drawable.app_icon);
-//		}
-//	};
+	private void brocastMethod(String msg) {
+		// TODO Auto-generated method stub
+		/*
+		 * @tip_1 当在应用界面时，不显示通知栏，只震动
+		 * 
+		 * 
+		 * 
+		 * @tip_3 当不在本应用时，震动、弹出通知栏
+		 */
+		if (DeviceUtils.getRunningActivity().equals(
+				TabBarActivity.class.getName())) {
+			System.out.println("Receiver TarBarActivity...");
+			// 震动
+			FunUtils.AcquireWakeLock(context);
+		} else {
+			FunUtils.setNotification(context, TabBarActivity.class, "易商",
+					"你有新的商机了", msg, R.drawable.app_icon);
+		}
+	};
 }
