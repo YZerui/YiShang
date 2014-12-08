@@ -7,6 +7,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import com.exception.utils.P;
 import com.yishang.A.global.application.AppContextApplication;
 import com.yishang.C.dao.daoModel.T_Contacts;
 
@@ -92,7 +93,7 @@ public class ConstactUtil {
 		ArrayList<T_Contacts> mSortList = new ArrayList<T_Contacts >();
 
 		for (int i = 0; i < date.length; i++) {
-			
+			try{
 			T_Contacts  contactSortBean = new T_Contacts();
 			//存入姓名
 			contactSortBean.setName(date[i]);
@@ -109,7 +110,10 @@ public class ConstactUtil {
 				contactSortBean.setFirstLetter("#");				
 			}
 			
-			mSortList.add(contactSortBean);
+			mSortList.add(contactSortBean);}catch (Exception e) {
+				// TODO: handle exception
+				P.v("同步联系人中 联系人信息有误");
+			}
 		}
 		//根据拼音进行排序
 		PinyinComparator pinyinComparator=new PinyinComparator();

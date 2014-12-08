@@ -10,6 +10,7 @@ import com.thread.RunnableService;
 import com.thread.callBack.runCallBack;
 import com.yishang.A.global.Enum.db.Enum_IfRegister;
 import com.yishang.A.global.application.AppContextApplication;
+import com.yishang.A.global.writting.W_Share;
 import com.yishang.B.module.c.ResourceEntity.Req_bookSend;
 import com.yishang.C.dao.daoImpl.Dao_Self;
 import com.yishang.C.dao.daoModel.T_Relationships;
@@ -71,7 +72,7 @@ public class TransUsersService {
 					&& DataValidate.checkDataValid(item.getRela_phone())) {
 				try {
 					SMS.SEND(AppContextApplication.getInstance(),
-							item.getRela_phone(), "我有一个很不错的文档给你看看:" + transUrl);
+							item.getRela_phone(), W_Share.shareMsg("",transUrl));
 				} catch (Exception e) {
 					// TODO: handle exception
 					P.v("自定义发送分享文档短信失败");

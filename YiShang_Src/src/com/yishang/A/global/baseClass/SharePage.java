@@ -22,6 +22,7 @@ import com.lidroid.xutils.view.annotation.ViewInject;
 import com.lidroid.xutils.view.annotation.event.OnClick;
 import com.ruifeng.yishang.R;
 import com.tencent.connect.share.QzoneShare;
+import com.yishang.A.global.writting.W_Share;
 import com.yishang.B.module.b.ContactsUI.ContactsSelectPage;
 import com.yishang.C.dao.daoImpl.Dao_Resource;
 import com.yishang.C.dao.daoImpl.Dao_Self;
@@ -171,7 +172,7 @@ public class SharePage extends SuperDialogActivity implements
 			// sp.setShareType(Pl)
 			// sp.setAddress("465931543@qq.com");
 			sp.setTitle("分享一个文档");
-			sp.setText("我分享一个文档给你,请点击该链接查看:" + transUrl);
+			sp.setText(W_Share.shareEmail("",transUrl));
 			Platform email = ShareSDK.getPlatform(context, Email.NAME);
 			email.setPlatformActionListener(this);
 			email.share(sp);
@@ -216,6 +217,7 @@ public class SharePage extends SuperDialogActivity implements
 			// sp.setTitle(shareTitle);
 			// sp.setText(resName);
 			sp.setTitle("分享一个文档: " + "《" + resName + "》");
+//			sp.setTitle("分享一个文档: " + "《" + resName + "》");
 			Platform weChat = ShareSDK.getPlatform(context, WechatMoments.NAME);
 			weChat.setPlatformActionListener(this); // 设置分享事件回调
 			// 执行图文分享
@@ -234,7 +236,8 @@ public class SharePage extends SuperDialogActivity implements
 		}
 		try {
 			ShareParams sp = new ShareParams();
-			sp.setText("我有一个很好的文档分享给你们: " + transUrl);
+//			sp.setText("我有一个很好的文档分享给你们: " + transUrl);
+			sp.setText(W_Share.shareSocial(transUrl));
 			// sp.setImageUrl("http://www.hotoos.com/guimi/?from=groupmessage&isappinstalled=0");
 			Platform weibo = ShareSDK.getPlatform(context, SinaWeibo.NAME);
 			weibo.setPlatformActionListener(this); // 设置分享事件回调
@@ -274,7 +277,8 @@ public class SharePage extends SuperDialogActivity implements
 		}
 		try{
 		ShareParams sp = new ShareParams();
-		sp.setText("我分享一个不错的文档给你看,你可能需要哦:"+ transUrl);
+		sp.setText(W_Share.shareMsg("",transUrl));
+//		sp.setText("我分享一个不错的文档给你看,你可能需要哦:"+ transUrl);
 		Platform sns = ShareSDK.getPlatform(context, ShortMessage.NAME);
 		sns.setPlatformActionListener(this);
 		sns.share(sp);}catch (Exception e) {

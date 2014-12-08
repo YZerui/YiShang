@@ -21,10 +21,14 @@ import com.thread.RunnableService;
 import com.thread.callBack.runCallBack;
 import com.yishang.A.global.baseClass.SearchBoxActivity;
 import com.yishang.A.global.constant.CONSTANT;
+import com.yishang.B.module.e.SelfUi.UserIfoPage;
+import com.yishang.C.dao.daoImpl.Dao_Relationship;
 import com.yishang.C.dao.daoImpl.Dao_Resource;
 import com.yishang.C.dao.daoModel.T_Relationships;
 import com.yishang.C.dao.daoModel.T_Resource;
+import com.yishang.E.view.CustomToast;
 import com.yishang.E.view.adapter.ResourceDocItemAdapter;
+import com.yishang.E.view.adapter.ResourceDocItemAdapter.callBack_Item;
 import com.yishang.Z.utils.Benchmark;
 import com.yishang.Z.utils.ViewSwitchUtils;
 
@@ -60,6 +64,34 @@ public class ResourceSearchActivity extends SearchBoxActivity {
 				ViewSwitchUtils.in2LeftIntent(context,
 						ResourceDetailPage.class, bean.getCom_name(),
 						bean.getBook_url(), bean.getBook_id(), bean.getCom_id());
+			}
+		});
+		adapter.setCallBack(new callBack_Item() {
+			
+			@Override
+			public void onSenderClick(int position) {
+				// TODO Auto-generated method stub
+				//调转到发送者
+				try {
+					// 跳转到发送人界面
+					T_Resource bean = list.get(position);
+					T_Relationships peoBean = Dao_Relationship.getByID(bean
+							.getSend_id());
+					ViewSwitchUtils.tab_in2LeftIntent(context,
+							UserIfoPage.class, peoBean.getRela_id(),
+							String.valueOf(peoBean.getRela_register()),
+							peoBean.getRela_phone());
+				} catch (Exception e) {
+					// TODO: handle exception
+					new CustomToast(context).locatCenter().setText("信息有误,无法查找该联系人");
+					P.v("跳转联系人错误:" + e.getMessage());
+				}
+			}
+			
+			@Override
+			public void onBackClick(int position) {
+				// TODO Auto-generated method stub
+				
 			}
 		});
 	}
