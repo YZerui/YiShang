@@ -572,9 +572,10 @@ int layout include_item_one_layer 0x7f030010
 int layout include_listitem_bottom_bar 0x7f030011
 int layout include_listitem_fix_layout 0x7f030012
 int layout include_listitem_unfix_layout 0x7f030013
-int layout pop_item_layout 0x7f030014
-int layout xlistview_footer 0x7f030015
-int layout xlistview_header 0x7f030016
+int layout listitem_fix_layout 0x7f030014
+int layout pop_item_layout 0x7f030015
+int layout xlistview_footer 0x7f030016
+int layout xlistview_header 0x7f030017
 int menu main 0x7f0c0000
 int string action_settings 0x7f090002
 int string app_name 0x7f090001

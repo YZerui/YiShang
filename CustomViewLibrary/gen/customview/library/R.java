@@ -1826,9 +1826,10 @@ containing a value of this type.
         public static int include_listitem_bottom_bar=0x7f030011;
         public static int include_listitem_fix_layout=0x7f030012;
         public static int include_listitem_unfix_layout=0x7f030013;
-        public static int pop_item_layout=0x7f030014;
-        public static int xlistview_footer=0x7f030015;
-        public static int xlistview_header=0x7f030016;
+        public static int listitem_fix_layout=0x7f030014;
+        public static int pop_item_layout=0x7f030015;
+        public static int xlistview_footer=0x7f030016;
+        public static int xlistview_header=0x7f030017;
     }
     public static final class menu {
         public static int main=0x7f0c0000;

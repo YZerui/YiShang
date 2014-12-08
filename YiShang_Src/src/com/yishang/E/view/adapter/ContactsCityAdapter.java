@@ -6,10 +6,14 @@ import com.customview.callBack.listItemCallBack;
 import com.customview.view.CustomListItemView;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
+import com.nostra13.universalimageloader.core.imageaware.ImageAware;
+import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
 import com.ruifeng.yishang.R;
 import com.yishang.A.global.Enum.constant.Enum_Color;
 import com.yishang.A.global.application.T_UserPoint;
 import com.yishang.A.global.baseClass.SuperAdapter;
+import com.yishang.A.global.baseClass.SuperViewHolder;
+import com.yishang.A.global.writting.W_UserIfo;
 import com.yishang.B.module.a.MsgEntity.MsgBean;
 import com.yishang.E.view.adapter.ContactsNearbyAdapter.ItemCallBack;
 
@@ -19,9 +23,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 
 /**
  * 显示同城信息列表的Adapter
@@ -41,7 +48,7 @@ public class ContactsCityAdapter extends SuperAdapter {
 				.showImageForEmptyUri(R.drawable.default_img_head)
 				.showImageOnFail(R.drawable.default_img_head)
 				.showImageForEmptyUri(R.drawable.default_img_head)
-				.displayer(new FadeInBitmapDisplayer(600))
+//				.displayer(new FadeInBitmapDisplayer(600))
 				// .showStubImage(R.drawable.default_img_msg)
 				// .showStubImage(R.drawable.app_icon)
 				.cacheInMemory(true).cacheOnDisc(true).build();
@@ -83,42 +90,15 @@ public class ContactsCityAdapter extends SuperAdapter {
 		// TODO Auto-generated method stub
 		ViewHolder holder = null;
 		if (convertView == null) {
-			holder = new ViewHolder();
+		
 			convertView = inflater.inflate(
-					R.layout.contacts_nearby_item_layout, null);
-			holder.item = (CustomListItemView) convertView
-					.findViewById(R.id.item);
+					R.layout.city_item_layout, null);
+			holder = new ViewHolder(convertView);
 			convertView.setTag(holder);
 		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}
-		T_UserPoint bean = datas.get(position);
-		holder.item.setFixDouble_title(bean.getUser_name());
-		holder.item.setFixDouble_content(bean.getUser_label());
-		holder.item.setCallBack(new listItemCallBack() {
-			@Override
-			public void checkbox_select_callBack(boolean ifCheck) {
-				// TODO Auto-generated method stub
-				super.checkbox_select_callBack(ifCheck);
-				itemCallBack.call_select(ifCheck, position);
-			}
-		});
-//		holder.item.onDoubleTitle_left2(bean.getUser_gender() == 1 ? "男" : "女")
-//				.onDoubleTitle_left2_size(10)
-//				.onDoubleTitle_left2_color(Enum_Color.TextLevelTwo.color());
-//		holder.item.onDoubleTitle_left3(bean.getLocateCity())
-//				.onDoubleTitle_left3_size(10)
-//				.onDoubleTitle_left3_color(Enum_Color.TextNote.color());
-		if (bean.getIfSelect() == 1) {
-			holder.item.setCheckSelect(true);
-			itemCallBack.call_select(true, position);
-		} else {
-			holder.item.setCheckSelect(false);
-			itemCallBack.call_select(false, position);
-		}
-		imageLoader.displayImage(bean.getUser_head(), holder.item.getFixIcon(),
-				loadOptions);
-
+		holder.refreshData(position);
 		return convertView;
 	}
 
@@ -126,7 +106,47 @@ public class ContactsCityAdapter extends SuperAdapter {
 		public abstract void call_select(boolean ifCheck, int position);
 	}
 
-	public final class ViewHolder {
-		public CustomListItemView item;
+	public final class ViewHolder extends SuperViewHolder{
+		private TextView title;
+		private TextView content;
+		private ImageView icon;
+		private ImageAware imageAware;
+		private CheckBox checkBox;
+		public ViewHolder(View parent){
+			initView(parent);
+		}
+		@Override
+		public void initView(View parent) {
+			// TODO Auto-generated method stub
+			title=(TextView)parent.findViewById(R.id.fixDouble_title);
+			content=(TextView)parent.findViewById(R.id.fixDouble_content);
+			icon=(ImageView)parent.findViewById(R.id.fixIcon);
+			checkBox=(CheckBox)parent.findViewById(R.id.select_checkbox);
+			imageAware=new ImageViewAware(icon, false);
+		}
+
+		@Override
+		public void refreshData(final int position) {
+			// TODO Auto-generated method stub
+			T_UserPoint bean = datas.get(position);
+			title.setText(bean.getUser_name());
+			content.setText(W_UserIfo.label(bean.getUser_label()));
+			imageLoader.displayImage(bean.getUser_head(),imageAware,loadOptions);
+			checkBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+				
+				@Override
+				public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+					// TODO Auto-generated method stub
+					itemCallBack.call_select(isChecked,position);
+				}
+			});
+			if(bean.getIfSelect()==1){
+				checkBox.setChecked(true);
+				itemCallBack.call_select(true,position);
+			}else {
+				checkBox.setChecked(false);
+				itemCallBack.call_select(false,position);
+			}
+		}
 	}
 }

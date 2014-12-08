@@ -2,6 +2,7 @@ package com.yishang.E.view.adapter;
 
 import java.util.List;
 
+import com.customview.model.item;
 import com.customview.view.CustomListItemView;
 import com.exception.utils.P;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
@@ -26,7 +27,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 /**
  * 显示联系列表的Adapter
@@ -38,21 +41,13 @@ public class ContactsItemAdapter extends SuperAdapter {
 	private List<T_Relationships> datas;
 
 	public ContactsItemAdapter(Context context) {
-//		 TODO Auto-generated constructor stub
+		// TODO Auto-generated constructor stub
 		inflater = LayoutInflater.from(context);
-		loadOptions= new DisplayImageOptions.Builder()			
-		.showImageForEmptyUri(R.drawable.default_img_head)	
-		.showImageOnFail(R.drawable.default_img_head)
-		.showImageForEmptyUri(R.drawable.default_img_head)
-//		.showStubImage(R.drawable.default_img_msg)
-//		.showStubImage(R.drawable.app_icon)
-//		.displayer(new FadeInBitmapDisplayer(600))
-		.cacheInMemory(true)
-           .cacheOnDisk(true)
-           .considerExifParams(true)
-                    .build();					
-//		.cacheOnDisc(true)						
-//		.build();	
+		loadOptions = new DisplayImageOptions.Builder()
+				.showImageForEmptyUri(R.drawable.default_img_head)
+				.showImageOnFail(R.drawable.default_img_head)
+				.cacheInMemory(true).cacheOnDisk(true).considerExifParams(true)
+				.build();
 	}
 
 	public void setData(List<T_Relationships> datas) {
@@ -87,48 +82,13 @@ public class ContactsItemAdapter extends SuperAdapter {
 		ViewHolder holder = null;
 
 		if (convertView == null) {
-			Benchmark.start("convertView");
-			convertView = inflater.inflate(R.layout.contacts_page_list_item,
-					null);
+			convertView = inflater.inflate(R.layout.contacts_item_layout, null);
 			holder = new ViewHolder(convertView);
-			// holder.backView=(CustomBarView)convertView.findViewById(R.id.frontItem);
-//			holder.backItem1 = (RelativeLayout) convertView
-//					.findViewById(R.id.backBtn_1);
-//			holder.backItem2 = (RelativeLayout) convertView
-//					.findViewById(R.id.backBtn_2);
-			holder.item = (CustomListItemView) convertView
-					.findViewById(R.id.item);
-			holder.imageAware = new ImageViewAware(holder.item.getFixIcon());
 			convertView.setTag(holder);
-			Benchmark.end("convertView");
 		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}
-//		Benchmark.start("convertViewData");
-		T_Relationships bean = datas.get(position);
-		holder.item.setFixDouble_title(bean.getRela_name());
-		holder.item.setFixDouble_content(W_UserIfo.rank(bean.getRela_rank()));
-		Enum_RelaType enumType=Enum_RelaType.valueOf(bean.getRela_typeResult());
-	
-		switch (enumType) {
-		case SYSTEM:
-			holder.item.getFixIcon().setImageResource(R.drawable.msg_system_icon);
-			P.v("SYSTEM IMG");
-			break;
-
-		default:
-			ImageLoader.getInstance().displayImage(bean.getRela_head(), holder.imageAware, loadOptions);
-			break;
-		}
-		
-		
-		
-		
-//		ImageLoader.getInstance().
-//			displayImage("http://www.0065.me/bbs/data/attachment/forum/201108/01/153822523lisaaau9jn25w.jpg", holder.imageAware, loadOptions);
-		
-		
-//		Benchmark.end("convertViewData");
+		holder.refreshData(position);
 		return convertView;
 	}
 
@@ -140,11 +100,9 @@ public class ContactsItemAdapter extends SuperAdapter {
 		public abstract void onBackClick_2(int position);
 	}
 
-	private final static class ViewHolder {
-
-		// public CustomBarView backView;
-		public RelativeLayout backItem1, backItem2;
-		public CustomListItemView item;
+	private final class ViewHolder {
+		private TextView title, content;
+		private ImageView icon;
 		public ImageAware imageAware;
 
 		public ViewHolder(View parent) {
@@ -152,13 +110,27 @@ public class ContactsItemAdapter extends SuperAdapter {
 		}
 
 		private void initView(View parent) {
-			// holder.backItem1=(RelativeLayout)convertView.findViewById(R.id.backBtn_1);
-			// holder.backItem2=(RelativeLayout)convertView.findViewById(R.id.backBtn_2);
-			// holder.item=(CustomListItemView)convertView.findViewById(R.id.item);
+			title = (TextView) parent.findViewById(R.id.fixDouble_title);
+			content = (TextView) parent.findViewById(R.id.fixDouble_content);
+			icon = (ImageView) parent.findViewById(R.id.fixIcon);
+			imageAware = new ImageViewAware(icon, false);
 		}
 
-		public void refreshData(T_Relationships rel) {
-
+		public void refreshData(int position) {
+			T_Relationships bean = datas.get(position);
+			title.setText(bean.getRela_name());
+			content.setText(W_UserIfo.rank(bean.getRela_rank()));
+			Enum_RelaType enumType = Enum_RelaType.valueOf(bean
+					.getRela_typeResult());
+			switch (enumType) {
+			case SYSTEM:
+				icon.setImageResource(R.drawable.msg_system_icon);
+				break;
+			default:
+				ImageLoader.getInstance().displayImage(bean.getRela_head(),
+						imageAware, loadOptions);
+				break;
+			}
 		}
 	}
 }
