@@ -7,6 +7,7 @@ package com.yishang.A.global.Enum.db;
  */
 public enum Enum_ResSource {
 	DEFAULT,
+	SOURCE_TRANS,//(当前已经转发的文档)
 	SOURCE_RELA,
 	SOURCE_CLIENT,
 	SOURCE_SUPPLIER,

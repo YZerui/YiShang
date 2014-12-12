@@ -21,6 +21,10 @@ import com.thread.HandlerExtend.handleCallBack;
 import com.yishang.A.global.Enum.Enum_PageSource;
 import com.yishang.A.global.Enum.Enum_ReceiverAction;
 import com.yishang.A.global.Enum.com.Enum_ComType;
+import com.yishang.A.global.Enum.db.Enum_RelaNote;
+import com.yishang.A.global.Enum.db.Enum_RelaType;
+import com.yishang.A.global.Enum.db.Enum_ResSource;
+import com.yishang.A.global.Enum.db.Enum_ResType;
 import com.yishang.A.global.application.AppContextApplication;
 import com.yishang.A.global.baseClass.SharePage;
 import com.yishang.A.global.baseClass.SuperActivity;
@@ -61,7 +65,7 @@ public class ResourceDetailPage extends SuperActivity {
 	private String url;
 	private String resID;
 	private String cID;
-	
+	private String comName;
 	private String transUrl;
 
 	@Override
@@ -85,6 +89,7 @@ public class ResourceDetailPage extends SuperActivity {
 				public void onSuccess(Recv_bookIfo bean) {
 					// TODO Auto-generated method stub
 					cID = bean.getCom_id();
+					comName = bean.getCom_abb();
 				}
 
 				@Override
@@ -152,8 +157,8 @@ public class ResourceDetailPage extends SuperActivity {
 				@Override
 				public void onSuccess(String url) {
 					// TODO Auto-generated method stub
-					transUrl=url;
-					P.v("获得转发URL:"+url);
+					transUrl = url;
+					P.v("获得转发URL:" + url);
 				}
 
 				@Override
@@ -168,7 +173,8 @@ public class ResourceDetailPage extends SuperActivity {
 					P.v("获得转发URL失败");
 				}
 			}).setIniId(resBean.getBook_creater_id()).setResId(resID)
-					.setUserId(Dao_Self.getInstance().getUser_id()).httpMethod();
+					.setUserId(Dao_Self.getInstance().getUser_id())
+					.httpMethod();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -274,11 +280,48 @@ public class ResourceDetailPage extends SuperActivity {
 					if (!DataValidate.checkDataValid(bean)) {
 						// 如果本地数据库不存在，则文档的原始转发人变为自己
 						ViewSwitchUtils.in2TopIntent(context, SharePage.class,
-								resID, Dao_Self.getInstance().getUser_id(),transUrl,name);
+								resID, Dao_Self.getInstance().getUser_id(),
+								transUrl, name);
+						// 并插入本地数据库中
+						final T_Resource tBean = new T_Resource();
+						tBean.setBook_creater_id(Dao_Self.getInstance()
+								.getUser_id());
+						tBean.setSend_id(Dao_Self.getInstance().getUser_id());
+						tBean.setBook_id(resID);
+						// 设定文档属性（即为自己转发）
+						tBean.setSender_type(Enum_RelaNote.SELF.value());
+						tBean.setCom_id(cID);
+						tBean.setBook_name(name);
+						tBean.setBook_url(url);
+
+						new HttpReq_GetResIfo(resID, new CallBack_Res() {
+
+							@Override
+							public void onSuccess(Recv_bookIfo bean) {
+								// TODO Auto-generated method stub
+								comName = bean.getCom_abb();
+							}
+
+							@Override
+							public void onFinally() {
+								// TODO Auto-generated method stub
+								tBean.setCom_name(comName);// 企业名
+								Dao_Resource.addTransBook(tBean);
+
+							}
+
+							@Override
+							public void onFail() {
+								// TODO Auto-generated method stub
+								cID = null;
+							}
+						});
+
 						return;
 					}
 					ViewSwitchUtils.in2TopIntent(context, SharePage.class,
-							bean.getBook_id(), bean.getBook_creater_id(),transUrl,name);
+							bean.getBook_id(), bean.getBook_creater_id(),
+							transUrl, name);
 					return;
 				} catch (DbException e) {
 					// TODO Auto-generated catch block

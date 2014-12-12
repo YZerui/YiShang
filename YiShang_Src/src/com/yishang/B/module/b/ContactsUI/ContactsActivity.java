@@ -197,8 +197,10 @@ public class ContactsActivity extends ListActivity {
 				Dialog_Select dialog = new Dialog_Select(context);
 				final T_Relationships bean = list.get(position);
 				String title = bean.getRela_name();
-				dialog.withTitle("选择对 " + title).withBtn_1("转发文档")
-						.withBtn_2("屏蔽该联系人").setCallBack(new callBack_Dialog() {
+				dialog.withTitle("选择对 " + title)
+						.withBtn_1("转发文档")
+//						.withBtn_2("屏蔽该联系人")
+						.setCallBack(new callBack_Dialog() {
 							@Override
 							public void click_btn1() {
 								// TODO Auto-generated method stub

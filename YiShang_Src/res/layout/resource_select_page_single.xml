@@ -16,7 +16,7 @@
         custom:topbar_right_text="转发"
         custom:topbar_title="选择资源转发" >
     </com.customview.view.CustomTopbarView>
-
+    <!--
     <com.customview.view.CustomBtnView
         android:id="@+id/searchBtn"
         android:layout_width="fill_parent"
@@ -28,21 +28,22 @@
         custom:btn_text="搜索"
         custom:btn_text_color="@color/text_color_level_two" >
     </com.customview.view.CustomBtnView>
- <com.customview.view.CustomPageView
+    -->
+
+    <com.customview.view.CustomPageView
         android:id="@+id/pageView"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:visibility="invisible" >
     </com.customview.view.CustomPageView>
+
     <com.yishang.E.view.swipelistview.XListView
         android:id="@+id/listView"
         style="@style/default_list_style"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-         >
+        android:layout_height="fill_parent" >
     </com.yishang.E.view.swipelistview.XListView>
 
-   
     <!--
     <com.yishang.E.view.swipelistview.SwipeListView
         android:id="@+id/listView"

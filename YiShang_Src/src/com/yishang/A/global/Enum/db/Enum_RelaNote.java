@@ -6,6 +6,7 @@ package com.yishang.A.global.Enum.db;
  *
  */
 public enum Enum_RelaNote {
+	SELF(11111),
 	CLIENT_SUPPLIER(11000),
 	CLIENT(10000),
 	SUPPLIER(1000),

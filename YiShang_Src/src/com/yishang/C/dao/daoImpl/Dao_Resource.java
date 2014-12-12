@@ -52,7 +52,18 @@ public class Dao_Resource extends SuperDaoImpl {
 	private static void addBook(List<T_Resource> list) throws DbException {
 		db.saveAll(list);
 	}
-
+	/**
+	 * 增加一个自己转发的文档到本地
+	 * @param tBean
+	 */
+	public static void addTransBook(T_Resource tBean){
+		try {
+			addBook(tBean);
+		} catch (DbException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 //	/**
 //	 * 增加一个资源到本地中
 //	 * 

@@ -18,9 +18,28 @@ public class Recv_comBook {
 	private String book_user;
 	private String com_abb; //企业简称
 	private String com_logo;//企业Logo
-	
-	
-	
+	private String forwardtimes;//转发次数
+    private String interesttimes;//感兴趣次数
+    private String book_readtimes;//阅读次数
+    
+	public String getBook_readtimes() {
+		return book_readtimes;
+	}
+	public void setBook_readtimes(String book_readtimes) {
+		this.book_readtimes = book_readtimes;
+	}
+	public String getForwardtimes() {
+		return forwardtimes;
+	}
+	public void setForwardtimes(String forwardtimes) {
+		this.forwardtimes = forwardtimes;
+	}
+	public String getInteresttimes() {
+		return interesttimes;
+	}
+	public void setInteresttimes(String interesttimes) {
+		this.interesttimes = interesttimes;
+	}
 	public String getCom_abb() {
 		return com_abb;
 	}

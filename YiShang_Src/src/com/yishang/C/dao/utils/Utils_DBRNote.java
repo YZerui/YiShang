@@ -31,7 +31,10 @@ public class Utils_DBRNote {
 		if(param==0){
 			return Enum_RelaType.SYSTEM.value();
 		}
-		if (param % 10 == 1) { //****1
+		if(param==11111){
+			return Enum_RelaType.SELF.value();
+		}
+		else if (param % 10 == 1) { //****1
 			return Enum_RelaType.BLACKLIST.value();
 		} else if (param / 1000 == 11) { // 11000
 			return Enum_RelaType.CLIENT_SUPPLIER.value();

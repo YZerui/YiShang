@@ -15,6 +15,7 @@ import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.ruifeng.yishang.R;
 import com.yishang.A.global.Enum.constant.Enum_Color;
 import com.yishang.A.global.baseClass.SuperAdapter;
+import com.yishang.A.global.writting.W_ResList;
 import com.yishang.C.dao.daoModel.T_Resource;
 import com.yishang.E.view.adapter.ContactsSelectAdapter.ItemCallBack;
 import com.yishang.E.view.swipelistview.StickyListHeadersAdapter;
@@ -98,13 +99,8 @@ public class ResourceSelectAdapter_Single extends SuperAdapter {
 		} else {
 			holder.item.setCheckSelect(false);
 		}
-		holder.item.setFixDouble_title(bean.getCom_name());
-//		holder.item.onDoubleTitle_left2("À´×Ô").onDoubleTitle_left2_size(14)
-//				.onDoubleTitle_left2_color(Enum_Color.TextLevelTwo.color());
-//		holder.item.onDoubleTitle_left3(bean.getSender_name())
-//				.onDoubleTitle_left3_size(14)
-//				.onDoubleTitle_left3_color(Enum_Color.TextNote.color());
-		holder.item.setFixDouble_content("¡¶"+bean.getBook_name()+"¡·");
+		holder.item.setFixDouble_title(W_ResList.getComName(bean.getCom_name()));
+		holder.item.setFixDouble_content(W_ResList.getResName(bean.getBook_name()));
 
 		imageLoader.displayImage(null, holder.item.getFixIcon(), loadOptions,
 				null);

@@ -15,7 +15,8 @@ public enum Enum_RelaType {
 	BLACKLIST(5),
 	UNKNOW(-1),
 	DEFAULT(6),
-	ADDRESSLIST(7);//认识的人
+	ADDRESSLIST(7),
+	SELF(9);//认识的人
 	private int value;
 	private Enum_RelaType(int value){
 		this.value=value;
@@ -46,6 +47,8 @@ public enum Enum_RelaType {
 			return ADDRESSLIST;
 		case 8:
 			return SYSTEM;
+		case 9:
+			return SELF;
 		default:
 			return UNKNOW;
 		}

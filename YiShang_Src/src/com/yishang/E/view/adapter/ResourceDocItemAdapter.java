@@ -7,7 +7,9 @@ import com.customview.view.CustomListItemView;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.ruifeng.yishang.R;
 import com.yishang.A.global.Enum.constant.Enum_Color;
+import com.yishang.A.global.Enum.db.Enum_RelaType;
 import com.yishang.A.global.baseClass.SuperAdapter;
+import com.yishang.A.global.writting.W_ResList;
 import com.yishang.C.dao.daoModel.T_Resource;
 import com.yishang.Z.utils.FormatUtils;
 
@@ -84,26 +86,19 @@ public class ResourceDocItemAdapter extends SuperAdapter {
 			holder = (ViewHolder) convertView.getTag();
 		}
 		T_Resource bean = datas.get(position);
-		holder.item.setFixDouble_title(bean.getCom_name());
-//		holder.item.onDoubleTitle_left2("来自").onDoubleTitle_left2_size(14)
-//				.onDoubleTitle_left2_color(Enum_Color.TextLevelTwo.color());
-//		holder.item.onDoubleTitle_left3("来自  "+bean.getSender_name())
-//				.onDoubleTitle_left3_size(14)
-//				.onDoubleTitle_left3_color(Enum_Color.TextNote.color());
+		if(bean.getSender_typeResult()==Enum_RelaType.SELF.value()){
+			holder.item.onDoubleBRText("原始转发");
+		}else {
+			holder.item.onDoubleBRText(W_ResList.getSenderName(bean.getSender_name()));
+			
+		}
+		holder.item.setFixDouble_content(W_ResList.getResName(bean.getBook_name()));
+		holder.item.setFixDouble_title(W_ResList.getComName(bean.getCom_name()));
 		holder.item.setFixDouble_timer(FormatUtils.getListItemTime(bean.getBook_recvTime()));
-		holder.item.onDoubleBRText("来自 "+bean.getSender_name());
-		holder.item.setFixDouble_content("《"+bean.getBook_name()+"》");
+		
 
 		imageLoader.displayImage(null, holder.item.getFixIcon(), loadOptions,
 				null);
-//		holder.backImg_Delete.setOnClickListener(new OnClickListener() {
-//			
-//			@Override
-//			public void onClick(View v) {
-//				// TODO Auto-generated method stub
-//				callBackItem.onBackClick(position);
-//			}
-//		});
 		holder.item.onDoubleBRTextColor(R.drawable.text_color_orange);
 		holder.item.getDoubleBRText().setOnClickListener(new OnClickListener() {
 			
