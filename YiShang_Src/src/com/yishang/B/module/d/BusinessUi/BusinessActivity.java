@@ -220,12 +220,14 @@ public class BusinessActivity extends ListActivity{
 	private HandlerExtend handlerExtend=new HandlerExtend(new handleCallBack() {
 		@Override
 		public void call_onInit() {
+			listView.setVisibility(View.VISIBLE);
 			listView.setPullLoadEnable(true);
 			listView.setAdapter(adapter);
 			pageView.setVisibility(View.GONE);
 		}
 		@Override
 		public void call_onRefresh() {
+			listView.setVisibility(View.VISIBLE);
 			adapter.notifyDataSetChanged();
 			pageView.setVisibility(View.GONE);
 		}
@@ -278,6 +280,7 @@ public class BusinessActivity extends ListActivity{
 				return;
 			}
 			pageView.onProgressOnly().setVisibility(View.VISIBLE);
+			listView.setVisibility(View.INVISIBLE);
 			handler.postDelayed(new Runnable() {
 				
 				@Override

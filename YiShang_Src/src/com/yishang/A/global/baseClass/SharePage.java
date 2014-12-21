@@ -14,6 +14,8 @@ import cn.sharesdk.tencent.qzone.QZone;
 import cn.sharesdk.wechat.friends.Wechat;
 import cn.sharesdk.wechat.moments.WechatMoments;
 
+import com.customview.callBack.topBarCallBack;
+import com.customview.view.CustomTopbarView;
 import com.device.CLIPBOARD;
 import com.exception.utils.P;
 import com.format.utils.DataValidate;
@@ -22,6 +24,8 @@ import com.lidroid.xutils.view.annotation.ViewInject;
 import com.lidroid.xutils.view.annotation.event.OnClick;
 import com.ruifeng.yishang.R;
 import com.tencent.connect.share.QzoneShare;
+import com.thread.HandlerExtend;
+import com.thread.HandlerExtend.handleCallBack;
 import com.yishang.A.global.writting.W_Share;
 import com.yishang.B.module.b.ContactsUI.ContactsSelectPage;
 import com.yishang.C.dao.daoImpl.Dao_Resource;
@@ -29,10 +33,12 @@ import com.yishang.C.dao.daoImpl.Dao_Self;
 import com.yishang.C.dao.daoModel.T_Resource;
 import com.yishang.D.service.httpRequest.HttpReq_GetTransUrl;
 import com.yishang.D.service.httpRequest.HttpReq_GetTransUrl.CallBack_TransUrl;
+import com.yishang.E.view.MyDialog;
 import com.yishang.Z.utils.DeviceUtils;
 import com.yishang.Z.utils.FormatUtils;
 import com.yishang.Z.utils.ViewSwitchUtils;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -64,8 +70,11 @@ public class SharePage extends SuperDialogActivity implements
 	private ImageView sns;
 	@ViewInject(R.id.link)
 	private ImageView link;
-	@ViewInject(R.id.cancel)
-	private TextView cancel;
+	// @ViewInject(R.id.cancel)
+	// private TextView cancel;
+
+	@ViewInject(R.id.topBar)
+	private CustomTopbarView topBar;
 
 	private String resId, sourceId, transUrl, resName, shareTitle;
 
@@ -146,14 +155,35 @@ public class SharePage extends SuperDialogActivity implements
 	@Override
 	protected void onClickListener() {
 		// TODO Auto-generated method stub
+		topBar.setCallBack(new topBarCallBack() {
+			@Override
+			public void call_rightTextBtnListener() {
+				// TODO Auto-generated method stub
+				super.call_rightTextBtnListener();
+				finish();
+			}
+		});
+	}
 
+	private void shareRun() {
+		topBar.setTitle("准备跳转...").setTitleVisible(true).setProVisibility(true)
+				.setLeftTextVisibility(false);
+
+	}
+
+	private void shareEnd() {
+		topBar.setProVisibility(false)
+				.setTitleVisible(false)
+				.setLeftText("转发到")
+				.setRightText("取消")
+				.setRightTextColor(getResources().getColor(R.color.color_theme));
 	}
 
 	@OnClick(R.id.yishang)
 	public void yishangShare(View v) {
 		try {
 			ViewSwitchUtils.in2TopIntent(context, ContactsSelectPage.class,
-					resId, sourceId,transUrl);
+					resId, sourceId, transUrl);
 		} catch (Exception e) {
 			// TODO: handle exception
 			toast.setText("无法分享,数据或出现问题");
@@ -167,18 +197,22 @@ public class SharePage extends SuperDialogActivity implements
 			toast.setText("文档数据出错,不支持转发");
 			return;
 		}
+
 		try {
+			shareRun();
 			ShareParams sp = new ShareParams();
 			// sp.setShareType(Pl)
 			// sp.setAddress("465931543@qq.com");
 			sp.setTitle("分享一个文档");
-			sp.setText(W_Share.shareEmail("",transUrl));
+			sp.setText(W_Share.shareEmail("", transUrl));
 			Platform email = ShareSDK.getPlatform(context, Email.NAME);
 			email.setPlatformActionListener(this);
 			email.share(sp);
+
 		} catch (Exception e) {
 			// TODO: handle exception
 			toast.setText("分享出错,版本过低或无安装此客户端");
+			shareEnd();
 		}
 	}
 
@@ -189,17 +223,20 @@ public class SharePage extends SuperDialogActivity implements
 			return;
 		}
 		try {
+			shareRun();
 			ShareParams sp = new ShareParams();
 			sp.setShareType(Platform.SHARE_WEBPAGE);
 			sp.setUrl(transUrl);
 			sp.setTitle(shareTitle);
-			sp.setText("分享一个文档: " + "《" + resName + "》");
+			sp.setText(W_Share.shareSocialZone(resName));
+			// sp.setText("分享一个文档: " + "《" + resName + "》");
 			Platform weChat = ShareSDK.getPlatform(context, Wechat.NAME);
 			weChat.setPlatformActionListener(this); // 设置分享事件回调
 			// 执行图文分享
 			weChat.share(sp);
 		} catch (Exception e) {
 			// TODO: handle exception
+			shareEnd();
 			toast.setText("分享出错,版本过低或无安装此客户端");
 		}
 	}
@@ -211,19 +248,21 @@ public class SharePage extends SuperDialogActivity implements
 			return;
 		}
 		try {
+			shareRun();
 			ShareParams sp = new ShareParams();
 			sp.setShareType(Platform.SHARE_WEBPAGE);
 			sp.setUrl(transUrl);
 			// sp.setTitle(shareTitle);
 			// sp.setText(resName);
-			sp.setTitle("分享一个文档: " + "《" + resName + "》");
-//			sp.setTitle("分享一个文档: " + "《" + resName + "》");
+			sp.setTitle(W_Share.shareSocialZone(resName));
+			// sp.setTitle("分享一个文档: " + "《" + resName + "》");
 			Platform weChat = ShareSDK.getPlatform(context, WechatMoments.NAME);
 			weChat.setPlatformActionListener(this); // 设置分享事件回调
 			// 执行图文分享
 			weChat.share(sp);
 		} catch (Exception e) {
 			// TODO: handle exception
+			shareEnd();
 			toast.setText("分享出错,版本过低或无安装此客户端");
 		}
 	}
@@ -235,8 +274,9 @@ public class SharePage extends SuperDialogActivity implements
 			return;
 		}
 		try {
+			shareRun();
 			ShareParams sp = new ShareParams();
-//			sp.setText("我有一个很好的文档分享给你们: " + transUrl);
+			// sp.setText("我有一个很好的文档分享给你们: " + transUrl);
 			sp.setText(W_Share.shareSocial(transUrl));
 			// sp.setImageUrl("http://www.hotoos.com/guimi/?from=groupmessage&isappinstalled=0");
 			Platform weibo = ShareSDK.getPlatform(context, SinaWeibo.NAME);
@@ -245,6 +285,7 @@ public class SharePage extends SuperDialogActivity implements
 			weibo.share(sp);
 		} catch (Exception e) {
 			// TODO: handle exception
+			shareEnd();
 			toast.setText("分享出错,版本过低或无安装此客户端");
 		}
 	}
@@ -256,6 +297,7 @@ public class SharePage extends SuperDialogActivity implements
 			return;
 		}
 		try {
+			shareRun();
 			ShareParams sp = new ShareParams();
 			sp.setTitle(shareTitle);
 			sp.setTitleUrl(transUrl);
@@ -264,7 +306,8 @@ public class SharePage extends SuperDialogActivity implements
 			qq.setPlatformActionListener(this);
 			qq.share(sp);
 		} catch (Exception e) {
-			// TODO: handle exception
+			// TODO: handle exception]
+			shareEnd();
 			toast.setText("分享出错,版本过低或无安装此客户端");
 		}
 	}
@@ -275,17 +318,20 @@ public class SharePage extends SuperDialogActivity implements
 			toast.setText("文档数据出错,不支持转发");
 			return;
 		}
-		try{
-		ShareParams sp = new ShareParams();
-		sp.setText(W_Share.shareMsg("",transUrl));
-//		sp.setText("我分享一个不错的文档给你看,你可能需要哦:"+ transUrl);
-		Platform sns = ShareSDK.getPlatform(context, ShortMessage.NAME);
-		sns.setPlatformActionListener(this);
-		sns.share(sp);}catch (Exception e) {
+		try {
+			shareRun();
+			ShareParams sp = new ShareParams();
+			sp.setText(W_Share.shareMsg("", transUrl));
+			// sp.setText("我分享一个不错的文档给你看,你可能需要哦:"+ transUrl);
+			Platform sns = ShareSDK.getPlatform(context, ShortMessage.NAME);
+			sns.setPlatformActionListener(this);
+			sns.share(sp);
+		} catch (Exception e) {
 			// TODO: handle exception
+			shareEnd();
 			toast.setText("文档数据出错,不支持发送");
 		}
-		
+
 		// if(!DataValidate.checkDataValid(transUrl)){
 		// toast.setText("文档数据出错,不支持转发");
 		// return;
@@ -325,10 +371,10 @@ public class SharePage extends SuperDialogActivity implements
 		toast.setText("链接复制成功");
 	}
 
-	@OnClick(R.id.cancel)
-	public void cancelClick(View v) {
-		finish();
-	}
+	// @OnClick(R.id.cancel)
+	// public void cancelClick(View v) {
+	// finish();
+	// }
 
 	@Override
 	public void finish() {
@@ -340,19 +386,51 @@ public class SharePage extends SuperDialogActivity implements
 	@Override
 	public void onCancel(Platform arg0, int arg1) {
 		// TODO Auto-generated method stub
-		toast.setText("取消了分享");
+		
+		handlerExtend.onLoadNull();
 	}
 
 	@Override
 	public void onComplete(Platform arg0, int arg1, HashMap<String, Object> arg2) {
 		// TODO Auto-generated method stub
-		toast.setText("分享");
+//		handlerExtend.onFinally();
 	}
 
 	@Override
 	public void onError(Platform arg0, int arg1, Throwable arg2) {
 		// TODO Auto-generated method stub
-		toast.setText("分享出错");
+		handlerExtend.onFail();
 	}
 
+	HandlerExtend handlerExtend = new HandlerExtend(new handleCallBack() {
+
+		@Override
+		public void call_onRefresh() {
+			// TODO Auto-generated method stub
+
+		}
+
+		@Override
+		public void call_onInit() {
+			// TODO Auto-generated method stub
+
+		}
+		public void call_onLoadNull() {
+			toast.setText("取消了分享");
+		};
+		public void call_onFail() {
+			toast.setText("分享出错,分享平台版本过低或未安装");
+			shareEnd();
+		};
+		public void call_onFinally() {
+//			toast.setText("分享");
+		};
+	});
+
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		shareEnd();
+	}
 }

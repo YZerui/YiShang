@@ -1,37 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:custom="http://schemas.android.com/apk/res/com.ruifeng.yishang"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/page_bg_level_one"
     android:gravity="bottom"
     android:orientation="vertical" >
 
-    <RelativeLayout
+    <com.customview.view.CustomTopbarView
+        android:id="@+id/topBar"
         android:layout_width="fill_parent"
-        android:layout_height="40dp" >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="@dimen/unit_margin_level_two"
-            android:text="转发到"
-            android:textColor="@color/text_color_level_one"
-            android:textSize="@dimen/text_btn_level_four" />
-
-        <TextView
-            android:id="@+id/cancel"
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:background="@drawable/btn_selector_bg"
-            android:padding="@dimen/unit_margin_level_two"
-            android:text="取消"
-            android:textColor="@color/color_note"
-            android:textSize="@dimen/text_btn_level_four" />
-    </RelativeLayout>
-
+        android:layout_height="wrap_content"
+        custom:topbar_left_text="转发到"
+        custom:topbar_right_text="取消"
+        
+        ></com.customview.view.CustomTopbarView>
     <View style="@style/split_line_view" />
 
     <LinearLayout
@@ -73,6 +56,7 @@
                 android:id="@+id/email"
                 android:layout_width="@dimen/share_icon_size"
                 android:layout_height="@dimen/share_icon_size"
+                
                 android:src="@drawable/share_email_icon" />
 
             <TextView

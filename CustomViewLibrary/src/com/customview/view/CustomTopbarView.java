@@ -358,6 +358,15 @@ public class CustomTopbarView extends LinearLayout {
 		this.title.setText(title);
 		return this;
 	}
+	
+	public CustomTopbarView setTitleVisible(boolean visible){
+		if(visible){
+			this.title.setVisibility(View.VISIBLE);
+		}else {
+			this.title.setVisibility(View.INVISIBLE);
+		}
+		return this;
+	}
 
 	public CustomTopbarView setBackText(String text) {
 		backText.setText(text);

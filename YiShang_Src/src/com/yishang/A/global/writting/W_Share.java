@@ -11,6 +11,9 @@ public class W_Share {
 	public static String shareSocial(String url){
 		return "这个很不错，向大家推荐："+url+"，该链接由“易商”移动营销App生成，绝对安全，请放心查看。";
 	}
+	public static String shareSocialZone(String name){
+		return "这个很不错，向大家推荐：《"+name+"》，该文档由“易商”移动营销App生成，绝对安全，请放心查看。";
+	}
 	/**
 	 * 邮件分享
 	 * @param name

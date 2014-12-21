@@ -99,7 +99,6 @@ public class ResourceSearchActivity extends SearchBoxActivity {
 	private void init() {
 		// TODO Auto-generated method stub
 		 editText.setHint("搜索文档资源(文档名/发送者/公司名");
-//		editText.setHint("搜索文档资源");
 		list = new ArrayList<T_Resource>();
 		adapter = new ResourceDocItemAdapter(context);
 		adapter.setData(list);

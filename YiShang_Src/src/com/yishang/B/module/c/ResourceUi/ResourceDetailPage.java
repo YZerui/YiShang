@@ -130,7 +130,7 @@ public class ResourceDetailPage extends SuperActivity {
 				@Override
 				public void onSuccess(Recv_bookIfo bean) {
 					// TODO Auto-generated method stub
-					webView.loadUrl(bean.getBook_url());
+					webView.loadUrl(bean.getBook_url()+"?flat=yishang");
 				}
 
 				@Override
@@ -146,7 +146,7 @@ public class ResourceDetailPage extends SuperActivity {
 				}
 			});
 		} else {
-			webView.loadUrl(url);
+			webView.loadUrl(url+"?flat=yishang");
 		}
 		T_Resource resBean;
 		try {
@@ -217,6 +217,7 @@ public class ResourceDetailPage extends SuperActivity {
 		});
 		// 设定支持JS
 		webView.getSettings().setJavaScriptEnabled(true);
+		webView.clearCache(true);
 		webView.setWebViewClient(new WebViewClient() {
 
 			@Override

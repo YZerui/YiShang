@@ -356,9 +356,7 @@ public class SYNCDbMsgService extends Service {
 
 					@Override
 					public void requestSuccess(Recv_comDetail bean) {
-						// 更新企业关联关系
-						Dao_Resource.updateCom_relate(resId,
-								Integer.valueOf(bean.getUc_status()));
+					
 						// 同步企业信息
 						T_Company tBean = new T_Company();
 						tBean.setCom_abb(bean.getCom_abb());
@@ -375,6 +373,9 @@ public class SYNCDbMsgService extends Service {
 						tBean.setCom_status(bean.getCom_status());
 						try {
 							Dao_Company.addComRecord_Total(tBean);
+							// 更新企业关联关系
+							Dao_Resource.updateCom_relate(resId,
+									Integer.valueOf(bean.getUc_status()));
 							if (num == 0) {
 								// 发送更新企业信息的通知
 								BroadcastUtil.sendBroadCast(context,

@@ -1,5 +1,6 @@
 package com.yishang.C.dao.daoImpl;
 
+import com.format.utils.DataValidate;
 import com.lidroid.xutils.db.sqlite.Selector;
 import com.lidroid.xutils.exception.DbException;
 import com.yishang.A.global.Enum.Enum_IfoType;
@@ -33,7 +34,10 @@ public class Dao_Self extends SuperDaoImpl {
 
 	public static T_SelfIfo getInstance() {
 		try {
-			return db.findFirst(Selector.from(T_SelfIfo.class));
+			T_SelfIfo tBean=db.findFirst(Selector.from(T_SelfIfo.class));
+			if(DataValidate.checkDataValid(tBean)){
+				return tBean;
+			}
 		} catch (DbException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

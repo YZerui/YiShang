@@ -11,7 +11,6 @@ import com.lidroid.xutils.db.annotation.Unique;
  */
 @Table(name="T_Company")
 public class T_Company extends EntityBase{
-	@Unique
 	@Column(column="com_id")
 	private String com_id;
 	
